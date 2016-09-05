@@ -16,19 +16,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "login_credential")
-@NamedQueries({
-	@NamedQuery(name = "QUERY_LOGIN_AUTH", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID and loginReg.password=:password"),
-	@NamedQuery(name = "QUERY_LOGIN_FORGOT", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID")
-})
+//@NamedQueries({
+//	@NamedQuery(name = "QUERY_LOGIN_AUTH", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID and loginReg.password=:password"),
+//	@NamedQuery(name = "QUERY_LOGIN_FORGOT", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID")
+//})
 
 public class LoginRegistartionModel implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+//	@GeneratedValue
 	@Column(name = "CREDENTIAL_ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long userId;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long userId = System.currentTimeMillis();
 
 	@Column(name = "EMAIL_ID")
 	private String emailID;
@@ -42,19 +43,20 @@ public class LoginRegistartionModel implements Serializable{
 	@Column(name = "LAST_NAME")
 	private String lastName;
 	
-	public LoginRegistartionModel() {
-	}
-	
-	public LoginRegistartionModel(long userId, String emailID, String password, String firstName, String lastName) {
-		super();
-		
-		this.emailID = emailID;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
-	@Id
-	@Column(name = "CREDENTIAL_ID")
+//	public LoginRegistartionModel() {
+//		userId = System.currentTimeMillis();
+//	}
+//	
+//	public LoginRegistartionModel(long userId, String emailID, String password, String firstName, String lastName) {
+//		super();
+//		this.userId = System.currentTimeMillis();
+//		this.emailID = emailID;
+//		this.password = password;
+//		this.firstName = firstName;
+//		this.lastName = lastName;
+//	}
+	//@Id
+	//@Column(name = "CREDENTIAL_ID")
 	public long getUserId() {
 		return userId;
 	}
@@ -63,7 +65,7 @@ public class LoginRegistartionModel implements Serializable{
 		this.userId = userId;
 	}
 
-	@Column(name = "EMAIL_ID")
+	//@Column(name = "EMAIL_ID")
 	public String getEmailID() {
 		return emailID;
 	}
@@ -71,7 +73,7 @@ public class LoginRegistartionModel implements Serializable{
 	public void setEmailID(final String emailID) {
 		this.emailID = emailID;
 	}
-	@Column(name = "PASSWORD")
+	//@Column(name = "PASSWORD")
 	public String getPassword() {
 		return password;
 	}
@@ -79,7 +81,7 @@ public class LoginRegistartionModel implements Serializable{
 	public void setPassword(final String password) {
 		this.password = password;
 	}
-	@Column(name = "FIRST_NAME")
+	//@Column(name = "FIRST_NAME")
 	public String getFirstName() {
 		return firstName;
 	}
@@ -87,7 +89,7 @@ public class LoginRegistartionModel implements Serializable{
 	public void setFirstName(final String firstName) {
 		this.firstName = firstName;
 	}
-	@Column(name = "LAST_NAME")
+	//@Column(name = "LAST_NAME")
 	public String getLastName() {
 		return lastName;
 	}

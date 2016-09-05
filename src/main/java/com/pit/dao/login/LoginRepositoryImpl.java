@@ -47,20 +47,25 @@ public class LoginRepositoryImpl implements LoginRepository{
 	public LoginRegistartionModel setRegistrationRepo(LoginRegistartionModel loginRegistartion) {
 		
 		try {
+			System.out.println("===="+System.currentTimeMillis());
+			loginRegistartion.setUserId(System.currentTimeMillis());
+			
 			sessionFactory.getCurrentSession().save(loginRegistartion); //Will return newly inserted record
 			
 			int newRegUserID = 0;
 
-			UserDetailModel userDetailMod = new UserDetailModel();
-			userDetailMod.setRegUserID(newRegUserID);
-			sessionFactory.getCurrentSession().save(userDetailMod);
-			
+//			UserDetailModel userDetailMod = new UserDetailModel();
+//			userDetailMod.setRegUserID(newRegUserID);
+//			sessionFactory.getCurrentSession().save(userDetailMod);
+			//sessionFactory.getCurrentSession().flush();
 			// TODO : What should I return.
 			
 			//int res = query.executeUpdate(); // Will Return How many record got effected.
 			//logger.info("Command successfully executed :: Record Effected : " + res);
 			
 		}catch (Exception e) {
+			e.printStackTrace();
+			sessionFactory.getCurrentSession().flush();
 		}
 		
 		return null;
