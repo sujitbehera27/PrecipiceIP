@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 import com.google.gson.Gson;
 import com.pit.biz.login.LoginBusinessManager;
 import com.pit.bo.LoginRegistartion;
+import java.util.Random;
 
 @Component
 @Path("/user")
@@ -50,6 +51,7 @@ public class LoginServiceImpl /*implements LoginService*/{
 			}
 			
 		}catch (Exception e) {
+			e.printStackTrace();
 			return Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
 		
@@ -65,12 +67,16 @@ public class LoginServiceImpl /*implements LoginService*/{
 		
 		try{
 			// TODO : What need to return 
+			Random randomGenerator = new Random();
+			
+		    registartion.setUserId(System.currentTimeMillis());
 			loginBusinessManager.setRegistration(registartion);
 			Gson gson = new Gson();
 			
-			//jsonResponse = gson.toJson(loginRegistartion);
+			jsonResponse = gson.toJson(registartion);
 			
 		}catch (Exception e) {
+			e.printStackTrace();
 			return Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
 		return Response.status(Response.Status.OK).entity(jsonResponse).build();

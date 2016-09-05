@@ -46,6 +46,7 @@ public class RegistrationServiceImpl {
 			System.out.println(retVal+"  <~~~~~~~~~~~~~companyDet ~~~~~~~~~~~");
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
 		

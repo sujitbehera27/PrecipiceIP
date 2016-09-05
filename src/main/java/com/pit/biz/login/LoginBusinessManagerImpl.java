@@ -48,6 +48,7 @@ public class LoginBusinessManagerImpl implements LoginBusinessManager{
 	public LoginRegistartion setRegistration(LoginRegistartion loginRegistartion) {
 
 		LoginRegistartionModel loginRegistartionModel = new LoginRegistartionModel();
+		loginRegistartionModel.setUserId(loginRegistartion.getUserId());
 		loginRegistartionModel.setFirstName(loginRegistartion.getFirstName());
 		loginRegistartionModel.setLastName(loginRegistartion.getLastName());
 		loginRegistartionModel.setEmailID(loginRegistartion.getEmailID());

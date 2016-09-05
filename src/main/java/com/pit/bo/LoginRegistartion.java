@@ -29,6 +29,14 @@ public class LoginRegistartion implements Serializable{
 		return emailID;
 	}
 
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
 	public void setEmailID(final String emailID) {
 		this.emailID = emailID;
 	}
