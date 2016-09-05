@@ -16,10 +16,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "login_credential")
-//@NamedQueries({
-//	@NamedQuery(name = "QUERY_LOGIN_AUTH", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID and loginReg.password=:password"),
-//	@NamedQuery(name = "QUERY_LOGIN_FORGOT", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID")
-//})
+@NamedQueries({
+	@NamedQuery(name = "QUERY_LOGIN_AUTH", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID and loginReg.password=:password"),
+	@NamedQuery(name = "QUERY_LOGIN_FORGOT", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID")
+})
 
 public class LoginRegistartionModel implements Serializable{
 
