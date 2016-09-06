@@ -26,7 +26,6 @@ public class LoginRegistartionModel implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-//	@GeneratedValue
 	@Column(name = "CREDENTIAL_ID")
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long userId = System.currentTimeMillis();
