@@ -21,11 +21,11 @@ public class FinancialDetail implements Serializable{
 	private int finDetID;
 	private String annualRev;
 	private String noOfEmp;
-	private String investInRnD;
-	private String busInCountries;
+	private List<String> investInRnD;
+	private List<String> busInCountries;
 	private int thirdPartyProd;
 	private int compBusType;
-	private String sellProd;
+	private List<String> sellProd;
 	private int sellService;
 	private int sellProdAndSvc;
 	private int licProp;
@@ -55,19 +55,19 @@ public class FinancialDetail implements Serializable{
 		this.noOfEmp = noOfEmp;
 	}
 
-	public String getInvestInRnD() {
+	public List<String> getInvestInRnD() {
 		return investInRnD;
 	}
 
-	public void setInvestInRnD(final String investInRnD) {
+	public void setInvestInRnD(final List<String> investInRnD) {
 		this.investInRnD = investInRnD;
 	}
 
-	public String getBusInCountries() {
+	public List<String> getBusInCountries() {
 		return busInCountries;
 	}
 
-	public void setBusInCountries(final String busInCountries) {
+	public void setBusInCountries(final List<String> busInCountries) {
 		this.busInCountries = busInCountries;
 	}
 
@@ -87,11 +87,11 @@ public class FinancialDetail implements Serializable{
 		this.compBusType = compBusType;
 	}
 
-	public String getSellProd() {
+	public List<String> getSellProd() {
 		return sellProd;
 	}
 
-	public void setSellProd(final String sellProd) {
+	public void setSellProd(final List<String> sellProd) {
 		this.sellProd = sellProd;
 	}
 

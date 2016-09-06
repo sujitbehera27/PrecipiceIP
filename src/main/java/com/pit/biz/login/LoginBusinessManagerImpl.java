@@ -24,7 +24,7 @@ public class LoginBusinessManagerImpl implements LoginBusinessManager{
 	public LoginRegistartion getLoginDetailsBusMng(LoginRegistartion loginRegistartion) {
 		
 		LoginRegistartionModel loginRegistartionModel = new LoginRegistartionModel();
-		if(loginRegistartion.getEmailID() != null && loginRegistartion.getPassword() != null){
+		
 			
 			loginRegistartionModel.setEmailID(loginRegistartion.getEmailID());
 			loginRegistartionModel.setPassword(loginRegistartion.getPassword());
@@ -35,7 +35,6 @@ public class LoginBusinessManagerImpl implements LoginBusinessManager{
 				if (loginRegistartionModel.getFirstName() != null && !loginRegistartionModel.getFirstName().isEmpty()) {
 					loginRegistartion.setFirstName(loginRegistartionModel.getFirstName());
 				}
-			}
 			
 			return loginRegistartion;
 		} 			
@@ -45,23 +44,14 @@ public class LoginBusinessManagerImpl implements LoginBusinessManager{
 
 	@Override
 	@Transactional
-	public LoginRegistartion setRegistration(LoginRegistartion loginRegistartion) {
+	public int setRegistration(LoginRegistartion loginRegistartion) {
 
 		LoginRegistartionModel loginRegistartionModel = new LoginRegistartionModel();
-		loginRegistartionModel.setUserId(loginRegistartion.getUserId());
 		loginRegistartionModel.setFirstName(loginRegistartion.getFirstName());
 		loginRegistartionModel.setLastName(loginRegistartion.getLastName());
 		loginRegistartionModel.setEmailID(loginRegistartion.getEmailID());
 		loginRegistartionModel.setPassword(loginRegistartion.getPassword());
 		
-		if (loginRegistartion != null) {
-			// TODO : What should It return
-			loginRepository.setRegistrationRepo(loginRegistartionModel);
-		}
-		
-
-		return null;
+		return loginRepository.setRegistrationRepo(loginRegistartionModel);
 	}
-	
-	
 }

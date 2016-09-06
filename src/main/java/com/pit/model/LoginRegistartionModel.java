@@ -27,8 +27,8 @@ public class LoginRegistartionModel implements Serializable{
 	
 	@Id
 	@Column(name = "CREDENTIAL_ID")
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long userId = System.currentTimeMillis();
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int userId ;
 
 	@Column(name = "EMAIL_ID")
 	private String emailID;
@@ -41,30 +41,15 @@ public class LoginRegistartionModel implements Serializable{
 	
 	@Column(name = "LAST_NAME")
 	private String lastName;
-	
-//	public LoginRegistartionModel() {
-//		userId = System.currentTimeMillis();
-//	}
-//	
-//	public LoginRegistartionModel(long userId, String emailID, String password, String firstName, String lastName) {
-//		super();
-//		this.userId = System.currentTimeMillis();
-//		this.emailID = emailID;
-//		this.password = password;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//	}
-	//@Id
-	//@Column(name = "CREDENTIAL_ID")
-	public long getUserId() {
+
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-
-	//@Column(name = "EMAIL_ID")
+	
 	public String getEmailID() {
 		return emailID;
 	}
@@ -72,7 +57,7 @@ public class LoginRegistartionModel implements Serializable{
 	public void setEmailID(final String emailID) {
 		this.emailID = emailID;
 	}
-	//@Column(name = "PASSWORD")
+
 	public String getPassword() {
 		return password;
 	}
@@ -80,7 +65,7 @@ public class LoginRegistartionModel implements Serializable{
 	public void setPassword(final String password) {
 		this.password = password;
 	}
-	//@Column(name = "FIRST_NAME")
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -88,7 +73,7 @@ public class LoginRegistartionModel implements Serializable{
 	public void setFirstName(final String firstName) {
 		this.firstName = firstName;
 	}
-	//@Column(name = "LAST_NAME")
+
 	public String getLastName() {
 		return lastName;
 	}

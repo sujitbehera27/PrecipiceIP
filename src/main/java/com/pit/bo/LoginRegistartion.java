@@ -24,10 +24,8 @@ public class LoginRegistartion implements Serializable{
 	private String password;
 	private String firstName;
 	private String lastName;
-
-	public String getEmailID() {
-		return emailID;
-	}
+	
+	
 
 	public long getUserId() {
 		return userId;
@@ -35,6 +33,10 @@ public class LoginRegistartion implements Serializable{
 
 	public void setUserId(long userId) {
 		this.userId = userId;
+	}
+
+	public String getEmailID() {
+		return emailID;
 	}
 
 	public void setEmailID(final String emailID) {

@@ -1,10 +1,8 @@
 package com.pit.service;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -17,11 +15,10 @@ import org.springframework.stereotype.Component;
 import com.google.gson.Gson;
 import com.pit.biz.login.LoginBusinessManager;
 import com.pit.bo.LoginRegistartion;
-import java.util.Random;
 
 @Component
 @Path("/user")
-public class LoginServiceImpl /*implements LoginService*/{
+public class LoginServiceImpl{
 	
 	
 	@Autowired
@@ -33,9 +30,11 @@ public class LoginServiceImpl /*implements LoginService*/{
 
 	@POST
     @Path("login")
-    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    //@Produces(MediaType.APPLICATION_FORM_URLENCODED)
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
+    //@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    //@Produces(MediaType.APPLICATION_FORM_URLENCODED)
+
 	public Response getLoginDetails(LoginRegistartion loginRegistartion) {
 		
 		System.out.println("~~~~~UN~~~~~~> "+loginRegistartion.getEmailID() +"~~~~~PW~~~> "+ loginRegistartion.getPassword());
@@ -43,15 +42,16 @@ public class LoginServiceImpl /*implements LoginService*/{
 		logger.info("getLoginDetails : Email ID -> " + loginRegistartion.getEmailID());  
 		
 		try{
+			if(loginRegistartion.getEmailID() != null && loginRegistartion.getPassword() != null){
+				
+			}
 			loginRegistartion = loginBusinessManager.getLoginDetailsBusMng(loginRegistartion);
-			System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			if(loginRegistartion != null){
 				Gson gson = new Gson();
 				jsonResponse = gson.toJson(loginRegistartion);
 			}
 			
 		}catch (Exception e) {
-			e.printStackTrace();
 			return Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
 		
@@ -62,46 +62,28 @@ public class LoginServiceImpl /*implements LoginService*/{
 	@Path("/registarion")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response setRegistartion(LoginRegistartion registartion) {
+	public Response setRegistartion(LoginRegistartion registartion/*, @Context HttpServletRequest request*/) {
 		logger.info("setRegistartion : Registaring new user.");
-		
+		int retVal = 0;
 		try{
-			// TODO : What need to return 
-			Random randomGenerator = new Random();
-			
-		    registartion.setUserId(System.currentTimeMillis());
-			loginBusinessManager.setRegistration(registartion);
-			Gson gson = new Gson();
-			
-			jsonResponse = gson.toJson(registartion);
+			if(registartion != null){
+				retVal = loginBusinessManager.setRegistration(registartion);
+				//HttpSession session = request.getSession();
+				//session.setAttribute("regID", retVal);
+			}
 			
 		}catch (Exception e) {
-			e.printStackTrace();
 			return Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
-		return Response.status(Response.Status.OK).entity(jsonResponse).build();
+		return Response.status(Response.Status.OK).entity(retVal).build();
 	}
 
-	//@Override
+	
 	public Response forgotPassword(String emailID) {
 		logger.info("forgotPassword : " + emailID);
-		
 		return null;
 	}
 	
-	 @GET
-	    @Path("getbook/{id}")
-	    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	    public LoginRegistartion getBookInfo(@PathParam("id") int bookId) {
-	 
-		 System.out.println("------------------------------------");
-	        // retrieve book information based on the id supplied in the formal argument
-		 LoginRegistartion getBook = loginBusinessManager.getLoginDetailsBusMng(null);
-	 
-		 LoginRegistartion bookType = new LoginRegistartion();
-	        return bookType;
-	    }
-
-
+	   // @Path("getbook/{id}")
+	   // public LoginRegistartion getBookInfo(@PathParam("id") int bookId) 
 }

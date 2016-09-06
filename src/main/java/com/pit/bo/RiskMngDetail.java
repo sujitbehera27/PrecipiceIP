@@ -1,14 +1,8 @@
 package com.pit.bo;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="riskMngDetail")
@@ -19,16 +13,16 @@ public class RiskMngDetail implements Serializable {
 	private int riskMngID;
 	private int hasConfInfo;
 	private int hasIpPolicy;
-	private String hasIpPolicyList;
+	private List<String> hasIpPolicyList;
 	private int agreementMngProt;
-	private String agreementMngProtList;
+	private List<String> agreementMngProtList;
 	private int hasErm;
-	private String hasErmList;
-	private String thirdPartyLia;
+	private List<String> hasErmList;
+	private List<String> thirdPartyLia;
 	private int selfInsIpLose;
 	private int purchedThirdPartyIns;
-	private String thirdPartyIns;
-	private String hasOverIpGov;
+	private List<String> thirdPartyIns;
+	private List<String> hasOverIpGov;
 
 	
 	public int getRiskMngID() {
@@ -47,13 +41,6 @@ public class RiskMngDetail implements Serializable {
 		this.hasIpPolicy = hasIpPolicy;
 	}
 
-	public String getHasIpPolicyList() {
-		return hasIpPolicyList;
-	}
-
-	public void setHasIpPolicyList(final String hasIpPolicyList) {
-		this.hasIpPolicyList = hasIpPolicyList;
-	}
 
 	public int getAgreementMngProt() {
 		return agreementMngProt;
@@ -63,13 +50,6 @@ public class RiskMngDetail implements Serializable {
 		this.agreementMngProt = agreementMngProt;
 	}
 
-	public String getAgreementMngProtList() {
-		return agreementMngProtList;
-	}
-
-	public void setAgreementMngProtList(final String agreementMngProtList) {
-		this.agreementMngProtList = agreementMngProtList;
-	}
 
 	public int getHasErm() {
 		return hasErm;
@@ -79,21 +59,6 @@ public class RiskMngDetail implements Serializable {
 		this.hasErm = hasErm;
 	}
 
-	public String getHasErmList() {
-		return hasErmList;
-	}
-
-	public void setHasErmList(final String hasErmList) {
-		this.hasErmList = hasErmList;
-	}
-
-	public String getHasOverIpGov() {
-		return hasOverIpGov;
-	}
-
-	public void setHasOverIpGov(final String hasOverIpGov) {
-		this.hasOverIpGov = hasOverIpGov;
-	}
 
 	public int getHasConfInfo() {
 		return hasConfInfo;
@@ -101,14 +66,6 @@ public class RiskMngDetail implements Serializable {
 
 	public void setHasConfInfo(final int hasConfInfo) {
 		this.hasConfInfo = hasConfInfo;
-	}
-
-	public String getThirdPartyLia() {
-		return thirdPartyLia;
-	}
-
-	public void setThirdPartyLia(final String thirdPartyLia) {
-		this.thirdPartyLia = thirdPartyLia;
 	}
 
 	public int getSelfInsIpLose() {
@@ -127,12 +84,54 @@ public class RiskMngDetail implements Serializable {
 		this.purchedThirdPartyIns = purchedThirdPartyIns;
 	}
 
-	public String getThirdPartyIns() {
+	public List<String> getHasIpPolicyList() {
+		return hasIpPolicyList;
+	}
+
+	public void setHasIpPolicyList(List<String> hasIpPolicyList) {
+		this.hasIpPolicyList = hasIpPolicyList;
+	}
+
+	public List<String> getAgreementMngProtList() {
+		return agreementMngProtList;
+	}
+
+	public void setAgreementMngProtList(List<String> agreementMngProtList) {
+		this.agreementMngProtList = agreementMngProtList;
+	}
+
+	public List<String> getHasErmList() {
+		return hasErmList;
+	}
+
+	public void setHasErmList(List<String> hasErmList) {
+		this.hasErmList = hasErmList;
+	}
+
+	public List<String> getThirdPartyLia() {
+		return thirdPartyLia;
+	}
+
+	public void setThirdPartyLia(List<String> thirdPartyLia) {
+		this.thirdPartyLia = thirdPartyLia;
+	}
+
+	public List<String> getThirdPartyIns() {
 		return thirdPartyIns;
 	}
 
-	public void setThirdPartyIns(final String thirdPartyIns) {
+	public void setThirdPartyIns(List<String> thirdPartyIns) {
 		this.thirdPartyIns = thirdPartyIns;
 	}
+
+	public List<String> getHasOverIpGov() {
+		return hasOverIpGov;
+	}
+
+	public void setHasOverIpGov(List<String> hasOverIpGov) {
+		this.hasOverIpGov = hasOverIpGov;
+	}
 	
+	
+
 }

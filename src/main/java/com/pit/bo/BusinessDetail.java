@@ -1,6 +1,7 @@
 package com.pit.bo;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +20,7 @@ public class BusinessDetail  implements Serializable {
 	private int businessDetailID;
 	private String compOverall;
 	private String compByBu;
-	private String compMarketAct;
+	private List<String> compMarketAct;
 	private int compIpPolicy;
 	private int compIpStrategy;
 	private int businesStrategy;
@@ -48,11 +49,11 @@ public class BusinessDetail  implements Serializable {
 		this.compByBu = compByBu;
 	}
 
-	public String getCompMarketAct() {
+	public List<String> getCompMarketAct() {
 		return compMarketAct;
 	}
 
-	public void setCompMarketAct(final String compMarketAct) {
+	public void setCompMarketAct(final List<String> compMarketAct) {
 		this.compMarketAct = compMarketAct;
 	}
 

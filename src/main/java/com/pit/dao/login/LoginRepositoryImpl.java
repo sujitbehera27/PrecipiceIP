@@ -37,38 +37,33 @@ public class LoginRepositoryImpl implements LoginRepository{
 			}
 			
 		}catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
-		
 		return null;
 	}
 
 	@Override
-	public LoginRegistartionModel setRegistrationRepo(LoginRegistartionModel loginRegistartion) {
+	public int setRegistrationRepo(LoginRegistartionModel loginRegistartion) {
+		
+		int newRegUserID = 0;
 		
 		try {
-			System.out.println("===="+System.currentTimeMillis());
-			loginRegistartion.setUserId(System.currentTimeMillis());
+			newRegUserID = (int) sessionFactory.getCurrentSession().save(loginRegistartion); //Will return newly inserted record
 			
-			sessionFactory.getCurrentSession().save(loginRegistartion); //Will return newly inserted record
-			
-			int newRegUserID = 0;
-
-//			UserDetailModel userDetailMod = new UserDetailModel();
-//			userDetailMod.setRegUserID(newRegUserID);
-//			sessionFactory.getCurrentSession().save(userDetailMod);
-			//sessionFactory.getCurrentSession().flush();
-			// TODO : What should I return.
-			
+			UserDetailModel userDetailMod = new UserDetailModel();
+			userDetailMod.setRegUserID(newRegUserID);
+			sessionFactory.getCurrentSession().save(userDetailMod);
+			return newRegUserID;
 			//int res = query.executeUpdate(); // Will Return How many record got effected.
 			//logger.info("Command successfully executed :: Record Effected : " + res);
 			
 		}catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("ERROR : User Already Exist");
 			sessionFactory.getCurrentSession().flush();
 		}
 		
-		return null;
+		return newRegUserID;
 	}
 	
 }

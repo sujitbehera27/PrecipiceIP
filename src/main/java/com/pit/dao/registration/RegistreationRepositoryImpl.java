@@ -20,7 +20,11 @@ public class RegistreationRepositoryImpl  implements RegistreationRepository{
 	@Override
 	public boolean setCompanyDetailBusMng(CompanyDetailModel companyDetailModel) {
 		
-		sessionFactory.getCurrentSession().saveOrUpdate(companyDetailModel);
+		try {
+			sessionFactory.getCurrentSession().saveOrUpdate(companyDetailModel);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return false;
 	}
@@ -44,7 +48,12 @@ public class RegistreationRepositoryImpl  implements RegistreationRepository{
 	@Override
 	public boolean setTradeDetailRepo(TradeDetailModel tradeDetailModel) {
 		
-		sessionFactory.getCurrentSession().saveOrUpdate(tradeDetailModel);
+		try {
+			sessionFactory.getCurrentSession().saveOrUpdate(tradeDetailModel);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return false;
 	}
@@ -52,8 +61,12 @@ public class RegistreationRepositoryImpl  implements RegistreationRepository{
 	@Override
 	public boolean setRiskManagementRepo(RiskMngDetailModel riskMngDetailModel) {
 		
-		sessionFactory.getCurrentSession().saveOrUpdate(riskMngDetailModel);
-		
+		try {
+			sessionFactory.getCurrentSession().saveOrUpdate(riskMngDetailModel);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 

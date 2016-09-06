@@ -1,5 +1,7 @@
 package com.pit.biz.registration;
 
+import java.util.List;
+
 import javax.persistence.Column;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,20 +53,20 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 		FinancialDetailModel financialDetailModel = new FinancialDetailModel();
 
 		// These all r String Value 
-		if (financialDetail.getAnnualRev() != null && financialDetail.getAnnualRev().isEmpty()) 
+		if (financialDetail.getAnnualRev() != null && !financialDetail.getAnnualRev().isEmpty()) 
 			financialDetailModel.setAnnualRev(financialDetail.getAnnualRev());
 
-		if (financialDetail.getNoOfEmp() != null && financialDetail.getNoOfEmp().isEmpty()) 
+		if (financialDetail.getNoOfEmp() != null && !financialDetail.getNoOfEmp().isEmpty()) 
 			financialDetailModel.setNoOfEmp(financialDetail.getNoOfEmp());
 
-		if (financialDetail.getInvestInRnD() != null && financialDetail.getInvestInRnD().isEmpty()) 
-			financialDetailModel.setInvestInRnD(financialDetail.getInvestInRnD());
+		if (financialDetail.getInvestInRnD() != null && !financialDetail.getInvestInRnD().isEmpty()) 
+			financialDetailModel.setInvestInRnD(convertListToString(financialDetail.getInvestInRnD()));
 
-		if (financialDetail.getBusInCountries() != null && financialDetail.getBusInCountries().isEmpty()) 
-			financialDetailModel.setBusInCountries(financialDetail.getBusInCountries());
+		if (financialDetail.getBusInCountries() != null && !financialDetail.getBusInCountries().isEmpty()) 
+			financialDetailModel.setBusInCountries(convertListToString(financialDetail.getBusInCountries()));
 
-		if (financialDetail.getSellProd() != null && financialDetail.getSellProd().isEmpty()) 
-			financialDetailModel.setSellProd(financialDetail.getSellProd());
+		if (financialDetail.getSellProd() != null && !financialDetail.getSellProd().isEmpty()) 
+			financialDetailModel.setSellProd(convertListToString(financialDetail.getSellProd()));
 		
 
 		// These all are int value
@@ -85,12 +87,12 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 		
 		BusinessDetailModel businessDetailModel = new BusinessDetailModel();
 		
-		if (businessDetail.getCompOverall() != null && businessDetail.getCompOverall().isEmpty()) 
+		if (businessDetail.getCompOverall() != null && !businessDetail.getCompOverall().isEmpty()) 
 			businessDetailModel.setCompOverall(businessDetail.getCompOverall());
-		if (businessDetail.getCompByBu() != null && businessDetail.getCompByBu().isEmpty()) 
+		if (businessDetail.getCompByBu() != null && !businessDetail.getCompByBu().isEmpty()) 
 			businessDetailModel.setCompByBu(businessDetail.getCompByBu());
-		if (businessDetail.getCompMarketAct() != null && businessDetail.getCompMarketAct().isEmpty()) 
-			businessDetailModel.setCompMarketAct(businessDetail.getCompMarketAct());
+		if (businessDetail.getCompMarketAct() != null && !businessDetail.getCompMarketAct().isEmpty()) 
+			businessDetailModel.setCompMarketAct(convertListToString(businessDetail.getCompMarketAct()));
 		
 		businessDetailModel.setCompIpPolicy(businessDetail.getCompIpPolicy());
 		businessDetailModel.setCompIpStrategy(businessDetail.getCompIpStrategy());
@@ -127,19 +129,24 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 	public boolean setRiskManagementBusMng(RiskMngDetail riskMngDetail) {
 
 		RiskMngDetailModel riskMngDetailModel = new RiskMngDetailModel();
+
+		if (riskMngDetail.getHasIpPolicyList() != null && !riskMngDetail.getHasIpPolicyList().isEmpty()) 
+			riskMngDetailModel.setHasIpPolicyList(convertListToString(riskMngDetail.getHasIpPolicyList()));
 		
-		if (riskMngDetail.getHasIpPolicyList() != null && riskMngDetail.getHasIpPolicyList().isEmpty()) 
-			riskMngDetailModel.setHasIpPolicyList(riskMngDetail.getHasIpPolicyList());
-		if (riskMngDetail.getAgreementMngProtList() != null && riskMngDetail.getAgreementMngProtList().isEmpty())
-			riskMngDetailModel.setAgreementMngProtList(riskMngDetail.getAgreementMngProtList());
-		if (riskMngDetail.getHasErmList() != null && riskMngDetail.getHasErmList().isEmpty())
-			riskMngDetailModel.setHasErmList(riskMngDetail.getHasErmList());
-		if (riskMngDetail.getThirdPartyLia() != null && riskMngDetail.getThirdPartyLia().isEmpty())
-			riskMngDetailModel.setThirdPartyLia(riskMngDetail.getThirdPartyLia());
-		if (riskMngDetail.getThirdPartyIns() != null && riskMngDetail.getThirdPartyIns().isEmpty())
-			riskMngDetailModel.setThirdPartyIns(riskMngDetail.getThirdPartyIns());
-		if (riskMngDetail.getHasOverIpGov() != null && riskMngDetail.getHasOverIpGov().isEmpty())
-			riskMngDetailModel.setHasOverIpGov(riskMngDetail.getHasOverIpGov());
+		if (riskMngDetail.getAgreementMngProtList() != null && !riskMngDetail.getAgreementMngProtList().isEmpty()) 
+			riskMngDetailModel.setAgreementMngProtList(convertListToString(riskMngDetail.getAgreementMngProtList()));
+			
+		if (riskMngDetail.getHasErmList() != null && !riskMngDetail.getHasErmList().isEmpty())
+			riskMngDetailModel.setHasErmList(convertListToString(riskMngDetail.getHasErmList()));
+		
+		if (riskMngDetail.getThirdPartyLia() != null && !riskMngDetail.getThirdPartyLia().isEmpty())
+			riskMngDetailModel.setThirdPartyLia(convertListToString(riskMngDetail.getThirdPartyLia()));
+		
+		if (riskMngDetail.getThirdPartyIns() != null && !riskMngDetail.getThirdPartyIns().isEmpty())
+			riskMngDetailModel.setThirdPartyIns(convertListToString(riskMngDetail.getThirdPartyIns()));
+		
+		if (riskMngDetail.getHasOverIpGov() != null && !riskMngDetail.getHasOverIpGov().isEmpty())
+			riskMngDetailModel.setHasOverIpGov(convertListToString(riskMngDetail.getHasOverIpGov()));
 		
 		riskMngDetailModel.setHasConfInfo(riskMngDetail.getHasConfInfo());
 		riskMngDetailModel.setHasIpPolicy(riskMngDetail.getHasIpPolicy());
@@ -151,6 +158,18 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 		registreationRepository.setRiskManagementRepo(riskMngDetailModel);
 
 		return false;
+	}
+	
+	private String convertListToString(List<String> inputList){
+		StringBuilder tempStrBuilder = new StringBuilder();
+			for(String tempStr : inputList){
+				if(tempStr != null && !tempStr.isEmpty()){
+					tempStrBuilder.append(tempStr.trim());
+					tempStrBuilder.append(",");
+				}
+			}
+			tempStrBuilder.delete(tempStrBuilder.length()-1, tempStrBuilder.length());
+		return tempStrBuilder.toString();
 	}
 
 }

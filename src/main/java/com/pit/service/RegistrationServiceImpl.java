@@ -35,10 +35,13 @@ public class RegistrationServiceImpl {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("companyDet")
-	public Response setCompanyDetails(CompanyDetail companyDetail) {
+	public Response setCompanyDetails(CompanyDetail companyDetail/*, @Context HttpServletRequest request*/) {
 		
 		System.out.println("~~~~~~~User Name~~~~~~~>" + companyDetail.getUserName());
 		logger.info("setCompanyDetails : Company Details Submited..");
+		
+		//HttpSession session= request.getSession(true);
+    	//int id = (int) session.getAttribute("regID");
 		
 		try {
 			
@@ -46,7 +49,6 @@ public class RegistrationServiceImpl {
 			System.out.println(retVal+"  <~~~~~~~~~~~~~companyDet ~~~~~~~~~~~");
 			
 		} catch (Exception e) {
-			e.printStackTrace();
 			Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
 		
