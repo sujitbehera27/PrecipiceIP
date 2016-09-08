@@ -52,8 +52,8 @@ public class LoginRepositoryImpl implements LoginRepository{
 			newRegUserID = (String) sessionFactory.getCurrentSession().save(loginRegistartion); //Will return newly inserted record
 			
 			UserDetailModel userDetailMod = new UserDetailModel();
-			//userDetailMod.setRegUserID(newRegUserID);
-			//sessionFactory.getCurrentSession().save(userDetailMod);
+			userDetailMod.setUserID(newRegUserID);
+			sessionFactory.getCurrentSession().save(userDetailMod);
 			return 1;
 			//int res = query.executeUpdate(); // Will Return How many record got effected.
 			//logger.info("Command successfully executed :: Record Effected : " + res);
