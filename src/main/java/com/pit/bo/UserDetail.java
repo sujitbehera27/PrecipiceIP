@@ -1,6 +1,7 @@
 package com.pit.bo;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,6 +26,18 @@ public class UserDetail implements Serializable {
 	private int riskManagementID;
 	private int businessDetailsID;
 	private int regUserID;
+	
+	
+	private String compOverall;
+	private String compByBu;
+	private List<String> compMarketAct;
+	private int compIpPolicy;
+	private int compIpStrategy;
+	private int businesStrategy;
+	
+	
+	
+	
 	
 
 	public int getUserID() {
