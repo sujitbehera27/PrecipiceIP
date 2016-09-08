@@ -26,9 +26,12 @@ public class LoginRegistartionModel implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@Column(name = "USER_ID")
+	private String userId ;
+	
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "CREDENTIAL_ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int userId ;
+	private int credentialId;
 
 	@Column(name = "EMAIL_ID")
 	private String emailID;
@@ -42,11 +45,11 @@ public class LoginRegistartionModel implements Serializable{
 	@Column(name = "LAST_NAME")
 	private String lastName;
 
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	
@@ -80,6 +83,14 @@ public class LoginRegistartionModel implements Serializable{
 
 	public void setLastName(final String lastName) {
 		this.lastName = lastName;
+	}
+	
+	public int getCredentialId() {
+		return credentialId;
+	}
+
+	public void setCredentialId(int credentialId) {
+		this.credentialId = credentialId;
 	}
 	
 }

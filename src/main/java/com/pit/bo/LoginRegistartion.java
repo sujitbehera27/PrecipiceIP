@@ -19,7 +19,7 @@ public class LoginRegistartion implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private long userId;
+	private String userId;
 	private String emailID;
 	private String password;
 	private String firstName;
@@ -27,11 +27,11 @@ public class LoginRegistartion implements Serializable{
 	
 	
 
-	public long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 

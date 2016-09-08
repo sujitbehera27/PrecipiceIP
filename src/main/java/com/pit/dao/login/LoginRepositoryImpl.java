@@ -45,15 +45,16 @@ public class LoginRepositoryImpl implements LoginRepository{
 	@Override
 	public int setRegistrationRepo(LoginRegistartionModel loginRegistartion) {
 		
-		int newRegUserID = 0;
-		
+		//int newRegUserID = 0;
+		String newRegUserID="";
 		try {
-			newRegUserID = (int) sessionFactory.getCurrentSession().save(loginRegistartion); //Will return newly inserted record
+			System.out.println("====="+loginRegistartion.getUserId());
+			newRegUserID = (String) sessionFactory.getCurrentSession().save(loginRegistartion); //Will return newly inserted record
 			
 			UserDetailModel userDetailMod = new UserDetailModel();
-			userDetailMod.setRegUserID(newRegUserID);
+			userDetailMod.setUserID(newRegUserID);
 			sessionFactory.getCurrentSession().save(userDetailMod);
-			return newRegUserID;
+			return 1;
 			//int res = query.executeUpdate(); // Will Return How many record got effected.
 			//logger.info("Command successfully executed :: Record Effected : " + res);
 			
@@ -63,7 +64,7 @@ public class LoginRepositoryImpl implements LoginRepository{
 			sessionFactory.getCurrentSession().flush();
 		}
 		
-		return newRegUserID;
+		return 1;
 	}
 	
 }
