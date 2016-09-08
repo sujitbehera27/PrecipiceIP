@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "user_det")
-@NamedQueries({
-	@NamedQuery(name = "QUERY_USER_DETAIL_SET_REGID", query = "from UserDetailModel userDet where userDet.regUserID=:userID")
-})
+//@NamedQueries({
+//	@NamedQuery(name = "QUERY_USER_DETAIL_SET_REGID", query = "from UserDetailModel userDet where userDet.regUserID=:userID")
+//})
 public class UserDetailModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
