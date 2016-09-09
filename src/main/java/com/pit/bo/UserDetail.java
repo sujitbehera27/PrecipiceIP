@@ -11,7 +11,7 @@ public class UserDetail implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private int userID ;
+	private String userID ;
 
 	private String regUserID;
 	
@@ -70,11 +70,11 @@ public class UserDetail implements Serializable {
 	private int formID; // Will Get From UI. 1-Comp Det, 2-Finance Det, 3-Biz Det, 4-Trade Det, 5-Risk Mng.
 	
 
-	public int getUserID() {
+	public String getUserID() {
 		return userID;
 	}
 
-	public void setUserID(final int userID) {
+	public void setUserID(final String userID) {
 		this.userID = userID;
 	}
 
