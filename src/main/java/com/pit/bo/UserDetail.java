@@ -15,6 +15,16 @@ public class UserDetail implements Serializable {
 
 	private String regUserID;
 	
+	/*Company Details*/
+	private String userName;
+	private String companyName;
+	private String emailID;
+	private String address1;
+	private String address2;
+	private String city;
+	private String zip;
+	private String country;
+	private String phoneNo;
 	
 	private String compOverall;
 	private String compByBu;
@@ -57,7 +67,7 @@ public class UserDetail implements Serializable {
 	private int protectTradeSec;
 	private int protectConfInfo;
 	
-	
+	private int formID; // Will Get From UI. 1-Comp Det, 2-Finance Det, 3-Biz Det, 4-Trade Det, 5-Risk Mng.
 	
 
 	public int getUserID() {
@@ -68,14 +78,84 @@ public class UserDetail implements Serializable {
 		this.userID = userID;
 	}
 
-	
-
 	public String getRegUserID() {
 		return regUserID;
 	}
 
 	public void setRegUserID(String regUserID) {
 		this.regUserID = regUserID;
+	}
+	
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public String getEmailID() {
+		return emailID;
+	}
+
+	public void setEmailID(String emailID) {
+		this.emailID = emailID;
+	}
+
+	public String getAddress1() {
+		return address1;
+	}
+
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+
+	public String getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getZip() {
+		return zip;
+	}
+
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
 	}
 
 	public String getCompOverall() {
@@ -372,6 +452,14 @@ public class UserDetail implements Serializable {
 
 	public void setProtectConfInfo(int protectConfInfo) {
 		this.protectConfInfo = protectConfInfo;
+	}
+
+	public int getFormID() {
+		return formID;
+	}
+
+	public void setFormID(int formID) {
+		this.formID = formID;
 	}
 	
 }

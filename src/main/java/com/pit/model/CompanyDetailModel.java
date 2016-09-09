@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name = "company_det")
+@Table(name = "user_det")
 public class CompanyDetailModel implements Serializable{
 
 	private static final long serialVersionUID = 1L;

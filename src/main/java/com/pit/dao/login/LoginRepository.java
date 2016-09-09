@@ -6,5 +6,5 @@ public interface LoginRepository {
 
 	public LoginRegistartionModel getLoginRepo(LoginRegistartionModel loginRegistartion);
 	
-	public int setRegistrationRepo(LoginRegistartionModel loginRegistartion);
+	public boolean setRegistrationRepo(LoginRegistartionModel loginRegistartion);
 }

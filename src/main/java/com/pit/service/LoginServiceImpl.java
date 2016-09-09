@@ -32,23 +32,19 @@ public class LoginServiceImpl{
     @Path("login")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-    //@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    //@Produces(MediaType.APPLICATION_FORM_URLENCODED)
-
 	public Response getLoginDetails(LoginRegistartion loginRegistartion) {
 		
 		System.out.println("~~~~~UN~~~~~~> "+loginRegistartion.getEmailID() +"~~~~~PW~~~> "+ loginRegistartion.getPassword());
-		
 		logger.info("getLoginDetails : Email ID -> " + loginRegistartion.getEmailID());  
 		
 		try{
-			if(loginRegistartion.getEmailID() != null && loginRegistartion.getPassword() != null){
-				
+			if(loginRegistartion.getUserId() != null && loginRegistartion.getPassword() != null){
+				loginRegistartion = loginBusinessManager.getLoginDetailsBusMng(loginRegistartion);
 			}
-			loginRegistartion = loginBusinessManager.getLoginDetailsBusMng(loginRegistartion);
+			
 			if(loginRegistartion != null){
 				Gson gson = new Gson();
-				jsonResponse = gson.toJson(loginRegistartion);
+				jsonResponse = gson.toJson(loginRegistartion.getUserId());
 			}
 			
 		}catch (Exception e) {
@@ -62,20 +58,23 @@ public class LoginServiceImpl{
 	@Path("/registarion")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response setRegistartion(LoginRegistartion registartion/*, @Context HttpServletRequest request*/) {
+	public Response setRegistartion(LoginRegistartion registartion) {
 		logger.info("setRegistartion : Registaring new user.");
-		int retVal = 0;
+		String retUserID = null;
 		try{
 			if(registartion != null){
-				retVal = loginBusinessManager.setRegistration(registartion);
-				//HttpSession session = request.getSession();
-				//session.setAttribute("regID", retVal);
+				boolean hasSuccessReg = loginBusinessManager.setRegistration(registartion);
+				
+				if (hasSuccessReg) {
+					retUserID = registartion.getUserId();
+					Gson gson = new Gson();
+					jsonResponse = gson.toJson(retUserID);
+				} 
 			}
-			
 		}catch (Exception e) {
 			return Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
-		return Response.status(Response.Status.OK).entity(retVal).build();
+		return Response.status(Response.Status.OK).entity(jsonResponse).build();
 	}
 
 	

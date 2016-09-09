@@ -26,7 +26,7 @@ public class LoginBusinessManagerImpl implements LoginBusinessManager{
 		LoginRegistartionModel loginRegistartionModel = new LoginRegistartionModel();
 		
 			
-			loginRegistartionModel.setEmailID(loginRegistartion.getEmailID());
+			loginRegistartionModel.setUserId(loginRegistartion.getUserId());
 			loginRegistartionModel.setPassword(loginRegistartion.getPassword());
 			
 			loginRegistartionModel = loginRepository.getLoginRepo(loginRegistartionModel);
@@ -40,11 +40,11 @@ public class LoginBusinessManagerImpl implements LoginBusinessManager{
 		} 			
 		
 		return null;
-	}
+	}	
 
 	@Override
 	@Transactional
-	public int setRegistration(LoginRegistartion loginRegistartion) {
+	public boolean setRegistration(LoginRegistartion loginRegistartion) {
 
 		LoginRegistartionModel loginRegistartionModel = new LoginRegistartionModel();
 		loginRegistartionModel.setUserId(loginRegistartion.getUserId());
@@ -54,5 +54,6 @@ public class LoginBusinessManagerImpl implements LoginBusinessManager{
 		loginRegistartionModel.setPassword(loginRegistartion.getPassword());
 		
 		return loginRepository.setRegistrationRepo(loginRegistartionModel);
+		
 	}
 }

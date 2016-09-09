@@ -5,10 +5,13 @@ import com.pit.bo.CompanyDetail;
 import com.pit.bo.FinancialDetail;
 import com.pit.bo.RiskMngDetail;
 import com.pit.bo.TradeDetail;
+import com.pit.bo.UserDetail;
 
 public interface RegistrationBusinessManager {
 
-	public boolean setCompanyDetailBusMng(CompanyDetail companyDetail);
+	public boolean setUserDetails(UserDetail userDetail) ;
+	
+	/*public boolean setCompanyDetailBusMng(CompanyDetail companyDetail);
 	
 	public boolean setFinancialDetailsBusMng(FinancialDetail financialDetail);
 	
@@ -16,6 +19,6 @@ public interface RegistrationBusinessManager {
 	
 	public boolean setTradeDetailBusMng(TradeDetail tradeDetail);
 	
-	public boolean setRiskManagementBusMng(RiskMngDetail riskMngDetail);
+	public boolean setRiskManagementBusMng(RiskMngDetail riskMngDetail);*/
 	
 }

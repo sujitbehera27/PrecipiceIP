@@ -2,8 +2,6 @@ package com.pit.biz.registration;
 
 import java.util.List;
 
-import javax.persistence.Column;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,151 +11,174 @@ import com.pit.bo.CompanyDetail;
 import com.pit.bo.FinancialDetail;
 import com.pit.bo.RiskMngDetail;
 import com.pit.bo.TradeDetail;
+import com.pit.bo.UserDetail;
 import com.pit.dao.registration.RegistreationRepository;
 import com.pit.model.BusinessDetailModel;
 import com.pit.model.CompanyDetailModel;
 import com.pit.model.FinancialDetailModel;
 import com.pit.model.RiskMngDetailModel;
 import com.pit.model.TradeDetailModel;
+import com.pit.model.UserDetailModel;
 
 @Component
 public class RegistrationBusinessManagertImpl implements RegistrationBusinessManager {
 
 	@Autowired
 	RegistreationRepository registreationRepository;
-
+	
+	private static final int COMPANY_DETAIL = 1;
+	private static final int FINANCE_DETAIL = 2;
+	private static final int BUSINESS_DETAIL= 3;
+	private static final int TRADE_DETAIL   = 4;
+	private static final int RISK_MNG_DETAIL= 5;
+	
+	UserDetailModel userDetailModel ;//= new UserDetailModel();
+	
 	@Override
 	@Transactional
-	public boolean setCompanyDetailBusMng(CompanyDetail companyDetail) {
-
-		CompanyDetailModel companyDetailModel = new CompanyDetailModel();
-		companyDetailModel.setUserName(companyDetail.getUserName());
-		companyDetailModel.setCompanyName(companyDetail.getCompanyName());
-		companyDetailModel.setEmailID(companyDetail.getEmailID());
-		companyDetailModel.setAddress1(companyDetail.getAddress1());
-		companyDetailModel.setAddress2(companyDetail.getAddress2());
-		companyDetailModel.setCity(companyDetail.getCity());
-		companyDetailModel.setZip(companyDetail.getZip());
-		companyDetailModel.setCountry(companyDetail.getCountry());
-		companyDetailModel.setPhoneNo(companyDetail.getPhoneNo());
-
-		registreationRepository.setCompanyDetailBusMng(companyDetailModel);
-
+	public boolean setUserDetails(UserDetail userDetail) {
+		
+		try {
+			userDetailModel = new UserDetailModel();
+			System.out.println("-------userDetail.getFormID()------->>>>"+userDetail.getFormID());
+			if (userDetail.getFormID() == COMPANY_DETAIL) 
+				setCompanyDetail(userDetail);      // Company Detail
+			if (userDetail.getFormID() == FINANCE_DETAIL)
+				setFinancialDetail(userDetail);    // Finance Detail
+			if (userDetail.getFormID() == BUSINESS_DETAIL)
+				setBusinessDetail(userDetail);     // Business Detail
+			if (userDetail.getFormID() == TRADE_DETAIL)
+				setTradeDetail(userDetail);        // Trade Detail
+			if (userDetail.getFormID() == RISK_MNG_DETAIL)
+				setRiskManagement(userDetail);     // Risk Management Details 
+			
+			//userDetailModel.setUserID("RegistrationBusinessManagertImpl::userid=="+userDetail.getUserID()+"-reguserid-"+userDetail.getRegUserID());
+			registreationRepository.setUserDetails(userDetailModel);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
 		return false;
 	}
 
-	@Override
-	@Transactional
-	public boolean setFinancialDetailsBusMng(FinancialDetail financialDetail) {
+	public void setCompanyDetail(UserDetail companyDetail) {
 
-		FinancialDetailModel financialDetailModel = new FinancialDetailModel();
+		userDetailModel = new UserDetailModel();
+		
+		if (companyDetail.getUserName() != null && !companyDetail.getUserName().isEmpty()) 
+			userDetailModel.setUserName(companyDetail.getUserName());
+		if (companyDetail.getCompanyName() != null && !companyDetail.getCompanyName().isEmpty()) 
+			userDetailModel.setCompanyName(companyDetail.getCompanyName());
+		if (companyDetail.getEmailID() != null && !companyDetail.getEmailID().isEmpty()) 
+			userDetailModel.setEmailID(companyDetail.getEmailID());
+		if (companyDetail.getAddress1() != null && !companyDetail.getAddress1().isEmpty()) 
+			userDetailModel.setAddress1(companyDetail.getAddress1());
+		if (companyDetail.getAddress2() != null && !companyDetail.getAddress2().isEmpty()) 
+			userDetailModel.setAddress2(companyDetail.getAddress2());
+		if (companyDetail.getCity() != null && !companyDetail.getCity().isEmpty()) 
+			userDetailModel.setCity(companyDetail.getCity());
+		if (companyDetail.getZip() != null && !companyDetail.getZip().isEmpty()) 
+			userDetailModel.setZip(companyDetail.getZip());
+		if (companyDetail.getCountry() != null && !companyDetail.getCountry().isEmpty()) 
+			userDetailModel.setCountry(companyDetail.getCountry());
+		if (companyDetail.getPhoneNo() != null && !companyDetail.getPhoneNo().isEmpty()) 
+			userDetailModel.setPhoneNo(companyDetail.getPhoneNo());
 
-		// These all r String Value 
+	}
+
+	public void setFinancialDetail(UserDetail financialDetail) {
+
+		userDetailModel = new UserDetailModel();
+		
 		if (financialDetail.getAnnualRev() != null && !financialDetail.getAnnualRev().isEmpty()) 
-			financialDetailModel.setAnnualRev(financialDetail.getAnnualRev());
+			userDetailModel.setAnnualRev(financialDetail.getAnnualRev());
 
 		if (financialDetail.getNoOfEmp() != null && !financialDetail.getNoOfEmp().isEmpty()) 
-			financialDetailModel.setNoOfEmp(financialDetail.getNoOfEmp());
+			userDetailModel.setNoOfEmp(financialDetail.getNoOfEmp());
 
 		if (financialDetail.getInvestInRnD() != null && !financialDetail.getInvestInRnD().isEmpty()) 
-			financialDetailModel.setInvestInRnD(convertListToString(financialDetail.getInvestInRnD()));
+			userDetailModel.setInvestInRnD(convertListToString(financialDetail.getInvestInRnD()));
 
 		if (financialDetail.getBusInCountries() != null && !financialDetail.getBusInCountries().isEmpty()) 
-			financialDetailModel.setBusInCountries(convertListToString(financialDetail.getBusInCountries()));
+			userDetailModel.setBusInCountries(convertListToString(financialDetail.getBusInCountries()));
 
 		if (financialDetail.getSellProd() != null && !financialDetail.getSellProd().isEmpty()) 
-			financialDetailModel.setSellProd(convertListToString(financialDetail.getSellProd()));
+			userDetailModel.setSellProd(convertListToString(financialDetail.getSellProd()));
 		
-
 		// These all are int value
-		financialDetailModel.setThirdPartyProd(financialDetail.getThirdPartyProd());
-		financialDetailModel.setCompBusType(financialDetail.getCompBusType());
-		financialDetailModel.setSellService(financialDetail.getSellService());
-		financialDetailModel.setSellProdAndSvc(financialDetail.getSellProdAndSvc());
-		financialDetailModel.setLicProp(financialDetail.getLicProp());
+		userDetailModel.setThirdPartyProd(financialDetail.getThirdPartyProd());
+		userDetailModel.setCompBusType(financialDetail.getCompBusType());
+		userDetailModel.setSellService(financialDetail.getSellService());
+		userDetailModel.setSellProdAndSvc(financialDetail.getSellProdAndSvc());
+		userDetailModel.setLicProp(financialDetail.getLicProp());
 
-		registreationRepository.setFinancialDetailsRepo(financialDetailModel);
-
-		return false;
 	}
 
-	@Override
-	@Transactional
-	public boolean setBusinessDetailBusMng(BusinessDetail businessDetail) {
+	public void setBusinessDetail(UserDetail businessDetail) {
 		
-		BusinessDetailModel businessDetailModel = new BusinessDetailModel();
+		userDetailModel = new UserDetailModel();
 		
 		if (businessDetail.getCompOverall() != null && !businessDetail.getCompOverall().isEmpty()) 
-			businessDetailModel.setCompOverall(businessDetail.getCompOverall());
+			userDetailModel.setCompOverall(businessDetail.getCompOverall());
 		if (businessDetail.getCompByBu() != null && !businessDetail.getCompByBu().isEmpty()) 
-			businessDetailModel.setCompByBu(businessDetail.getCompByBu());
+			userDetailModel.setCompByBu(businessDetail.getCompByBu());
 		if (businessDetail.getCompMarketAct() != null && !businessDetail.getCompMarketAct().isEmpty()) 
-			businessDetailModel.setCompMarketAct(convertListToString(businessDetail.getCompMarketAct()));
+			userDetailModel.setCompMarketAct(convertListToString(businessDetail.getCompMarketAct()));
 		
-		businessDetailModel.setCompIpPolicy(businessDetail.getCompIpPolicy());
-		businessDetailModel.setCompIpStrategy(businessDetail.getCompIpStrategy());
-		businessDetailModel.setBusinesStrategy(businessDetail.getBusinesStrategy());
+		userDetailModel.setCompIpPolicy(businessDetail.getCompIpPolicy());
+		userDetailModel.setCompIpStrategy(businessDetail.getCompIpStrategy());
+		userDetailModel.setBusinesStrategy(businessDetail.getBusinesStrategy());
 		
-		
-		registreationRepository.setBusinessDetailRepo(businessDetailModel);
-
-		return false;
 	}
 
-	@Override
-	@Transactional
-	public boolean setTradeDetailBusMng(TradeDetail tradeDetail) {
-		TradeDetailModel tradeDetailModel = new TradeDetailModel();
+	public void setTradeDetail(UserDetail tradeDetail) {
 		
-		tradeDetailModel.setPreserveCopyRight(tradeDetail.getPreserveCopyRight());
-		tradeDetailModel.setRegTradeMark(tradeDetail.getRegTradeMark());
-		tradeDetailModel.setDomainRefBN(tradeDetail.getDomainRefBN());
-		tradeDetailModel.setDomainRefPN(tradeDetail.getDomainRefPN());
-		tradeDetailModel.setTradeSec(tradeDetail.getTradeSec());
-		tradeDetailModel.setCategoriTradeSec(tradeDetail.getCategoriTradeSec());
-		tradeDetailModel.setMngCyberSecRisk(tradeDetail.getMngCyberSecRisk());
-		tradeDetailModel.setProtectTradeSec(tradeDetail.getProtectTradeSec());
-		tradeDetailModel.setProtectConfInfo(tradeDetail.getProtectConfInfo());
+		userDetailModel = new UserDetailModel();
 		
-		registreationRepository.setTradeDetailRepo(tradeDetailModel);
-
-		return false;
+		userDetailModel.setPreserveCopyRight(tradeDetail.getPreserveCopyRight());
+		userDetailModel.setRegTradeMark(tradeDetail.getRegTradeMark());
+		userDetailModel.setDomainRefBN(tradeDetail.getDomainRefBN());
+		userDetailModel.setDomainRefPN(tradeDetail.getDomainRefPN());
+		userDetailModel.setTradeSec(tradeDetail.getTradeSec());
+		userDetailModel.setCategoriTradeSec(tradeDetail.getCategoriTradeSec());
+		userDetailModel.setMngCyberSecRisk(tradeDetail.getMngCyberSecRisk());
+		userDetailModel.setProtectTradeSec(tradeDetail.getProtectTradeSec());
+		userDetailModel.setProtectConfInfo(tradeDetail.getProtectConfInfo());
+		
 	}
 
-	@Override
-	@Transactional
-	public boolean setRiskManagementBusMng(RiskMngDetail riskMngDetail) {
+	public void setRiskManagement(UserDetail riskMngDetail) {
 
-		RiskMngDetailModel riskMngDetailModel = new RiskMngDetailModel();
-
+		userDetailModel = new UserDetailModel();
+		
 		if (riskMngDetail.getHasIpPolicyList() != null && !riskMngDetail.getHasIpPolicyList().isEmpty()) 
-			riskMngDetailModel.setHasIpPolicyList(convertListToString(riskMngDetail.getHasIpPolicyList()));
+			userDetailModel.setHasIpPolicyList(convertListToString(riskMngDetail.getHasIpPolicyList()));
 		
 		if (riskMngDetail.getAgreementMngProtList() != null && !riskMngDetail.getAgreementMngProtList().isEmpty()) 
-			riskMngDetailModel.setAgreementMngProtList(convertListToString(riskMngDetail.getAgreementMngProtList()));
+			userDetailModel.setAgreementMngProtList(convertListToString(riskMngDetail.getAgreementMngProtList()));
 			
 		if (riskMngDetail.getHasErmList() != null && !riskMngDetail.getHasErmList().isEmpty())
-			riskMngDetailModel.setHasErmList(convertListToString(riskMngDetail.getHasErmList()));
+			userDetailModel.setHasErmList(convertListToString(riskMngDetail.getHasErmList()));
 		
 		if (riskMngDetail.getThirdPartyLia() != null && !riskMngDetail.getThirdPartyLia().isEmpty())
-			riskMngDetailModel.setThirdPartyLia(convertListToString(riskMngDetail.getThirdPartyLia()));
+			userDetailModel.setThirdPartyLia(convertListToString(riskMngDetail.getThirdPartyLia()));
 		
 		if (riskMngDetail.getThirdPartyIns() != null && !riskMngDetail.getThirdPartyIns().isEmpty())
-			riskMngDetailModel.setThirdPartyIns(convertListToString(riskMngDetail.getThirdPartyIns()));
+			userDetailModel.setThirdPartyIns(convertListToString(riskMngDetail.getThirdPartyIns()));
 		
 		if (riskMngDetail.getHasOverIpGov() != null && !riskMngDetail.getHasOverIpGov().isEmpty())
-			riskMngDetailModel.setHasOverIpGov(convertListToString(riskMngDetail.getHasOverIpGov()));
+			userDetailModel.setHasOverIpGov(convertListToString(riskMngDetail.getHasOverIpGov()));
 		
-		riskMngDetailModel.setHasConfInfo(riskMngDetail.getHasConfInfo());
-		riskMngDetailModel.setHasIpPolicy(riskMngDetail.getHasIpPolicy());
-		riskMngDetailModel.setAgreementMngProt(riskMngDetail.getAgreementMngProt());
-		riskMngDetailModel.setHasErm(riskMngDetail.getHasErm());
-		riskMngDetailModel.setSelfInsIpLose(riskMngDetail.getSelfInsIpLose());
-		riskMngDetailModel.setPurchedThirdPartyIns(riskMngDetail.getPurchedThirdPartyIns());
+		userDetailModel.setHasConfInfo(riskMngDetail.getHasConfInfo());
+		userDetailModel.setHasIpPolicy(riskMngDetail.getHasIpPolicy());
+		userDetailModel.setAgreementMngProt(riskMngDetail.getAgreementMngProt());
+		userDetailModel.setHasErm(riskMngDetail.getHasErm());
+		userDetailModel.setSelfInsIpLose(riskMngDetail.getSelfInsIpLose());
+		userDetailModel.setPurchedThirdPartyIns(riskMngDetail.getPurchedThirdPartyIns());
 		
-		registreationRepository.setRiskManagementRepo(riskMngDetailModel);
-
-		return false;
 	}
 	
 	private String convertListToString(List<String> inputList){

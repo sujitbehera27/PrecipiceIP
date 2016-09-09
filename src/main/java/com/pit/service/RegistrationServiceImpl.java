@@ -18,6 +18,7 @@ import com.pit.bo.CompanyDetail;
 import com.pit.bo.FinancialDetail;
 import com.pit.bo.RiskMngDetail;
 import com.pit.bo.TradeDetail;
+import com.pit.bo.UserDetail;
 
 @Component
 @Path("/reg")
@@ -34,8 +35,31 @@ public class RegistrationServiceImpl {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
+	@Path("user")
+	public Response setUserDetails(UserDetail userDetail) {
+		
+		System.out.println("RegistrationServiceImpl~~~User Name~~~~~~~>" + userDetail.getUserName());
+		System.out.println("RegistrationServiceImpl~~~User ID~~~~~~~>" + userDetail.getUserID());
+		System.out.println("RegistrationServiceImpl~~~User ID~~~~~~~>" + userDetail.getFormID()+"--"+userDetail.getCompanyName());
+		logger.info("setCompanyDetails : Company Details Submited..");
+		try {
+			if (userDetail != null) {
+				regBusinesMng.setUserDetails(userDetail);
+			}
+			
+			System.out.println("  <~~~~~~~~~~~~~Completed ~~~~~~~~~~~");
+			
+		} catch (Exception e) {
+			Response.status(Response.Status.OK).entity(e.toString()).build();
+		}
+		return Response.status(Response.Status.OK).entity("").build();
+	}
+	
+	/*@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("companyDet")
-	public Response setCompanyDetails(CompanyDetail companyDetail/*, @Context HttpServletRequest request*/) {
+	public Response setCompanyDetails(CompanyDetail companyDetail, @Context HttpServletRequest request) {
 		
 		System.out.println("~~~~~~~User Name~~~~~~~>" + companyDetail.getUserName());
 		logger.info("setCompanyDetails : Company Details Submited..");
@@ -128,6 +152,6 @@ public class RegistrationServiceImpl {
 		}
 		//TODO : Check Return Type
 		return Response.status(Response.Status.OK).entity("").build();
-	}
+	}*/
 
 }

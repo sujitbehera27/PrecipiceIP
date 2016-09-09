@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "login_credential")
 @NamedQueries({
-	@NamedQuery(name = "QUERY_LOGIN_AUTH", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID and loginReg.password=:password"),
+	@NamedQuery(name = "QUERY_LOGIN_AUTH", query = "from LoginRegistartionModel loginReg where loginReg.userId=:userId and loginReg.password=:password"),
 	@NamedQuery(name = "QUERY_LOGIN_FORGOT", query = "from LoginRegistartionModel loginReg where loginReg.emailID=:emailID")
 })
 
@@ -26,24 +26,25 @@ public class LoginRegistartionModel implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name = "USER_ID")
-	private String userId ;
-	
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "CREDENTIAL_ID")
 	private int credentialId;
 
-	@Column(name = "EMAIL_ID")
-	private String emailID;
-	
-	@Column(name = "PASSWORD")
-	private String password;
-	
 	@Column(name = "FIRST_NAME")
 	private String firstName;
 	
 	@Column(name = "LAST_NAME")
 	private String lastName;
+	
+	@Column(name = "EMAIL_ID")
+	private String emailID;
+	
+	@Column(name = "USER_ID")
+	private String userId ;
+	
+	@Column(name = "PASSWORD")
+	private String password;
+	
 
 	public String getUserId() {
 		return userId;

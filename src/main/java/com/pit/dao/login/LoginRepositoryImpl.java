@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.exception.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class LoginRepositoryImpl implements LoginRepository{
 	public LoginRegistartionModel getLoginRepo(LoginRegistartionModel loginRegistartionModel) {
 		
 		Query query = sessionFactory.getCurrentSession().getNamedQuery("QUERY_LOGIN_AUTH");
-		query.setParameter("emailID", loginRegistartionModel.getEmailID()); 
+		query.setParameter("userId", loginRegistartionModel.getUserId()); 
 		query.setParameter("password", loginRegistartionModel.getPassword()); 
 		
 		try {
@@ -43,28 +44,31 @@ public class LoginRepositoryImpl implements LoginRepository{
 	}
 
 	@Override
-	public int setRegistrationRepo(LoginRegistartionModel loginRegistartion) {
+	public boolean setRegistrationRepo(LoginRegistartionModel loginRegistartion) {
 		
-		//int newRegUserID = 0;
-		String newRegUserID="";
 		try {
 			System.out.println("====="+loginRegistartion.getUserId());
-			newRegUserID = (String) sessionFactory.getCurrentSession().save(loginRegistartion); //Will return newly inserted record
+			
+			sessionFactory.getCurrentSession().save(loginRegistartion); //Will return newly inserted record
 			
 			UserDetailModel userDetailMod = new UserDetailModel();
-			userDetailMod.setUserID(newRegUserID);
-			sessionFactory.getCurrentSession().save(userDetailMod);
-			return 1;
-			//int res = query.executeUpdate(); // Will Return How many record got effected.
-			//logger.info("Command successfully executed :: Record Effected : " + res);
+			userDetailMod.setUserID(loginRegistartion.getUserId());
+			sessionFactory.getCurrentSession().save(userDetailMod);  
 			
-		}catch (Exception e) {
-			e.printStackTrace();
+			return true;
+			
+		}
+		
+		catch (ConstraintViolationException e) {
 			System.out.println("ERROR : User Already Exist");
+			return false;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
 			sessionFactory.getCurrentSession().flush();
 		}
 		
-		return 1;
+		return false;
 	}
 	
 }

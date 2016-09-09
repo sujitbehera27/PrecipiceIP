@@ -6,5 +6,5 @@ public interface LoginBusinessManager {
 
 	public LoginRegistartion getLoginDetailsBusMng(LoginRegistartion loginRegistartion);
 	
-	public int setRegistration(LoginRegistartion loginRegistartion);
+	public boolean setRegistration(LoginRegistartion loginRegistartion);
 }
