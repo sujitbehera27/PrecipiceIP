@@ -27,9 +27,9 @@ public class UserDetailModel implements Serializable {
 	@Column(name = "USER_ID")
 	private String userID ;
 	
-	@Column(name = "USER_DET_ID")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userDetId ;
+//	@Column(name = "USER_DET_ID")
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+//	private int userDetId ;
 	
 	@Column(name = "PRESERVE_COPYRIGHTS")
 	private int preserveCopyRight;
@@ -169,13 +169,13 @@ public class UserDetailModel implements Serializable {
 	@Column(name = "BUSINESS_STRATEGY")
 	private int businesStrategy;
 	
-	public int getUserDetId() {
-		return userDetId;
-	}
-
-	public void setUserDetId(int userDetId) {
-		this.userDetId = userDetId;
-	}
+//	public int getUserDetId() {
+//		return userDetId;
+//	}
+//
+//	public void setUserDetId(int userDetId) {
+//		this.userDetId = userDetId;
+//	}
 
 	public String getCompOverall() {
 		return compOverall;
