@@ -67,7 +67,8 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 	public void setCompanyDetail(UserDetail companyDetail) {
 
 		userDetailModel = new UserDetailModel();
-		
+		if (companyDetail.getUserID() != null && !companyDetail.getUserID().isEmpty()) 
+			userDetailModel.setUserID(companyDetail.getUserID());
 		if (companyDetail.getUserName() != null && !companyDetail.getUserName().isEmpty()) 
 			userDetailModel.setUserName(companyDetail.getUserName());
 		if (companyDetail.getCompanyName() != null && !companyDetail.getCompanyName().isEmpty()) 
@@ -92,6 +93,9 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 	public void setFinancialDetail(UserDetail financialDetail) {
 
 		userDetailModel = new UserDetailModel();
+		
+		if (financialDetail.getUserID() != null && !financialDetail.getUserID().isEmpty()) 
+			userDetailModel.setUserID(financialDetail.getUserID());
 		
 		if (financialDetail.getAnnualRev() != null && !financialDetail.getAnnualRev().isEmpty()) 
 			userDetailModel.setAnnualRev(financialDetail.getAnnualRev());
@@ -121,6 +125,8 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 		
 		userDetailModel = new UserDetailModel();
 		
+		if (businessDetail.getUserID() != null && !businessDetail.getUserID().isEmpty()) 
+			userDetailModel.setUserID(businessDetail.getUserID());
 		if (businessDetail.getCompOverall() != null && !businessDetail.getCompOverall().isEmpty()) 
 			userDetailModel.setCompOverall(businessDetail.getCompOverall());
 		if (businessDetail.getCompByBu() != null && !businessDetail.getCompByBu().isEmpty()) 
@@ -138,6 +144,7 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 		
 		userDetailModel = new UserDetailModel();
 		
+		userDetailModel.setUserID(tradeDetail.getUserID());
 		userDetailModel.setPreserveCopyRight(tradeDetail.getPreserveCopyRight());
 		userDetailModel.setRegTradeMark(tradeDetail.getRegTradeMark());
 		userDetailModel.setDomainRefBN(tradeDetail.getDomainRefBN());
@@ -153,6 +160,9 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 	public void setRiskManagement(UserDetail riskMngDetail) {
 
 		userDetailModel = new UserDetailModel();
+		
+		if (riskMngDetail.getUserID() != null && !riskMngDetail.getUserID().isEmpty()) 
+			userDetailModel.setUserID(riskMngDetail.getUserID());
 		
 		if (riskMngDetail.getHasIpPolicyList() != null && !riskMngDetail.getHasIpPolicyList().isEmpty()) 
 			userDetailModel.setHasIpPolicyList(convertListToString(riskMngDetail.getHasIpPolicyList()));
