@@ -39,6 +39,7 @@ public class RegistreationRepositoryImpl  implements RegistreationRepository{
 				userDetailModel.setUserDetId(userDetailModelForID.getUserDetId());*/
 				
 			sessionFactory.getCurrentSession().update(userDetailModel);
+			
 			System.out.println("SUCCESS : DB :: ~~~~~~~~~~~~~~~~~");
 			
 			//int res = query.executeUpdate(); // Will Return How many record got effected.
