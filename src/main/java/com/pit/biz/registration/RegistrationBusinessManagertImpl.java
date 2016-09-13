@@ -94,6 +94,24 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 
 		userDetailModel = new UserDetailModel();
 		
+		if (financialDetail.getUserName() != null && !financialDetail.getUserName().isEmpty()) 
+			userDetailModel.setUserName(financialDetail.getUserName());
+		if (financialDetail.getCompanyName() != null && !financialDetail.getCompanyName().isEmpty()) 
+			userDetailModel.setCompanyName(financialDetail.getCompanyName());
+		if (financialDetail.getEmailID() != null && !financialDetail.getEmailID().isEmpty()) 
+			userDetailModel.setEmailID(financialDetail.getEmailID());
+		if (financialDetail.getAddress1() != null && !financialDetail.getAddress1().isEmpty()) 
+			userDetailModel.setAddress1(financialDetail.getAddress1());
+		if (financialDetail.getAddress2() != null && !financialDetail.getAddress2().isEmpty()) 
+			userDetailModel.setAddress2(financialDetail.getAddress2());
+		if (financialDetail.getCity() != null && !financialDetail.getCity().isEmpty()) 
+			userDetailModel.setCity(financialDetail.getCity());
+		if (financialDetail.getZip() != null && !financialDetail.getZip().isEmpty()) 
+			userDetailModel.setZip(financialDetail.getZip());
+		if (financialDetail.getCountry() != null && !financialDetail.getCountry().isEmpty()) 
+			userDetailModel.setCountry(financialDetail.getCountry());
+		if (financialDetail.getPhoneNo() != null && !financialDetail.getPhoneNo().isEmpty()) 
+			userDetailModel.setPhoneNo(financialDetail.getPhoneNo());
 		if (financialDetail.getUserID() != null && !financialDetail.getUserID().isEmpty()) 
 			userDetailModel.setUserID(financialDetail.getUserID());
 		
