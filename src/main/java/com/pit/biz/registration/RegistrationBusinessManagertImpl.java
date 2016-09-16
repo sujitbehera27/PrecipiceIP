@@ -65,31 +65,7 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 		return false;
 	}
 
-	/*public void setuserDetail(UserDetail userDetail) {
-
-		userDetailModel = new UserDetailModel();
-		if (userDetail.getUserID() != null && !userDetail.getUserID().isEmpty()) 
-			userDetailModel.setUserID(userDetail.getUserID());
-		if (userDetail.getUserName() != null && !userDetail.getUserName().isEmpty()) 
-			userDetailModel.setUserName(userDetail.getUserName());
-		if (userDetail.getCompanyName() != null && !userDetail.getCompanyName().isEmpty()) 
-			userDetailModel.setCompanyName(userDetail.getCompanyName());
-		if (userDetail.getEmailID() != null && !userDetail.getEmailID().isEmpty()) 
-			userDetailModel.setEmailID(userDetail.getEmailID());
-		if (userDetail.getAddress1() != null && !userDetail.getAddress1().isEmpty()) 
-			userDetailModel.setAddress1(userDetail.getAddress1());
-		if (userDetail.getAddress2() != null && !userDetail.getAddress2().isEmpty()) 
-			userDetailModel.setAddress2(userDetail.getAddress2());
-		if (userDetail.getCity() != null && !userDetail.getCity().isEmpty()) 
-			userDetailModel.setCity(userDetail.getCity());
-		if (userDetail.getZip() != null && !userDetail.getZip().isEmpty()) 
-			userDetailModel.setZip(userDetail.getZip());
-		if (userDetail.getCountry() != null && !userDetail.getCountry().isEmpty()) 
-			userDetailModel.setCountry(userDetail.getCountry());
-		if (userDetail.getPhoneNo() != null && !userDetail.getPhoneNo().isEmpty()) 
-			userDetailModel.setPhoneNo(userDetail.getPhoneNo());
-
-	}*/
+	
 
 	public void setuserDetail(UserDetail userDetail) {
 
@@ -188,75 +164,13 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 		userDetailModel.setPurchedThirdPartyIns(userDetail.getPurchedThirdPartyIns());
 	}
 
-	/*public void setuserDetail(UserDetail userDetail) {
+//	@Override
+//	public UserDetail getUserDetails(String userId) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 		
-		userDetailModel = new UserDetailModel();
-		
-		if (userDetail.getUserID() != null && !userDetail.getUserID().isEmpty()) 
-			userDetailModel.setUserID(userDetail.getUserID());
-		if (userDetail.getCompOverall() != null && !userDetail.getCompOverall().isEmpty()) 
-			userDetailModel.setCompOverall(userDetail.getCompOverall());
-		if (userDetail.getCompByBu() != null && !userDetail.getCompByBu().isEmpty()) 
-			userDetailModel.setCompByBu(userDetail.getCompByBu());
-		if (userDetail.getCompMarketAct() != null && !userDetail.getCompMarketAct().isEmpty()) 
-			userDetailModel.setCompMarketAct(convertListToString(userDetail.getCompMarketAct()));
-		
-		userDetailModel.setCompIpPolicy(userDetail.getCompIpPolicy());
-		userDetailModel.setCompIpStrategy(userDetail.getCompIpStrategy());
-		userDetailModel.setBusinesStrategy(userDetail.getBusinesStrategy());
-		
-	}
-
-	public void setuserDetail(UserDetail userDetail) {
-		
-		userDetailModel = new UserDetailModel();
-		
-		userDetailModel.setUserID(userDetail.getUserID());
-		userDetailModel.setPreserveCopyRight(userDetail.getPreserveCopyRight());
-		userDetailModel.setRegTradeMark(userDetail.getRegTradeMark());
-		userDetailModel.setDomainRefBN(userDetail.getDomainRefBN());
-		userDetailModel.setDomainRefPN(userDetail.getDomainRefPN());
-		userDetailModel.setTradeSec(userDetail.getTradeSec());
-		userDetailModel.setCategoriTradeSec(userDetail.getCategoriTradeSec());
-		userDetailModel.setMngCyberSecRisk(userDetail.getMngCyberSecRisk());
-		userDetailModel.setProtectTradeSec(userDetail.getProtectTradeSec());
-		userDetailModel.setProtectConfInfo(userDetail.getProtectConfInfo());
-		
-	}
-
-	public void setRiskManagement(UserDetail userDetail) {
-
-		userDetailModel = new UserDetailModel();
-		
-		if (userDetail.getUserID() != null && !userDetail.getUserID().isEmpty()) 
-			userDetailModel.setUserID(userDetail.getUserID());
-		
-		if (userDetail.getHasIpPolicyList() != null && !userDetail.getHasIpPolicyList().isEmpty()) 
-			userDetailModel.setHasIpPolicyList(convertListToString(userDetail.getHasIpPolicyList()));
-		
-		if (userDetail.getAgreementMngProtList() != null && !userDetail.getAgreementMngProtList().isEmpty()) 
-			userDetailModel.setAgreementMngProtList(convertListToString(userDetail.getAgreementMngProtList()));
-			
-		if (userDetail.getHasErmList() != null && !userDetail.getHasErmList().isEmpty())
-			userDetailModel.setHasErmList(convertListToString(userDetail.getHasErmList()));
-		
-		if (userDetail.getThirdPartyLia() != null && !userDetail.getThirdPartyLia().isEmpty())
-			userDetailModel.setThirdPartyLia(convertListToString(userDetail.getThirdPartyLia()));
-		
-		if (userDetail.getThirdPartyIns() != null && !userDetail.getThirdPartyIns().isEmpty())
-			userDetailModel.setThirdPartyIns(convertListToString(userDetail.getThirdPartyIns()));
-		
-		if (userDetail.getHasOverIpGov() != null && !userDetail.getHasOverIpGov().isEmpty())
-			userDetailModel.setHasOverIpGov(convertListToString(userDetail.getHasOverIpGov()));
-		
-		userDetailModel.setHasConfInfo(userDetail.getHasConfInfo());
-		userDetailModel.setHasIpPolicy(userDetail.getHasIpPolicy());
-		userDetailModel.setAgreementMngProt(userDetail.getAgreementMngProt());
-		userDetailModel.setHasErm(userDetail.getHasErm());
-		userDetailModel.setSelfInsIpLose(userDetail.getSelfInsIpLose());
-		userDetailModel.setPurchedThirdPartyIns(userDetail.getPurchedThirdPartyIns());
-		
-	}*/
+	
 	
 	private String convertListToString(List<String> inputList){
 		StringBuilder tempStrBuilder = new StringBuilder();
@@ -269,5 +183,7 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 			tempStrBuilder.delete(tempStrBuilder.length()-1, tempStrBuilder.length());
 		return tempStrBuilder.toString();
 	}
+
+	
 
 }

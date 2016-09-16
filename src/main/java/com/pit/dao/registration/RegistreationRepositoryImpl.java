@@ -106,4 +106,15 @@ public class RegistreationRepositoryImpl  implements RegistreationRepository{
 		return false;
 	}
 
+/*	@Override
+	public UserDetailModel setUserDetails(String UserID) {
+		try {
+			sessionFactory.getCurrentSession().byId(UserID);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}*/
+
 }

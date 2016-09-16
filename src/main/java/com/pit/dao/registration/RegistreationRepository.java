@@ -21,4 +21,6 @@ public interface RegistreationRepository {
 	
 	public boolean setRiskManagementRepo(RiskMngDetailModel riskMngDetail);
 	
+//	public UserDetailModel setUserDetails(String UserID);
+	
 }
