@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import com.google.gson.Gson;
 import com.pit.biz.login.LoginBusinessManager;
 import com.pit.bo.LoginRegistartion;
+import com.pit.bo.UserDetail;
 
 @Component
 @Path("/user")
@@ -34,24 +35,16 @@ public class LoginServiceImpl{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getLoginDetails(LoginRegistartion loginRegistartion) {
 		
-		System.out.println("~~~~~UN~~~~~~> "+loginRegistartion.getEmailID() +"~~~~~PW~~~> "+ loginRegistartion.getPassword());
-		logger.info("getLoginDetails : Email ID -> " + loginRegistartion.getEmailID());  
-		
+		String userID = null;
 		try{
 			if(loginRegistartion.getUserId() != null && loginRegistartion.getPassword() != null){
-				loginRegistartion = loginBusinessManager.getLoginDetailsBusMng(loginRegistartion);
+				
+				userID  = loginBusinessManager.getLoginDetailsBusMng(loginRegistartion);
 			}
-			
-			if(loginRegistartion != null){
-				Gson gson = new Gson();
-				jsonResponse = gson.toJson(loginRegistartion.getUserId());
-			}
-			
 		}catch (Exception e) {
 			return Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
-		
-		return Response.status(Response.Status.OK).entity(jsonResponse).build();
+		return Response.status(Response.Status.OK).entity(userID).build();
 	}
 
 	@POST

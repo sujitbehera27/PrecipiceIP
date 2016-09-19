@@ -39,82 +39,30 @@ public class RegistreationRepositoryImpl  implements RegistreationRepository{
 				userDetailModel.setUserDetId(userDetailModelForID.getUserDetId());*/
 				
 			sessionFactory.getCurrentSession().update(userDetailModel);
-			
-			System.out.println("SUCCESS : DB :: ~~~~~~~~~~~~~~~~~");
+			return true;
 			
 			//int res = query.executeUpdate(); // Will Return How many record got effected.
 			//logger.info("Command successfully executed :: Record Effected : " + res);
 		} catch (Exception e) {
-			
 			System.out.println("ERROR : DB :: ~~~~~~~~~~~~~~~~~");
 			e.printStackTrace();
+			return false;
 		}
-		
-		return false;
 	}
 
 	@Override
-	public boolean setCompanyDetailBusMng(CompanyDetailModel companyDetailModel) {
+	public UserDetailModel getUserDetails(String userId) {
 		
 		try {
-			sessionFactory.getCurrentSession().saveOrUpdate(companyDetailModel);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return false;
-	}
-
-	@Override
-	public boolean setFinancialDetailsRepo(FinancialDetailModel financialDetailModel) {
-		
-		sessionFactory.getCurrentSession().saveOrUpdate(financialDetailModel);
-		
-		return false;
-	}
-
-	@Override
-	public boolean setBusinessDetailRepo(BusinessDetailModel businessDetailModel) {
-		
-		sessionFactory.getCurrentSession().saveOrUpdate(businessDetailModel);
-		
-		return false;
-	}
-
-	@Override
-	public boolean setTradeDetailRepo(TradeDetailModel tradeDetailModel) {
-		
-		try {
-			sessionFactory.getCurrentSession().saveOrUpdate(tradeDetailModel);
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return false;
-	}
-
-	@Override
-	public boolean setRiskManagementRepo(RiskMngDetailModel riskMngDetailModel) {
-		
-		try {
-			sessionFactory.getCurrentSession().saveOrUpdate(riskMngDetailModel);
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-
-/*	@Override
-	public UserDetailModel setUserDetails(String UserID) {
-		try {
-			sessionFactory.getCurrentSession().byId(UserID);
+			Query query = sessionFactory.getCurrentSession().getNamedQuery("QUERY_USER_DETAIL_ID");
+			query.setParameter("userID", userId);
+			List<UserDetailModel>  userDetailModList = query.list();
+			
+			return (UserDetailModel)userDetailModList.get(0);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
-	}*/
-
+	}
 }

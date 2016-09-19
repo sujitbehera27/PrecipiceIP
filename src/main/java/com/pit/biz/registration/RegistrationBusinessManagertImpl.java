@@ -1,5 +1,6 @@
 package com.pit.biz.registration;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,14 +34,14 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 	private static final int RISK_MNG_DETAIL= 5;
 	
 	UserDetailModel userDetailModel ;//= new UserDetailModel();
-	
+	UserDetail userDetailRet ;
 	
 	@Override
 	@Transactional
-	public boolean setUserDetails(UserDetail userDetail) {
+	public UserDetail setUserDetails(UserDetail userDetail) {
+		
 		
 		try {
-			userDetailModel = new UserDetailModel();
 			System.out.println("-------userDetail.getFormID()------->>>>"+userDetail.getFormID());
 			//if (userDetail.getFormID() == COMPANY_DETAIL) 
 				setuserDetail(userDetail);      // Company Detail
@@ -54,18 +55,31 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 //				setRiskManagement(userDetail);     // Risk Management Details 
 			
 			//userDetailModel.setUserID("RegistrationBusinessManagertImpl::userid=="+userDetail.getUserID()+"-reguserid-"+userDetail.getRegUserID());
-			registreationRepository.setUserDetails(userDetailModel);
+				
+				boolean updateSuccess = registreationRepository.setUserDetails(userDetailModel);
+				
+				if (updateSuccess == true) {
+					userDetailRet = getUserDetails(userDetail.getUserID());
+					return userDetailRet;
+				}
+				
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		return false;
+		return null;
 	}
-
 	
+	@Override
+	@Transactional
+	public UserDetail getUserDetails(String userId) {
+		
+		userDetailModel = registreationRepository.getUserDetails(userId);
+		if (userDetailModel != null) {
+			userDetailRet = setuserDetail(userDetailModel);
+			return userDetailRet;
+		}
+		return null;
+	}
 
 	public void setuserDetail(UserDetail userDetail) {
 
@@ -164,13 +178,106 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 		userDetailModel.setPurchedThirdPartyIns(userDetail.getPurchedThirdPartyIns());
 	}
 
-//	@Override
-//	public UserDetail getUserDetails(String userId) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	public UserDetail setuserDetail(UserDetailModel userDetailModel) {
+
+		userDetailRet = new UserDetail();
 		
-	
+		if (userDetailModel.getUserID() != null && !userDetailModel.getUserID().isEmpty()) 
+			userDetailRet.setUserID(userDetailModel.getUserID());
+		if (userDetailModel.getUserName() != null && !userDetailModel.getUserName().isEmpty()) 
+			userDetailRet.setUserName(userDetailModel.getUserName());
+		if (userDetailModel.getCompanyName() != null && !userDetailModel.getCompanyName().isEmpty()) 
+			userDetailRet.setCompanyName(userDetailModel.getCompanyName());
+		if (userDetailModel.getEmailID() != null && !userDetailModel.getEmailID().isEmpty()) 
+			userDetailRet.setEmailID(userDetailModel.getEmailID());
+		if (userDetailModel.getAddress1() != null && !userDetailModel.getAddress1().isEmpty()) 
+			userDetailRet.setAddress1(userDetailModel.getAddress1());
+		if (userDetailModel.getAddress2() != null && !userDetailModel.getAddress2().isEmpty()) 
+			userDetailRet.setAddress2(userDetailModel.getAddress2());
+		if (userDetailModel.getCity() != null && !userDetailModel.getCity().isEmpty()) 
+			userDetailRet.setCity(userDetailModel.getCity());
+		if (userDetailModel.getZip() != null && !userDetailModel.getZip().isEmpty()) 
+			userDetailRet.setZip(userDetailModel.getZip());
+		if (userDetailModel.getCountry() != null && !userDetailModel.getCountry().isEmpty()) 
+			userDetailRet.setCountry(userDetailModel.getCountry());
+		if (userDetailModel.getPhoneNo() != null && !userDetailModel.getPhoneNo().isEmpty()) 
+			userDetailRet.setPhoneNo(userDetailModel.getPhoneNo());
+		if (userDetailModel.getUserID() != null && !userDetailModel.getUserID().isEmpty()) 
+			userDetailRet.setUserID(userDetailModel.getUserID());
+		
+		if (userDetailModel.getAnnualRev() != null && !userDetailModel.getAnnualRev().isEmpty()) 
+			userDetailRet.setAnnualRev(userDetailModel.getAnnualRev());
+
+		if (userDetailModel.getNoOfEmp() != null && !userDetailModel.getNoOfEmp().isEmpty()) 
+			userDetailRet.setNoOfEmp(userDetailModel.getNoOfEmp());
+
+		if (userDetailModel.getInvestInRnD() != null && !userDetailModel.getInvestInRnD().isEmpty()) 
+			userDetailRet.setInvestInRnD(Arrays.asList(userDetailModel.getInvestInRnD().split(",")));
+
+		if (userDetailModel.getBusInCountries() != null && !userDetailModel.getBusInCountries().isEmpty()) 
+			userDetailRet.setBusInCountries(Arrays.asList(userDetailModel.getBusInCountries().split(",")));
+
+		if (userDetailModel.getSellProd() != null && !userDetailModel.getSellProd().isEmpty()) 
+			userDetailRet.setSellProd(Arrays.asList(userDetailModel.getSellProd().split(",")));
+		
+		// These all are int value
+		userDetailRet.setThirdPartyProd(userDetailModel.getThirdPartyProd());
+		userDetailRet.setCompBusType(userDetailModel.getCompBusType());
+		userDetailRet.setSellService(userDetailModel.getSellService());
+		userDetailRet.setSellProdAndSvc(userDetailModel.getSellProdAndSvc());
+		userDetailRet.setLicProp(userDetailModel.getLicProp());
+		if (userDetailModel.getUserID() != null && !userDetailModel.getUserID().isEmpty()) 
+			userDetailRet.setUserID(userDetailModel.getUserID());
+		if (userDetailModel.getCompOverall() != null && !userDetailModel.getCompOverall().isEmpty()) 
+			userDetailRet.setCompOverall(userDetailModel.getCompOverall());
+		if (userDetailModel.getCompByBu() != null && !userDetailModel.getCompByBu().isEmpty()) 
+			userDetailRet.setCompByBu(userDetailModel.getCompByBu());
+		if (userDetailModel.getCompMarketAct() != null && !userDetailModel.getCompMarketAct().isEmpty()) 
+			userDetailRet.setCompMarketAct(Arrays.asList(userDetailModel.getCompMarketAct().split(",")));
+		
+		userDetailRet.setCompIpPolicy(userDetailModel.getCompIpPolicy());
+		userDetailRet.setCompIpStrategy(userDetailModel.getCompIpStrategy());
+		userDetailRet.setBusinesStrategy(userDetailModel.getBusinesStrategy());
+		userDetailRet.setUserID(userDetailModel.getUserID());
+		userDetailRet.setPreserveCopyRight(userDetailModel.getPreserveCopyRight());
+		userDetailRet.setRegTradeMark(userDetailModel.getRegTradeMark());
+		userDetailRet.setDomainRefBN(userDetailModel.getDomainRefBN());
+		userDetailRet.setDomainRefPN(userDetailModel.getDomainRefPN());
+		userDetailRet.setTradeSec(userDetailModel.getTradeSec());
+		userDetailRet.setCategoriTradeSec(userDetailModel.getCategoriTradeSec());
+		userDetailRet.setMngCyberSecRisk(userDetailModel.getMngCyberSecRisk());
+		userDetailRet.setProtectTradeSec(userDetailModel.getProtectTradeSec());
+		userDetailRet.setProtectConfInfo(userDetailModel.getProtectConfInfo());
+		if (userDetailModel.getUserID() != null && !userDetailModel.getUserID().isEmpty()) 
+			userDetailRet.setUserID(userDetailModel.getUserID());
+		
+		if (userDetailModel.getHasIpPolicyList() != null && !userDetailModel.getHasIpPolicyList().isEmpty()) 
+			userDetailRet.setHasIpPolicyList(Arrays.asList(userDetailModel.getHasIpPolicyList().split(",")));
+		
+		if (userDetailModel.getAgreementMngProtList() != null && !userDetailModel.getAgreementMngProtList().isEmpty()) 
+			userDetailRet.setAgreementMngProtList(Arrays.asList(userDetailModel.getAgreementMngProtList().split(",")));
+			
+		if (userDetailModel.getHasErmList() != null && !userDetailModel.getHasErmList().isEmpty())
+			userDetailRet.setHasErmList(Arrays.asList(userDetailModel.getHasErmList().split(",")));
+		
+		if (userDetailModel.getThirdPartyLia() != null && !userDetailModel.getThirdPartyLia().isEmpty())
+			userDetailRet.setThirdPartyLia(Arrays.asList(userDetailModel.getThirdPartyLia().split(",")));
+		
+		if (userDetailModel.getThirdPartyIns() != null && !userDetailModel.getThirdPartyIns().isEmpty())
+			userDetailRet.setThirdPartyIns(Arrays.asList(userDetailModel.getThirdPartyIns().split(",")));
+		
+		if (userDetailModel.getHasOverIpGov() != null && !userDetailModel.getHasOverIpGov().isEmpty())
+			userDetailRet.setHasOverIpGov(Arrays.asList(userDetailModel.getHasOverIpGov().split(",")));
+		
+		userDetailRet.setHasConfInfo(userDetailModel.getHasConfInfo());
+		userDetailRet.setHasIpPolicy(userDetailModel.getHasIpPolicy());
+		userDetailRet.setAgreementMngProt(userDetailModel.getAgreementMngProt());
+		userDetailRet.setHasErm(userDetailModel.getHasErm());
+		userDetailRet.setSelfInsIpLose(userDetailModel.getSelfInsIpLose());
+		userDetailRet.setPurchedThirdPartyIns(userDetailModel.getPurchedThirdPartyIns());
+		
+		return userDetailRet;
+	}
 	
 	private String convertListToString(List<String> inputList){
 		StringBuilder tempStrBuilder = new StringBuilder();
@@ -183,7 +290,5 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 			tempStrBuilder.delete(tempStrBuilder.length()-1, tempStrBuilder.length());
 		return tempStrBuilder.toString();
 	}
-
-	
 
 }

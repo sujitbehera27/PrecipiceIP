@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.google.gson.Gson;
 import com.pit.biz.registration.RegistrationBusinessManager;
 import com.pit.bo.BusinessDetail;
 import com.pit.bo.CompanyDetail;
@@ -46,26 +47,41 @@ public class RegistrationServiceImpl {
 		logger.info("setCompanyDetails : Company Details Submited..");
 		try {
 			if (userDetail != null) {
-				regBusinesMng.setUserDetails(userDetail);
+				userDetail = regBusinesMng.setUserDetails(userDetail);
+				
+				if(userDetail != null){
+					Gson gson = new Gson();
+					jsonResponse = gson.toJson(userDetail);
+				}
 			}
 			
 			System.out.println("  <~~~~~~~~~~~~~Completed ~~~~~~~~~~~");
-			
 		} catch (Exception e) {
 			Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
-		return Response.status(Response.Status.OK).entity("").build();
+		return Response.status(Response.Status.OK).entity(jsonResponse).build();
 	}
 	
-	/*@GET
-    @Path("{userID}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public UserDetail getUserById(@PathParam("userID") String id) {
-		UserDetail userDetail;
-		userDetail = regBusinesMng.getUserDetails(id);
-        return userDetail;
-    }*/
-	
+	@GET
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("userDetails/{userID}")
+	public Response getUserDetails(@PathParam("userID") String userId) {
+		
+		try {
+			if (userId != null) {
+				UserDetail userDetail = regBusinesMng.getUserDetails(userId);
+				if(userDetail != null){
+					Gson gson = new Gson();
+					jsonResponse = gson.toJson(userDetail);
+				}
+			}
+			System.out.println("  <~~~~~~~~~~~~~Completed ~~~~~~~~~~~");
+		} catch (Exception e) {
+			Response.status(Response.Status.OK).entity(e.toString()).build();
+		}
+		return Response.status(Response.Status.OK).entity(jsonResponse).build();
+	}
 	
 	/*@POST
 	@Consumes(MediaType.APPLICATION_JSON)
