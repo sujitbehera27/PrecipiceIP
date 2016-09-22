@@ -41,13 +41,13 @@
     <!-- dataSource configuration -->
     <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		 <property name="url" value="jdbc:mysql://localhost:3306/precipiceip" /> 
+		 <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		 <!--  <property name="url" value="jdbc:mysql://localhost:3306/precipiceip" /> 
 		<property name="username" value="root" />
-		<property name="password" value="sambit" />
-		<!-- <property name="url" value="jdbc:mysql://pipdb.cstmp8cb2ufj.us-west-2.rds.amazonaws.com:3306/precipiceip" />
+		<property name="password" value="sambit" />  -->
+		   <property name="url" value="jdbc:mysql://pipdb.cstmp8cb2ufj.us-west-2.rds.amazonaws.com:3306/precipiceip" />
 		<property name="username" value="pipdb" />
-		<property name="password" value="pip12345" /> -->
+		<property name="password" value="pip12345" />   
 	</bean>
  
 </beans>
