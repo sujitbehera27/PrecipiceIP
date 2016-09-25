@@ -57,6 +57,7 @@ public class RegistrationServiceImpl {
 			
 			System.out.println("  <~~~~~~~~~~~~~Completed ~~~~~~~~~~~");
 		} catch (Exception e) {
+			e.printStackTrace();
 			Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
 		return Response.status(Response.Status.OK).entity(jsonResponse).build();
@@ -73,11 +74,13 @@ public class RegistrationServiceImpl {
 				UserDetail userDetail = regBusinesMng.getUserDetails(userId);
 				if(userDetail != null){
 					Gson gson = new Gson();
+					System.out.println("================================setRegistartion==========================");
 					jsonResponse = gson.toJson(userDetail);
 				}
 			}
 			System.out.println("  <~~~~~~~~~~~~~Completed ~~~~~~~~~~~");
 		} catch (Exception e) {
+			e.printStackTrace();
 			Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
 		return Response.status(Response.Status.OK).entity(jsonResponse).build();

@@ -38,10 +38,11 @@ public class LoginServiceImpl{
 		String userID = null;
 		try{
 			if(loginRegistartion.getUserId() != null && loginRegistartion.getPassword() != null){
-				
+				System.out.println("================================getLoginDetails==========================");
 				userID  = loginBusinessManager.getLoginDetailsBusMng(loginRegistartion);
 			}
 		}catch (Exception e) {
+			e.printStackTrace();
 			return Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
 		return Response.status(Response.Status.OK).entity(userID).build();
@@ -57,7 +58,7 @@ public class LoginServiceImpl{
 		try{
 			if(registartion != null){
 				boolean hasSuccessReg = loginBusinessManager.setRegistration(registartion);
-				
+				System.out.println("================================setRegistartion==========================");
 				if (hasSuccessReg) {
 					retUserID = registartion.getUserId();
 					Gson gson = new Gson();
@@ -65,6 +66,7 @@ public class LoginServiceImpl{
 				} 
 			}
 		}catch (Exception e) {
+			e.printStackTrace();
 			return Response.status(Response.Status.OK).entity(e.toString()).build();
 		}
 		return Response.status(Response.Status.OK).entity(jsonResponse).build();
