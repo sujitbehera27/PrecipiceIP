@@ -1,0 +1,387 @@
+<div ng-controller="summaryCtrl">
+<div class="container" >
+    <div class="row">
+        <div class="col-lg-5" style="height: 50%;width:45%;" id="grid1">
+           
+            <table style="margin-top:3%;width: 95%;">
+                <thead>
+                <tr style="border:1px solid #727277;background-color: #cc7a00;">
+                    <th style="border:1px solid #727277;">Company Details</th>
+                </tr>
+                </thead>
+                <tbody style="border:1px solid #727277;">
+                <tr>
+                    <td>
+                    <span>User Name</span></td>
+                    <td>
+                    <span>{{userDetail.userName}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Company</span></td>
+                    <td>
+                    <span>{{userDetail.companyName}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Email</span></td>
+                    <td>
+                    <span>{{userDetail.emailID}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Address1</span></td>
+                    <td>
+                    <span>{{userDetail.address1}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Address2</span></td>
+                    <td>
+                    <span>{{userDetail.address2}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>City</span></td>
+                    <td>
+                    <span>{{userDetail.city}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>City</span></td>
+                    <td>
+                    <span>{{userDetail.zip}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>City</span></td>
+                    <td>
+                    <span>{{userDetail.country}}</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                    <span>Phone No</span></td>
+                    <td>
+                    <span>{{userDetail.phoneNo}}</span>
+                    </td>
+                </tr>
+               
+
+                </tbody>
+            </table>
+             
+            <table style="margin-top:3%;width: 95%;">
+                <thead>
+                <tr style="border:1px solid #727277;background-color: #cc7a00;">
+                    <th style="border:1px solid #727277;">Business Details</th>
+                </tr>
+                </thead>
+                <tbody style="border:1px solid #727277;">
+                <tr>
+                    <td>
+                    <span>List the company’s top 5 competitors to the business.</span></td>
+                    <td>
+                    <span>{{userDetail.compOverall}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>What are the company’s marketing activities</span></td>
+                    <td>
+                    <span>{{userDetail.compMarketAct}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Is there a company wide IP Policy?</span></td>
+                    <td>
+                    <span>{{userDetail.compIpPolicy}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Do business units engage in strategy setting of the IP strategy?</span></td>
+                    <td>
+                    <span>{{userDetail.compIpStrategy}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Do intellectual property rights correlate with the
+                    business strategy?</span></td>
+                    <td>
+                    <span>{{userDetail.businesStrategy}}</span>
+                    </td>
+                </tr>
+               
+               
+
+                </tbody>
+            </table>
+              <table style="margin-top:3%;width: 95%;">
+                <thead>
+                <tr style="border:1px solid #727277;background-color: #cc7a00;">
+                    <th style="border:1px solid #727277;">Finance Details</th>
+                </tr>
+                </thead>
+                <tbody style="border:1px solid #727277;">
+                <tr>
+                    <td>
+                    <span>What is the annual world-wide revenue for the business?</span></td>
+                    <td>
+                    <span>{{userDetail.annualRev}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>How many employees are in the business world-wide?</span></td>
+                    <td>
+                    <span>{{userDetail.noOfEmp}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>How does the company invest in R&D?</span></td>
+                    <td>
+                    <span>{{userDetail.investInRnD}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Which regions of the world does the business manufacture/sell/distribute its products?</span></td>
+                    <td>
+                    <span>{{userDetail.busInCountries}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Does the company use third parties to distribute its product?</span></td>
+                    <td>
+                    <span>{{userDetail.thirdPartyProd}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>What is the nature of company’s business? Sell Products?</span></td>
+                    <td>
+                    <span>{{userDetail.compBusType}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>If yes, select all IP insurance coverage that apply</span></td>
+                    <td>
+                    <span>{{userDetail.sellProd}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Sell services?</span></td>
+                    <td>
+                    <span>{{userDetail.sellService}}</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                    <span>Sell products and services</span></td>
+                    <td>
+                    <span>{{userDetail.sellProdAndSvc}}</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                    <span>License intellectual property</span></td>
+                    <td>
+                    <span>{{userDetail.licProp}}</span>
+                    </td>
+                </tr>
+               
+
+                </tbody>
+            </table>
+             
+         </div>
+        <div class="col-lg-5" style="height: 50%;width:47%;" id="grid2">
+            <table style="margin-top:3%;width: 95%;">
+                <thead>
+                <tr style="border:1px solid #727277;background-color: #cc7a00;">
+                    <th style="border:1px solid #727277;">Trade Details</th>
+                </tr>
+                </thead>
+                <tbody style="border:1px solid #727277;">
+                <tr>
+                    <td>
+                    <span>List the company’s top 5 competitors to the business.</span></td>
+                    <td>
+                    <span>{{userDetail.compOverall}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>What are the company’s marketing activities</span></td>
+                    <td>
+                    <span>{{userDetail.compMarketAct}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Is there a company wide IP Policy?</span></td>
+                    <td>
+                    <span>{{userDetail.compIpPolicy}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Do business units engage in strategy setting of the IP strategy?</span></td>
+                    <td>
+                    <span>{{userDetail.compIpStrategy}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Do intellectual property rights correlate with the
+                    business strategy?</span></td>
+                    <td>
+                    <span>{{userDetail.businesStrategy}}</span>
+                    </td>
+                </tr>
+               
+               
+
+                </tbody>
+            </table>
+           
+              <table style="margin-top:3%;width: 95%;">
+                <thead>
+                <tr style="border:1px solid #727277;background-color: #cc7a00;">
+                    <th style="border:1px solid #727277;">Risk Details</th>
+                </tr>
+                </thead>
+                <tbody style="border:1px solid #727277;">
+                <tr>
+                    <td>
+                    <span>Has the company taken reasonable measures to protect its confidential information.</span></td>
+                    <td>
+                    <span>{{userDetail.hasConfInfo}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Does the company have specific IP policies?</span></td>
+                    <td>
+                    <span>{{userDetail.hasIpPolicy}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>select all IP insurance coverage that apply:</span></td>
+                    <td>
+                    <span>{{userDetail.hasIpPolicyList}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Agreement management and compliance protocols?</span></td>
+                    <td>
+                    <span>{{userDetail.agreementMngProt}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>If yes, select all that apply:</span></td>
+                    <td>
+                    <span>{{userDetail.agreementMngProtList}}</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                    <span>Does the company have ERM Software solutions</span></td>
+                    <td>
+                    <span>{{userDetail.hasErm}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>If yes, select all that apply:</span></td>
+                    <td>
+                    <span>{{userDetail.hasErmList}}</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                    <span>How does the company avoid third party liability?</span></td>
+                    <td>
+                    <span>{{userDetail.thirdPartyLia}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>If yes, select all that apply:</span></td>
+                    <td>
+                    <span>{{userDetail.agreementMngProtList}}</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                    <span>Is the company self-insured for IP losses?</span></td>
+                    <td>
+                    <span>{{userDetail.selfInsIpLose}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <span>Does the company purchase 3rd Party IP insurance?</span></td>
+                    <td>
+                    <span>{{userDetail.purchedThirdPartyIns}}</span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                    <span>Does the company have oversight of its IP Governance?</span></td>
+                    <td>
+                    <span>{{userDetail.hasOverIpGov}}</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                    <span>Does the company purchase 3rd Party IP insurance?</span></td>
+                    <td>
+                    <span>{{userDetail.purchedThirdPartyIns}}</span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                    <span>If yes, select all IP insurance coverage that apply:</span></td>
+                    <td>
+                    <span>{{userDetail.thirdPartyIns}}</span>
+                    </td>
+                </tr>
+               
+               
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+     <div class="row">
+                <div class="col-xs-offset-3 col-xs-8 " style="margin-left:65%;margin-top:2%;">
+                   <!--  <a style="background-color: #8c6316;" href="#trd" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Edit Previous Changes</a> -->
+                    <!-- <a style="background-color:green;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Save and Continue</a> -->
+                    <a style="background-color:green;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" >Edit Details</a>&nbsp;&nbsp;&nbsp;
+               		<a style="background-color:green;" class="btn btn-primary nexttab" ng-click="viewRiskScore()" >View Risk Score</a>
+                </div>
+            </div>
+   
+    
+</div>
+

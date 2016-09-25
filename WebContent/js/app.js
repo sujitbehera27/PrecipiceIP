@@ -61,6 +61,9 @@ var homeApp = angular.module('formApp', ['ngAnimate', 'ui.router']).run(function
      .state('form.report', {
          url: '/report',
          templateUrl: 'report.html'
+     }).state('form.summary', {
+         url: '/summary',
+         templateUrl: 'summary.html'
      });
     
  // catch all route

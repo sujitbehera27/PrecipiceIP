@@ -199,10 +199,20 @@ homeApp.controller('riskMngDetailCtrl', function($scope,$rootScope,$state, $http
 			 }
 			// $('.nav-tabs > .active').next('li').find('a').trigger('click');
 			// $state.go('eventmenu.financedet');
-			 $state.go('form.report');
+			 $state.go('form.summary');
 //			 $scope.lclUserDetail = userDetail;
 			// $window.location.href= './financedet.html'
 		 });
+	}
+});
+homeApp.controller('summaryCtrl', function($scope,$rootScope,$state, $http,useridService) {
+	// Page:Risk Management :: Submit
+	$scope.viewRiskScore = function(){
+		console.log("***********Summaryl Controller************");
+		
+		
+		$state.go('form.report');
+	
 	}
 });
 
