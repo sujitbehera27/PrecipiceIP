@@ -23,6 +23,10 @@
 		//Hide & Seek : End
 		
 		$scope.loginSubmit = function(){
+
+			if(angular.isUndefined($scope.loginRegistartion && (angular.isUndefined($scope.loginRegistartion.userId) || angular.isUndefined($scope.loginRegistartion.password)))){
+				alert("Please enter Userid & Passowrd both");
+			} else{
 			 $http.post($rootScope.host+"rest/user/login", $scope.loginRegistartion)
 			 .success(function(response){
 				 if(response != "" && response != null){
@@ -33,6 +37,7 @@
 					$scope.loginRegistartion = "";
 				 }
 			 }); 
+			}
 		}
 		
 		// Registration Service Call

@@ -58,9 +58,13 @@ public class RegistrationServiceImpl {
 			System.out.println("  <~~~~~~~~~~~~~Completed ~~~~~~~~~~~");
 		} catch (Exception e) {
 			e.printStackTrace();
-			Response.status(Response.Status.OK).entity(e.toString()).build();
+			Response.status(Response.Status.OK).header("Access-Control-Allow-Origin","*")
+            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+            .allow("OPTIONS").entity(e.toString()).build();
 		}
-		return Response.status(Response.Status.OK).entity(jsonResponse).build();
+		return Response.status(Response.Status.OK).header("Access-Control-Allow-Origin","*")
+	            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+	            .allow("OPTIONS").entity(jsonResponse).build();
 	}
 	
 	@GET
@@ -81,9 +85,13 @@ public class RegistrationServiceImpl {
 			System.out.println("  <~~~~~~~~~~~~~Completed ~~~~~~~~~~~");
 		} catch (Exception e) {
 			e.printStackTrace();
-			Response.status(Response.Status.OK).entity(e.toString()).build();
+			Response.status(Response.Status.OK).header("Access-Control-Allow-Origin","*")
+            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+            .allow("OPTIONS").entity(e.toString()).build();
 		}
-		return Response.status(Response.Status.OK).entity(jsonResponse).build();
+		return Response.status(Response.Status.OK).header("Access-Control-Allow-Origin","*")
+	            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+	            .allow("OPTIONS").entity(jsonResponse).build();
 	}
 	
 	/*@POST
