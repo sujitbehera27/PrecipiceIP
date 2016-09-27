@@ -129,3 +129,9 @@ legend {
 {
     fill: FireBrick;
 }
+.btn{
+	min-width: 130px;
+}
+.spanTxt {
+	padding-left: 5px;
+}
