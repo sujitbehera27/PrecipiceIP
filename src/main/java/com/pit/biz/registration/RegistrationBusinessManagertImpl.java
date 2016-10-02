@@ -287,7 +287,9 @@ public class RegistrationBusinessManagertImpl implements RegistrationBusinessMan
 					tempStrBuilder.append(",");
 				}
 			}
-			tempStrBuilder.delete(tempStrBuilder.length()-1, tempStrBuilder.length());
+			if (tempStrBuilder != null && !tempStrBuilder.toString().isEmpty()) 
+				tempStrBuilder.delete(tempStrBuilder.length()-1, tempStrBuilder.length());
+			
 		return tempStrBuilder.toString();
 	}
 
