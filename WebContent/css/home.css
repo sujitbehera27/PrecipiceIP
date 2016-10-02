@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+.logout {
+	margin-top: 80%;height: 22px;width: 25px;
+    /* background-image: url("../img/logout.png");
+    height: xx;
+    width: yy; */
+}
+
+/* .logoutimg:hover {
+    background-image: url("../img/logout2.png");
+} */

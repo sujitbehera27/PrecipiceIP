@@ -105,6 +105,12 @@ homeApp.controller('financeDetailCtrl', function($scope,$rootScope,$state, $http
 			// $window.location.href= './financedet.html'
 		 });
 	}
+	
+	$scope.$watch("userDetail.compBusType", function(val){
+		  if (val == "0") { // or, if (!val.length), to make it completely equivalent
+		    $scope.userDetail.sellProd = null;
+		  }
+		});
 });
 
 homeApp.controller('businessDetailCtrl', function($scope,$rootScope,$state, $http,useridService) {
@@ -205,6 +211,17 @@ homeApp.controller('riskMngDetailCtrl', function($scope,$rootScope,$state, $http
 		 });
 	}
 });
+homeApp.controller('logoutController',function($location, $scope,$rootScope,$state){
+	$scope.logout = function(userDetail){
+		if (confirm('Are you sure you want to log out?')) {
+			window.location= '../index.html';
+		} else {
+			return false;
+		}
+		
+	}
+	
+});
 homeApp.controller('summaryCtrl', function($scope,$rootScope,$state, $http,useridService) {
 	// Page:Risk Management :: Submit
 	$scope.viewRiskScore = function(){
@@ -214,6 +231,29 @@ homeApp.controller('summaryCtrl', function($scope,$rootScope,$state, $http,useri
 		$state.go('form.report');
 	
 	}
+	$scope.$watch("userDetail.hasIpPolicy", function(val){
+	  if (val == "0") { // or, if (!val.length), to make it completely equivalent
+	    $scope.userDetail.hasIpPolicyList = null;
+	  }
+	});
+	
+	$scope.$watch("userDetail.agreementMngProt", function(val){
+	  if (val == "0") { // or, if (!val.length), to make it completely equivalent
+	    $scope.userDetail.agreementMngProtList = null;
+	  }
+	});
+	
+	$scope.$watch("userDetail.hasErm", function(val){
+	  if (val == "0") { // or, if (!val.length), to make it completely equivalent
+	    $scope.userDetail.hasErmList = null;
+	  }
+	});
+	
+	$scope.$watch("userDetail.purchedThirdPartyIns", function(val){
+	  if (val == "0") { // or, if (!val.length), to make it completely equivalent
+	    $scope.userDetail.thirdPartyIns = null;
+	  }
+	});
 });
 
 
