@@ -105,7 +105,9 @@ homeApp.controller('financeDetailCtrl', function($scope,$rootScope,$state, $http
 			// $window.location.href= './financedet.html'
 		 });
 	}
-	
+	$scope.goBack = function(){
+		$state.go('form.profile');
+	}
 	$scope.$watch("userDetail.compBusType", function(val){
 		  if (val == "0") { // or, if (!val.length), to make it completely equivalent
 		    $scope.userDetail.sellProd = null;
@@ -141,6 +143,9 @@ homeApp.controller('businessDetailCtrl', function($scope,$rootScope,$state, $htt
 			// $window.location.href= './financedet.html'
 		 });
 	}
+	$scope.goBack = function(){
+		$state.go('form.finance');
+	}
 });
 
 homeApp.controller('tradeDetailCtrl', function($scope,$rootScope,$state, $http,useridService) {
@@ -174,6 +179,9 @@ homeApp.controller('tradeDetailCtrl', function($scope,$rootScope,$state, $http,u
 //			 $scope.lclUserDetail = userDetail;
 			// $window.location.href= './financedet.html'
 		 });
+	}
+	$scope.goBack = function(){
+		$state.go('form.biz');
 	}
 });
 
@@ -210,6 +218,9 @@ homeApp.controller('riskMngDetailCtrl', function($scope,$rootScope,$state, $http
 			// $window.location.href= './financedet.html'
 		 });
 	}
+	$scope.goBack = function(){
+		$state.go('form.trade');
+	}
 });
 homeApp.controller('logoutController',function($location, $scope,$rootScope,$state){
 	$scope.logout = function(userDetail){
@@ -224,6 +235,9 @@ homeApp.controller('logoutController',function($location, $scope,$rootScope,$sta
 });
 homeApp.controller('summaryCtrl', function($scope,$rootScope,$state, $http,useridService) {
 	// Page:Risk Management :: Submit
+	$scope.goBack = function(){
+		$state.go('form.risk');
+	}
 	$scope.viewRiskScore = function(){
 		console.log("***********Summaryl Controller************");
 		

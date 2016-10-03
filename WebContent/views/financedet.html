@@ -3,17 +3,18 @@
         <fieldset>
 
             <!-- Form Name -->
-            <legend>Financial Details</legend>
-
+            <legend>Financial Details<img class="back" src="../img/back.png" ng-click="goBack()"></legend>
+			
             <div class="row">
                 <label class="col-md-4 control-label" for="revenue">What is the annual world-wide revenue for the business?</label>
                 <div class="col-md-4">
-                    <select id="revenue" ng-model="userDetail.annualRev" name="revenue" class="form-control input-sm">
+                <input id="fn" ng-model="userDetail.annualRev" name="fn" type="text" placeholder="In $" class="form-control input-sm" required>
+                   <!--  <select id="revenue" ng-model="userDetail.annualRev" name="revenue" class="form-control input-sm">
                         <option value="">Select One</option>
                         <option value="less than $50 million" >less than $50 million</option>
                         <option value="more than $50 million, but less than $1 billion">more than $50 million, but less than $1 billion</option>
                         <option value="1 billion or more">1 billion or more</option>
-                    </select>
+                    </select> -->
                 </div>
             </div>
             <div class="row" >

@@ -9,3 +9,7 @@
 /* .logoutimg:hover {
     background-image: url("../img/logout2.png");
 } */
+.back {
+    height: 40px;
+    margin-left: 82%;
+}
