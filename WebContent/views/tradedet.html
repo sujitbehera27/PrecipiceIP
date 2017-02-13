@@ -16,6 +16,15 @@
                         <input type="radio"  ng-model="userDetail.preserveCopyRight" ng-value="0" name="preserveCopyRight" id="forPreserveCopyRight-N" >
                         No
                     </label>
+<!-- New -->
+                    <br><label style="font-size: 14px;color: #cc7a00">If yes, how does the company preserve its copyrights ?</label>
+                    <select  ng-show="userDetail.preserveCopyRight == '1'"  ng-model="userDetail.howPreserveCopyRight"  class="form-control input-sm"  multiple="multiple" >
+                        <!-- <option value="">Select Multiple</option> -->
+                        <option value="Regiser copyright with USPTO">Regiser copyright with USPTO</option>
+                        <option value="Provide Copyright notice">Provide Copyright notice</option>
+                        <option value="International Copyright Protection">International Copyright Protection</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
             </div>
 
@@ -30,6 +39,14 @@
                         <input type="radio" ng-model="userDetail.regTradeMark" ng-value="0" name="regTradeMark" id="forRegTradeMark-N" >
                         No
                     </label>
+<!-- New -->
+                    <br><label style="font-size: 14px;color: #cc7a00">If yes, where does the company register its trademarks ?</label>
+                    <select id="revenue1" ng-show="userDetail.regTradeMark == '1'"  ng-model="userDetail.wherRegTradeMark"  class="form-control input-sm"  multiple="multiple" >
+                        <!-- <option value="">Select Multiple</option> -->
+                        <option value="State">State</option>
+                        <option value="Federal">Federal</option>
+                        <option value="Global">Global</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
@@ -98,6 +115,15 @@
                         <input type="radio" ng-model="userDetail.mngCyberSecRisk" ng-value="0" name="mngCyberSecRisk" id="forMngCyberSecRisk-N">
                         No
                     </label>
+       <!-- New -->
+                    <br><label style="font-size: 14px;color: #cc7a00">If yes, what is the framework to manage cyber security risk ?</label>
+                    <select id="revenue1" ng-show="userDetail.mngCyberSecRisk == '1'"  ng-model="userDetail.frameMngCyberSecRisk"  class="form-control input-sm" >
+                        <!-- <option value="">Select Multiple</option> -->
+                        <option value="Utilizing NIST Standards">Utilizing NIST Standards</option>
+                        <option value="Other">Other</option>
+                        <option value="I don't know">I don't know</option>
+                    </select>
+                    
                 </div>
             </diV>
             <div class="row">
@@ -111,10 +137,23 @@
                         <input type="radio" ng-model="userDetail.protectTradeSec" ng-value="0"   name="protectTradeSec" id="forProtectTradeSec-N">
                         No
                     </label>
+          <!-- New -->
+                    <br><label style="font-size: 14px;color: #cc7a00">If yes, what are the measures taken to protect trade secrets ?</label>
+                    <select id="revenue1" ng-show="userDetail.protectTradeSec == '1'"  ng-model="userDetail.measureProtectTradeSec"  class="form-control input-sm"  multiple="multiple" >
+                        <!-- <option value="">Select Multiple</option> -->
+                        <option value="Employee Badges">Employee Badges</option>
+                        <option value="Visitor Logs">Visitor Logs</option>
+                        <option value="Visitor Agreements">Visitor Agreements</option>
+                        <option value="Secured Servers">Secured Servers</option>
+                        <option value="Secured Team Sites">Secured Team Sites</option>
+                        <option value="Contracts">Contracts</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
             </div>
+            
             <div class="row">
-                <label class="col-md-4 control-label" >Has the company taken reasonable measures to protect its confidential information</label>
+                <label class="col-md-4 control-label" >Has the company taken reasonable measures to protect its confidential information ?</label>
                 <div class="col-md-4" >
                     <label class="radio-inline" for="forProtectConfInfo-Y">
                         <input type="radio" ng-model="userDetail.protectConfInfo" ng-value="1"  name="protectConfInfo" id="forProtectConfInfo-Y" >
@@ -126,7 +165,48 @@
                     </label>
                 </div>
             </div>
-
+         <!-- New -->   
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company evaluate and subsequently protect patentable innovations ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forPatentableInnov-Y">
+                        <input type="radio" ng-model="userDetail.patentableInnov" ng-value="1"   name="patentableInnov" id="forPatentableInnov-Y" >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forPatentableInnov-N">
+                        <input type="radio" ng-model="userDetail.patentableInnov" ng-value="0"   name="patentableInnov" id="forPatentableInnov-N">
+                        No
+                    </label>
+          <!-- New -->        
+                    <br><label style="font-size: 14px;color: #cc7a00">If yes where does the company file ?</label>
+                    <select id="revenue1" ng-show="userDetail.patentableInnov == '1'"  ng-model="userDetail.patentableInnovFile"  class="form-control input-sm"  multiple="multiple" >
+                        <!-- <option value="">Select Multiple</option> -->
+                        <option value="United States">United States</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Japan">Japan</option>
+                        <option value="China">China</option>
+                        <option value="South America">South America</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+         <!-- New -->   
+             <div class="row">
+                <label class="col-md-4 control-label" >Does the company conduct periodic and ongoing Trade secret assessment and categorization ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forPerOngTradeSec-Y">
+                        <input type="radio" ng-model="userDetail.perOngTradeSec" ng-value="1"  name="perOngTradeSec" id="forPerOngTradeSec-Y" >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forPerOngTradeSec-N">
+                        <input type="radio" ng-model="userDetail.perOngTradeSec" ng-value="0"  name="perOngTradeSec" id="forPerOngTradeSec-N">
+                        No
+                    </label>
+                </div>
+            </div>
+	
 
             <!--<div class="form-group" style="margin-left: 25%;">
                 <label class="col-md-4 control-label" for="submit"></label>

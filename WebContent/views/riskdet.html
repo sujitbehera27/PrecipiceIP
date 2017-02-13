@@ -16,6 +16,18 @@
                         <input type="radio"  ng-model="userDetail.hasConfInfo" ng-value="0" name="hasConfInfo" id="forHasConfInfo-N" >
                         No
                     </label>
+              <!-- New -->
+                    <br><label style="font-size: 14px;color: #cc7a00">If yes, what are the measures taken to protect trade secrets ?</label>
+                    <select  ng-show="userDetail.hasConfInfo == '1'"  ng-model="userDetail.protectTradeSce"  class="form-control input-sm"  multiple="multiple" >
+                        <!-- <option value="">Select Multiple</option> -->
+                        <option value="Employee Badges">Employee Badges</option>
+                        <option value="Visitor Logs">Visitor Logs</option>
+                        <option value="Visitor Agreements">Visitor Agreements</option>
+                        <option value="Secured Servers">Secured Servers</option>
+                        <option value="Secured Team Sites">Secured Team Sites</option>
+                        <option value="Contracts">Contracts</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
@@ -38,7 +50,6 @@
                         <option value="Trade show policies">Trade show policies</option>
                     </select>
                 </div>
-
             </div>
             <div class="row">
                 <label class="col-md-4 control-label">Agreement management and compliance protocols?</label>
@@ -114,6 +125,23 @@
                         <input type="radio"  ng-model="userDetail.selfInsIpLose" ng-value="0" name="selfInsIpLose" id="forSelfInsIpLose-N">
                         No
                     </label>
+                    <br><label style="font-size: 14px;color: #cc7a00">If yes, answer the following questions:</label>
+
+                    <!-- New -->
+					<div class="form-group">
+		                <label class="col-md-4 " for="forAmtFound">What is the amount funded ?</label>
+		                <div class="col-md-4">
+		                    <input type="number" ng-model="userDetail.amtFound" name="forAmtFound" id="forAmtFound"  class="form-control" >
+		                </div>
+		             </div>
+		             <!-- New -->
+					<div class="row" style="margin-bottom: 15px;">
+                	<label class="col-md-4 control-label" for="compBenchmark">What companies were benchmarked to arrive at funding levels ?</label>
+		                <div class="col-md-4">
+		                    <label>Overall</label>
+		                    <textarea class="form-control" id="compBenchmark" name="compBenchmark"  ng-model="userDetail.compBenchmark" placeholder="List competitors to overall business" ></textarea>
+		                </div>
+            		</div>
                 </div>
             </div>
             <div class="row" style="margin-bottom: 15px;">
@@ -138,8 +166,29 @@
 
             </div>
 
-
+			<!-- New -->      
             <div class="row">
+                <label class="col-md-4 control-label" >Does the company have oversight of its IP Governance ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forProtectTradeSec-Y">
+                        <input type="radio" ng-model="userDetail.doesCompHasOverIpGov" ng-value="1"   name="protectTradeSec" id="forProtectTradeSec-Y" >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forProtectTradeSec-N">
+                        <input type="radio" ng-model="userDetail.doesCompHasOverIpGov" ng-value="0"   name="protectTradeSec" id="forProtectTradeSec-N">
+                        No
+                    </label>
+          <!-- New -->        
+                    <br><label style="font-size: 14px;color: #cc7a00">If yes, identify the mechanisms of IP governance employed </label>
+                    <select sng-show="userDetail.doesCompHasOverIpGov == '1'"  ng-model="userDetail.hasOverIpGov"  class="form-control input-sm"  multiple="multiple" >
+                        <!-- <option value="">Select Multiple</option> -->
+                        <option value="Board oversight and reporting">Board oversight and reporting</option>
+                        <option value="Legal/compliance oversight and management">Legal/compliance oversight and management</option>
+                        <option value="Business unit oversight and strategy alignment">Business unit oversight and strategy alignment</option>
+                    </select>
+                </div>
+            </div> 
+            <!-- <div class="row">
                 <label class="col-md-4 control-label" for="country">Does the company have oversight of its IP Governance?</label>
                 <div class="col-md-4">
 
@@ -151,7 +200,65 @@
                     </select>
                 </div>
 
+            </div> -->
+     <!-- New -->       
+            <div class="row" >
+                <label class="col-md-4 control-label" for="empAgreeUtil">What Type of employee agreements does the company utilize ?</label>
+                <div class="col-md-4">
+                    <select id="empAgreeUtil" ng-model="userDetail.empAgreeUtil" name="empAgreeUtil" class="form-control input-sm" multiple="multiple" >
+                        <option value="Non-competes">Non-competes</option>
+                        <option value="Proprietary and assignments">Proprietary and assignments</option>
+                        <option value="NDA">NDA</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
             </div>
+            
+       <!-- New -->       
+            <div class="row" >
+                <label class="col-md-4 control-label" for="forLastNDAAgree">If NDA are utlized, when was the last time the NDA agreement was updated ?</label>
+                <div class="col-md-4">
+                    <select id="forLastNDAAgree" ng-model="userDetail.lastNDAAgree" name="forLastNDAAgree" class="form-control input-sm" >
+                        <option value="">Select One</option>
+                        <option value="Within past 6 months">Within past 6 months</option>
+                        <option value="Within the past year">Within the past year</option>
+                        <option value="Within the past 3 years">Within the past 3 years</option>
+                        <option value="Within the past 5 years">Within the past 5 years</option>
+                        <option value="Greater than 5 years">Greater than 5 years</option>
+                        <option value="I don't know">I don't know</option>
+                    </select>
+                </div>
+            </div>
+            
+         <!-- New -->       
+            <div class="row" >
+                <label class="col-md-4 control-label" for="emptotal">If IPR docketing system is selected, further select which of the following systems exist:</label>
+                <div class="col-md-4">
+                    <select id="emptotal" ng-model="userDetail.iprDocketing" name="noOfEmp" class="form-control input-sm" >
+                        <option value="">Select One</option>
+                        <option value="Patents">Patents</option>
+                        <option value="Trademarks">Trademarks</option>
+                    </select>
+                </div>
+            </div>   
+            
+            <!-- New -->      
+            <div class="row">
+                <label class="col-md-4 control-label" >Has the company been a party to legal activity such as litigation ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forpartOfLitigation-Y">
+                        <input type="radio" ng-model="userDetail.partOfLitigation" ng-value="1"   name="partOfLitigation" id="forpartOfLitigation-Y" >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forProtectTradeSec-N">
+                        <input type="radio" ng-model="userDetail.partOfLitigation" ng-value="0"   name="partOfLitigation" id="forpartOfLitigation-N">
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            
+            
             <!--<div class="form-group" style="margin-left: 75%;">
                 <label class="col-md-4 control-label" for="submit"></label>
                 <div class="col-md-4">

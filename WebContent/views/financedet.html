@@ -8,7 +8,7 @@
             <div class="row">
                 <label class="col-md-4 control-label" for="revenue">What is the annual world-wide revenue for the business?</label>
                 <div class="col-md-4">
-                <input id="fn" ng-model="userDetail.annualRev" name="fn" type="text" placeholder="In $" class="form-control input-sm" required>
+                <input id="fn" ng-model="userDetail.annualRev" name="fn" type="text" placeholder="In $" class="form-control input-sm" required><br>
                    <!--  <select id="revenue" ng-model="userDetail.annualRev" name="revenue" class="form-control input-sm">
                         <option value="">Select One</option>
                         <option value="less than $50 million" >less than $50 million</option>
@@ -25,7 +25,7 @@
                         <option value="fewer than 100 employees">fewer than 100 employees</option>
                         <option value="100 to 999 employees">100 to 999 employees</option>
                         <option value="1000 or more">1000 or more</option>
-                    </select>
+                    </select><br>
                 </div>
             </div>
             <!-- <div class="form-group">
@@ -155,7 +155,48 @@
                     </label>
                 </div>
             </div>
+            <!-- New -->
+            <div class="row">
+                <label class="col-md-4 control-label" for="forGrossRevenue">What is  the gross revenue for the business unit in which IP resides ?</label>
+                <div class="col-md-4">
+                <input ng-model="userDetail.grossRevenue" name="forGrossRevenue"  id="forGrossRevenue" placeholder="In $" type="text" class="form-control input-sm"> <br>
+                <!-- 
+                <input ng-model="userDetail.grossRevenue" name="forGrossRevenue"  id="forGrossRevenue" type="number" placeholder="In $" class="form-control input-sm">
+                 --></div>
+            </div>
             
+            <!-- New -->
+            <div class="row">
+                <label class="col-md-4 control-label" for="forProjSale">What are the projected sales for the product associated with the IP ?</label>
+                <div class="col-md-4">
+                <input ng-model="userDetail.projectedSale" name="forProjSale"  id="forProjSale" type="text" placeholder="In $" class="form-control input-sm"><br>
+                </div>
+            </div>
+            
+            <!-- New -->
+            <div class="row">
+                <label class="col-md-4 control-label" for="forRevToRandD">What is the ratio of gross revenue to R&D spend ?</label>
+                <div class="col-md-4">
+                <input ng-model="userDetail.revToRandD" name="forRevToRandD"  id="forRevToRandD" type="text" class="form-control input-sm"> <br>
+                </div>
+            </div>
+            
+             <!-- New -->
+            <div class="row">
+                <label class="col-md-4 control-label" for="forAmtSpend"> What was the total amount of enterprise R&D spend the past fiscal year ?</label>
+                <div class="col-md-4">
+                <input ng-model="userDetail.amtSpend" name="forAmtSpend"  id="forAmtSpend" type="text" placeholder="In $"  class="form-control input-sm"><br>
+                </div>
+            </div>
+            
+            <!-- New -->
+            <div class="row">
+                <label class="col-md-4 control-label" for="forspendBizUnit"> What was the R&D spend for the business unit ?</label>
+                <div class="col-md-4">
+                <input ng-model="userDetail.spendBizUnit" name="forspendBizUnit"  id="forspendBizUnit" type="text" placeholder="In $"  class="form-control input-sm">
+                </div>
+            </div>
+           
             <input type="hidden" ng-model="userDetail.formID" value="2"/>
            <!--  <input type="hidden" ng-model="userDetail.userID"/> -->
 

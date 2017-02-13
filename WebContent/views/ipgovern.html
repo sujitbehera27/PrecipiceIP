@@ -1,0 +1,175 @@
+<div ng-controller="ipGovernCtrl">
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+			<legend>IP Governance</legend>
+			
+			<div class="row">
+                <label class="col-md-4 control-label" for="forExtractValue">How does the company extract value from its intellectual property rights ?</label>
+                <div class="col-md-4">
+                <input type="text" ng-model="userDetail.extractValue" id="forExtractValue" name="extractValue"  class="form-control input-sm">
+                </div>
+            </div>
+            <div class="row" >
+                <label class="col-md-4 control-label" for="forCompExtValue">Does the Company extract value from its intellectual property rights through Enforcement of IP in the form of:</label>
+                <div class="col-md-4">
+                    <select id="forCompExtValue" ng-model="userDetail.compExtValue" name="compExtValue" class="form-control input-sm" multiple="multiple">
+                        <option value="Cease and desist letters">Cease and desist letters</option>
+                        <option value="Court actions">Court actions</option>
+                        <option value="Administrative proceedings">Administrative proceedings</option>
+                    </select><br>
+                </div>
+            </div>
+            <div class="row" >
+                <label class="col-md-4 control-label" for="forCompExtThrough">Does the Company extract value from its intellectual property rights through Exploitation of IP through:</label>
+                <div class="col-md-4">
+                    <select id="forCompExtThrough" ng-model="userDetail.compExtThrough" name="compExtThrough" class="form-control input-sm" multiple="multiple">
+                        <option value="Sales of products covered by IP">Sales of products covered by IP</option>
+                        <option value="Licensing covered by IP">Licensing covered by IP</option>
+                        <option value="Sales IP">Sales IP</option>
+                        <option value="Sales IP">Secrutinization of IP</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="col-md-4 control-label" >If the company has subsidiaries, does the company have inter-company IP agreements in place ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forInterCompIpAgree-Y">
+                        <input type="radio" ng-model="userDetail.interCompIpAgree" ng-value="1" name="interCompIpAgree" id="forInterCompIpAgree-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forInterCompIpAgree-N">
+                        <input type="radio" ng-model="userDetail.interCompIpAgree"  ng-value="0" name="interCompIpAgree" id="forInterCompIpAgree-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company conduct annual and/or periodic Training with employees regarding securing its IP ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forTrainForSecure-Y">
+                        <input type="radio" ng-model="userDetail.trainForSecure" ng-value="1" name="trainForSecure" id="forTrainForSecure-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forTrainForSecure-N">
+                        <input type="radio" ng-model="userDetail.trainForSecure"  ng-value="0" name="trainForSecure" id="forTrainForSecure-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company have an Employee Handbook governing the use and disposition of its IP</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forEmpHandbook-Y">
+                        <input type="radio" ng-model="userDetail.empHandbook" ng-value="1" name="empHandbook" id="forEmpHandbook-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forEmpHandbook-N">
+                        <input type="radio" ng-model="userDetail.empHandbook"  ng-value="0" name="empHandbook" id="forEmpHandbook-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company conduct IP Valuations and or recognize and  assign good will values to its IP as part of its financial reporting ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forIpAsFinReport-Y">
+                        <input type="radio" ng-model="userDetail.ipAsFinReport" ng-value="1" name="ipAsFinReport" id="forIpAsFinReport-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forIpAsFinReport-N">
+                        <input type="radio" ng-model="userDetail.ipAsFinReport"  ng-value="0" name="ipAsFinReport" id="forIpAsFinReport-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company have a repository and conduct periodic review of thrid party Agreements for IP risk ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forReviewAggr-Y">
+                        <input type="radio" ng-model="userDetail.reviewAggr" ng-value="1" name="reviewAggr" id="forReviewAggr-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forReviewAggr-N">
+                        <input type="radio" ng-model="userDetail.reviewAggr"  ng-value="0" name="reviewAggr" id="forReviewAggr-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company have a defined IP Strategy ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forDefIpStratg-Y">
+                        <input type="radio" ng-model="userDetail.defIpStratg" ng-value="1" name="defIpStratg" id="forDefIpStratg-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forDefIpStratg-N">
+                        <input type="radio" ng-model="userDetail.defIpStratg"  ng-value="0" name="defIpStratg" id="forDefIpStratg-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+
+               <div class="row">
+                <label class="col-md-4 control-label" >Does the company conduct regular IP Audits</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forIpAudits-Y">
+                        <input type="radio" ng-model="userDetail.ipAudits" ng-value="1" name="ipAudits" id="forIpAudits-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forIpAudits-N">
+                        <input type="radio" ng-model="userDetail.ipAudits"  ng-value="0" name="ipAudits" id="forIpAudits-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+               
+               <div class="row">
+                <label class="col-md-4 control-label" >Do all employees assign their IP rights to the enterprise at the time of employment ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forIpRightsAtEmptTime-Y">
+                        <input type="radio" ng-model="userDetail.ipRightsAtEmptTime" ng-value="1" name="ipRightsAtEmptTime" id="forIpRightsAtEmptTime-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forIpRightsAtEmptTime-N">
+                        <input type="radio" ng-model="userDetail.ipRightsAtEmptTime"  ng-value="0" name="ipRightsAtEmptTime" id="forIpRightsAtEmptTime-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+               
+            <div class="row">
+                <label class="col-md-4 control-label" >Do employees receive additional incentives for generation of ideas that may lead to future products or innovations for the enterprise ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forEmpRecvAddIncent-Y">
+                        <input type="radio" ng-model="userDetail.empRecvAddIncent" ng-value="1" name="empRecvAddIncent" id="forEmpRecvAddIncent-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forEmpRecvAddIncent-N">
+                        <input type="radio" ng-model="userDetail.empRecvAddIncent"  ng-value="0" name="empRecvAddIncent" id="forEmpRecvAddIncent-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+
+            <input type="hidden" ng-model="userDetail.formID" value="7"/>
+            <input type="hidden" ng-model="userDetail.userID"/>
+
+            <div class="row">
+                <div class="col-xs-offset-3 col-xs-8 " style="margin-left:70%;">
+                    <!-- <a style="background-color: #8c6316;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Edit Previous Changes</a> 
+                    <!-- <a style="background-color:green;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Save and Continue</a> -->
+                    <a style="background-color:#4775af;width: 160px;" class="btn btn-primary nexttab" data-toggle="tab"  ng-click="goBack()">Previous</a> 
+                    <a style="background-color:green;" href="#trd" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" ng-click="ipGovernDetSubmit(userDetail)">Save and Continue</a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>

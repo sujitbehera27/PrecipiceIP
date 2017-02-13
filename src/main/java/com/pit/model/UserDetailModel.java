@@ -1,18 +1,14 @@
 package com.pit.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "user_det")
@@ -31,11 +27,18 @@ public class UserDetailModel implements Serializable {
 //	@GeneratedValue(strategy = GenerationType.AUTO)
 //	private int userDetId ;
 	
+	/*Trade Details*/
 	@Column(name = "PRESERVE_COPYRIGHTS")
 	private int preserveCopyRight;
 	
+	@Column(name = "HOW_PRESERVE_COPYRIGHT")
+	private String howPreserveCopyRight;
+	
 	@Column(name = "REG_TRADEMARK")
 	private int regTradeMark;
+	
+	@Column(name = "WHER_REG_TRADEMARK")
+	private String wherRegTradeMark;
 	
 	@Column(name = "DOM_REFLECT_BN")
 	private int domainRefBN;
@@ -52,14 +55,33 @@ public class UserDetailModel implements Serializable {
 	@Column(name = "MANAGE_CYBER_SECURITY_RISK")
 	private int mngCyberSecRisk;
 	
+	@Column(name = "FRAME_MNG_CYBER_SEC_RISK")
+	private String frameMngCyberSecRisk;
+	
 	@Column(name = "PROT_TRD_SECRETS")
 	private int protectTradeSec;
+	
+	@Column(name = "MEASURE_PROTECT_TRADE_SEC")
+	private String measureProtectTradeSec;
 	
 	@Column(name = "PROT_CONFIDENTIAL_INFO")
 	private int protectConfInfo;
 	
+	@Column(name = "PATENTABLE_INNOV")
+	private int patentableInnov;
+	
+	@Column(name = "PATENTABLE_INNOV_FILE")
+	private String patentableInnovFile;
+	
+	@Column(name = "PER_ONG_TRADE_SEC")
+	private int perOngTradeSec;
+	
+	/*Risk Managements*/
 	@Column(name = "HAS_CONF_INFO")
 	private int hasConfInfo;
+	
+	@Column(name = "PROTECT_TRADE_SEC")
+	private String protectTradeSce;
 	
 	@Column(name = "HAS_IP_POLICY")
 	private int hasIpPolicy;
@@ -91,9 +113,28 @@ public class UserDetailModel implements Serializable {
 	@Column(name = "THIRD_PARTY_INS")
 	private String thirdPartyIns;
 	
+	@Column(name = "DOES_COMP_HAS_OVER_IP_GOV")
+	private int doesCompHasOverIpGov;
+	
 	@Column(name = "HAS_OVER_IP_GOV")
 	private String hasOverIpGov;
 	
+	@Column(name = "EMP_AGREE_UNIT")
+	private String empAgreeUtil;
+	
+	@Column(name = "LAST_NDA_AGREE")
+	private String lastNDAAgree;
+	
+	@Column(name = "IPR_DOCKETING")
+	private String iprDocketing;
+	
+	@Column(name = "AMT_FOUND")
+	private int amtFound;
+	
+	@Column(name = "COMP_BENCHMARK")
+	private String compBenchmark;
+	
+	/*Finance Detail*/
 	@Column(name = "ANN_REVENUE")
 	private String annualRev;
 	
@@ -123,6 +164,21 @@ public class UserDetailModel implements Serializable {
 	
 	@Column(name = "LIC_PROP")
 	private int licProp;
+	
+	@Column(name = "GROSS_REVENUE")
+	private int grossRevenue;
+	
+	@Column(name = "PROJECTED_SALE")
+	private int projectedSale;
+	
+	@Column(name = "REV_TO_RandD")
+	private String revToRandD;
+	
+	@Column(name = "AMT_SPEND")
+	private int amtSpend;
+	
+	@Column(name = "SPEND_BIZ_UNIT")
+	private int  spendBizUnit;
 	
 	@Column(name = "USER_NAME")
 	private String userName;
@@ -168,6 +224,108 @@ public class UserDetailModel implements Serializable {
 	
 	@Column(name = "BUSINESS_STRATEGY")
 	private int businesStrategy;
+	
+	@Column(name = "PRIMARY_INDUSTRY")
+	private String primaryIndus;
+	
+	
+	/*R&D*/
+	@Column(name = "COMP_COND_IP_POLICY")
+	private int compCondIpPolicy;
+	
+	@Column(name = "INTELLI_MONITOR")
+	private int intelliMonitor;
+	
+	@Column(name = "SPACE_ANALY")
+	private int spaceAnaly;
+	
+	@Column(name = "RandD_IN_CENT_ORG")
+	private int randDInCentOrg;
+	
+	@Column(name = "INNOV_FROM_INT_EMP")
+	private int innovFromIntEmp;
+	
+	@Column(name = "BIZ_UNIT_CONDUCT")
+	private String bizUnitConduct;
+	
+	@Column(name = "EMP_SIGN_NDA")
+	private int empSignNDA;
+	
+	@Column(name = "OPEN_INNOV_PORTAL")
+	private int openInnovPortal;
+	
+	@Column(name = "OPEN_INNOV_THIRD_PARTY")
+	private int openInnovThirdParty;
+	
+	
+	/*IP-Governance*/
+	
+	@Column(name = "EXTRACT_VALUE")
+	private String extractValue;
+	
+	@Column(name = "COMP_EXT_VALUE")
+	private String compExtValue;
+	
+	@Column(name = "COMP_EXT_THROUGH")
+	private String compExtThrough;
+	
+	@Column(name = "INTER_COMP_IP_AGREE")
+	private int interCompIpAgree;
+	
+	@Column(name = "TRAIN_FOR_SECURE")
+	private int trainForSecure;
+	
+	@Column(name = "EMP_HAND_BOOK")
+	private int empHandbook;
+	
+	@Column(name = "IP_AS_FIN_REPORT")
+	private int ipAsFinReport;
+	
+	@Column(name = "REVIEW_AGGR")
+	private int reviewAggr;
+	
+	@Column(name = "DEF_IP_STRATG")
+	private int defIpStratg;
+	
+	@Column(name = "IP_AUDITS")
+	private int ipAudits;
+	
+	@Column(name = "IP_RIGHTS_AT_EMP_TIME")
+	private int ipRightsAtEmptTime;
+	
+	@Column(name = "EMP_RECV_ADD_INCENT")
+	private int empRecvAddIncent;
+	
+	/*3rd Party*/
+	@Column(name = "COMP_FOR_INVEST")
+	private int compForInvest;
+	
+	@Column(name = "ACQ_PRO_MandA")
+	private int acqProcMandA = 0;
+	
+	@Column(name = "ENG_JOINT_DEV")
+	private int engJointDev;
+	
+	@Column(name = "CONTRACT_RES_ORG")
+	private int contractResOrg;
+	
+	@Column(name = "ORG_COMP_INT")
+	private int orgCompInt;
+	
+	@Column(name = "PAST_IP_RIGHTS")
+	private int pastIpRights;
+	
+	@Column(name = "DEDICAT_STAF_RES")
+	private int dedicatStafRes;
+	
+	@Column(name = "CO_PROMO_AGREE")
+	private int coPromoAgree;
+	
+	@Column(name = "IND_SUBMIT_IDEA")
+	private int indSubmitIdea;
+	
+	@Column(name = "GATHER_IDEAS")
+	private int gatherIdeas;
 	
 //	public int getUserDetId() {
 //		return userDetId;
@@ -551,6 +709,414 @@ public class UserDetailModel implements Serializable {
 
 	public void setUserID(final String userID) {
 		this.userID = userID;
+	}
+
+	public String getHowPreserveCopyRight() {
+		return howPreserveCopyRight;
+	}
+
+	public void setHowPreserveCopyRight(String howPreserveCopyRight) {
+		this.howPreserveCopyRight = howPreserveCopyRight;
+	}
+
+	public String getWherRegTradeMark() {
+		return wherRegTradeMark;
+	}
+
+	public void setWherRegTradeMark(String wherRegTradeMark) {
+		this.wherRegTradeMark = wherRegTradeMark;
+	}
+
+	public String getFrameMngCyberSecRisk() {
+		return frameMngCyberSecRisk;
+	}
+
+	public void setFrameMngCyberSecRisk(String frameMngCyberSecRisk) {
+		this.frameMngCyberSecRisk = frameMngCyberSecRisk;
+	}
+
+	public String getMeasureProtectTradeSec() {
+		return measureProtectTradeSec;
+	}
+
+	public void setMeasureProtectTradeSec(String measureProtectTradeSec) {
+		this.measureProtectTradeSec = measureProtectTradeSec;
+	}
+
+	public int getPatentableInnov() {
+		return patentableInnov;
+	}
+
+	public void setPatentableInnov(int patentableInnov) {
+		this.patentableInnov = patentableInnov;
+	}
+
+	public String getPatentableInnovFile() {
+		return patentableInnovFile;
+	}
+
+	public void setPatentableInnovFile(String patentableInnovFile) {
+		this.patentableInnovFile = patentableInnovFile;
+	}
+
+	public int getPerOngTradeSec() {
+		return perOngTradeSec;
+	}
+
+	public void setPerOngTradeSec(int perOngTradeSec) {
+		this.perOngTradeSec = perOngTradeSec;
+	}
+
+	public String getProtectTradeSce() {
+		return protectTradeSce;
+	}
+
+	public void setProtectTradeSce(String protectTradeSce) {
+		this.protectTradeSce = protectTradeSce;
+	}
+
+	public int getDoesCompHasOverIpGov() {
+		return doesCompHasOverIpGov;
+	}
+
+	public void setDoesCompHasOverIpGov(int doesCompHasOverIpGov) {
+		this.doesCompHasOverIpGov = doesCompHasOverIpGov;
+	}
+
+	public String getEmpAgreeUtil() {
+		return empAgreeUtil;
+	}
+
+	public void setEmpAgreeUtil(String empAgreeUtil) {
+		this.empAgreeUtil = empAgreeUtil;
+	}
+
+	public String getLastNDAAgree() {
+		return lastNDAAgree;
+	}
+
+	public void setLastNDAAgree(String lastNDAAgree) {
+		this.lastNDAAgree = lastNDAAgree;
+	}
+
+	public String getIprDocketing() {
+		return iprDocketing;
+	}
+
+	public void setIprDocketing(String iprDocketing) {
+		this.iprDocketing = iprDocketing;
+	}
+
+	public int getAmtFound() {
+		return amtFound;
+	}
+
+	public void setAmtFound(int amtFound) {
+		this.amtFound = amtFound;
+	}
+
+	public String getCompBenchmark() {
+		return compBenchmark;
+	}
+
+	public void setCompBenchmark(String compBenchmark) {
+		this.compBenchmark = compBenchmark;
+	}
+
+	public int getGrossRevenue() {
+		return grossRevenue;
+	}
+
+	public void setGrossRevenue(int grossRevenue) {
+		this.grossRevenue = grossRevenue;
+	}
+
+	public int getProjectedSale() {
+		return projectedSale;
+	}
+
+	public void setProjectedSale(int projectedSale) {
+		this.projectedSale = projectedSale;
+	}
+
+	public String getRevToRandD() {
+		return revToRandD;
+	}
+
+	public void setRevToRandD(String revToRandD) {
+		this.revToRandD = revToRandD;
+	}
+
+	public int getAmtSpend() {
+		return amtSpend;
+	}
+
+	public void setAmtSpend(int amtSpend) {
+		this.amtSpend = amtSpend;
+	}
+
+	public int getSpendBizUnit() {
+		return spendBizUnit;
+	}
+
+	public void setSpendBizUnit(int spendBizUnit) {
+		this.spendBizUnit = spendBizUnit;
+	}
+
+	public String getPrimaryIndus() {
+		return primaryIndus;
+	}
+
+	public void setPrimaryIndus(String primaryIndus) {
+		this.primaryIndus = primaryIndus;
+	}
+
+	public int getCompCondIpPolicy() {
+		return compCondIpPolicy;
+	}
+
+	public void setCompCondIpPolicy(int compCondIpPolicy) {
+		this.compCondIpPolicy = compCondIpPolicy;
+	}
+
+	public int getIntelliMonitor() {
+		return intelliMonitor;
+	}
+
+	public void setIntelliMonitor(int intelliMonitor) {
+		this.intelliMonitor = intelliMonitor;
+	}
+
+	public int getSpaceAnaly() {
+		return spaceAnaly;
+	}
+
+	public void setSpaceAnaly(int spaceAnaly) {
+		this.spaceAnaly = spaceAnaly;
+	}
+
+	public int getRandDInCentOrg() {
+		return randDInCentOrg;
+	}
+
+	public void setRandDInCentOrg(int randDInCentOrg) {
+		this.randDInCentOrg = randDInCentOrg;
+	}
+
+	public int getInnovFromIntEmp() {
+		return innovFromIntEmp;
+	}
+
+	public void setInnovFromIntEmp(int innovFromIntEmp) {
+		this.innovFromIntEmp = innovFromIntEmp;
+	}
+
+	public String getBizUnitConduct() {
+		return bizUnitConduct;
+	}
+
+	public void setBizUnitConduct(String bizUnitConduct) {
+		this.bizUnitConduct = bizUnitConduct;
+	}
+
+	public int getEmpSignNDA() {
+		return empSignNDA;
+	}
+
+	public void setEmpSignNDA(int empSignNDA) {
+		this.empSignNDA = empSignNDA;
+	}
+
+	public int getOpenInnovPortal() {
+		return openInnovPortal;
+	}
+
+	public void setOpenInnovPortal(int openInnovPortal) {
+		this.openInnovPortal = openInnovPortal;
+	}
+
+	public int getOpenInnovThirdParty() {
+		return openInnovThirdParty;
+	}
+
+	public void setOpenInnovThirdParty(int openInnovThirdParty) {
+		this.openInnovThirdParty = openInnovThirdParty;
+	}
+
+	public String getExtractValue() {
+		return extractValue;
+	}
+
+	public void setExtractValue(String extractValue) {
+		this.extractValue = extractValue;
+	}
+
+	public String getCompExtValue() {
+		return compExtValue;
+	}
+
+	public void setCompExtValue(String compExtValue) {
+		this.compExtValue = compExtValue;
+	}
+
+	public String getCompExtThrough() {
+		return compExtThrough;
+	}
+
+	public void setCompExtThrough(String compExtThrough) {
+		this.compExtThrough = compExtThrough;
+	}
+
+	public int getInterCompIpAgree() {
+		return interCompIpAgree;
+	}
+
+	public void setInterCompIpAgree(int interCompIpAgree) {
+		this.interCompIpAgree = interCompIpAgree;
+	}
+
+	public int getTrainForSecure() {
+		return trainForSecure;
+	}
+
+	public void setTrainForSecure(int trainForSecure) {
+		this.trainForSecure = trainForSecure;
+	}
+
+	public int getEmpHandbook() {
+		return empHandbook;
+	}
+
+	public void setEmpHandbook(int empHandbook) {
+		this.empHandbook = empHandbook;
+	}
+
+	public int getIpAsFinReport() {
+		return ipAsFinReport;
+	}
+
+	public void setIpAsFinReport(int ipAsFinReport) {
+		this.ipAsFinReport = ipAsFinReport;
+	}
+
+	public int getReviewAggr() {
+		return reviewAggr;
+	}
+
+	public void setReviewAggr(int reviewAggr) {
+		this.reviewAggr = reviewAggr;
+	}
+
+	public int getDefIpStratg() {
+		return defIpStratg;
+	}
+
+	public void setDefIpStratg(int defIpStratg) {
+		this.defIpStratg = defIpStratg;
+	}
+
+	public int getIpAudits() {
+		return ipAudits;
+	}
+
+	public void setIpAudits(int ipAudits) {
+		this.ipAudits = ipAudits;
+	}
+
+	public int getIpRightsAtEmptTime() {
+		return ipRightsAtEmptTime;
+	}
+
+	public void setIpRightsAtEmptTime(int ipRightsAtEmptTime) {
+		this.ipRightsAtEmptTime = ipRightsAtEmptTime;
+	}
+
+	public int getEmpRecvAddIncent() {
+		return empRecvAddIncent;
+	}
+
+	public void setEmpRecvAddIncent(int empRecvAddIncent) {
+		this.empRecvAddIncent = empRecvAddIncent;
+	}
+
+	public int getCompForInvest() {
+		return compForInvest;
+	}
+
+	public void setCompForInvest(int compForInvest) {
+		this.compForInvest = compForInvest;
+	}
+
+	public int getAcqProcMandA() {
+		return acqProcMandA;
+	}
+
+	public void setAcqProcMandA(int acqProcMandA) {
+		this.acqProcMandA = acqProcMandA;
+	}
+
+	public int getEngJointDev() {
+		return engJointDev;
+	}
+
+	public void setEngJointDev(int engJointDev) {
+		this.engJointDev = engJointDev;
+	}
+
+	public int getContractResOrg() {
+		return contractResOrg;
+	}
+
+	public void setContractResOrg(int contractResOrg) {
+		this.contractResOrg = contractResOrg;
+	}
+
+	public int getOrgCompInt() {
+		return orgCompInt;
+	}
+
+	public void setOrgCompInt(int orgCompInt) {
+		this.orgCompInt = orgCompInt;
+	}
+
+	public int getPastIpRights() {
+		return pastIpRights;
+	}
+
+	public void setPastIpRights(int pastIpRights) {
+		this.pastIpRights = pastIpRights;
+	}
+
+	public int getDedicatStafRes() {
+		return dedicatStafRes;
+	}
+
+	public void setDedicatStafRes(int dedicatStafRes) {
+		this.dedicatStafRes = dedicatStafRes;
+	}
+
+	public int getCoPromoAgree() {
+		return coPromoAgree;
+	}
+
+	public void setCoPromoAgree(int coPromoAgree) {
+		this.coPromoAgree = coPromoAgree;
+	}
+
+	public int getIndSubmitIdea() {
+		return indSubmitIdea;
+	}
+
+	public void setIndSubmitIdea(int indSubmitIdea) {
+		this.indSubmitIdea = indSubmitIdea;
+	}
+
+	public int getGatherIdeas() {
+		return gatherIdeas;
+	}
+
+	public void setGatherIdeas(int gatherIdeas) {
+		this.gatherIdeas = gatherIdeas;
 	}
 
 	

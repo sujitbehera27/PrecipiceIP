@@ -213,13 +213,128 @@ homeApp.controller('riskMngDetailCtrl', function($scope,$rootScope,$state, $http
 			 }
 			// $('.nav-tabs > .active').next('li').find('a').trigger('click');
 			// $state.go('eventmenu.financedet');
-			 $state.go('form.summary');
+			 $state.go('form.r&d');
 //			 $scope.lclUserDetail = userDetail;
 			// $window.location.href= './financedet.html'
 		 });
 	}
 	$scope.goBack = function(){
 		$state.go('form.trade');
+	}
+});
+homeApp.controller('researchDeveleopmentCtrl', function($scope,$rootScope,$state, $http,useridService) {
+	// Page:Risk Management :: Submit
+	$scope.resDevDetSubmit = function(userDetail){
+		console.log("***********Risk Detail Controller************");
+		userDetail.formID = 6;
+		//userDetail.userID = $rootScope.userId;
+		userDetail.userID = useridService.getUserId();
+		$rootScope.userDetail.formID = 2;
+		$rootScope.userDetail.compCondIpPolicy = userDetail.compCondIpPolicy;
+		$rootScope.userDetail.intelliMonitor = userDetail.intelliMonitor;
+		$rootScope.userDetail.spaceAnaly = userDetail.spaceAnaly;
+		$rootScope.userDetail.randDInCentOrg = userDetail.randDInCentOrg;
+		$rootScope.userDetail.innovFromIntEmp = userDetail.innovFromIntEmp;
+		$rootScope.userDetail.bizUnitConduct = userDetail.bizUnitConduct;
+		$rootScope.userDetail.empSignNDA = userDetail.empSignNDA;
+		$rootScope.userDetail.openInnovPortal = userDetail.openInnovPortal;
+		$rootScope.userDetail.openInnovThirdParty = userDetail.openInnovThirdParty;
+		
+		
+		$http.post($rootScope.host+"../rest/reg/user", $rootScope.userDetail)
+		 .success(function(response){
+			 console.log("=======> " + response);
+			 if(response != ""){
+				 $rootScope.userDetail = response;
+			 }
+			// $('.nav-tabs > .active').next('li').find('a').trigger('click');
+			// $state.go('eventmenu.financedet');
+			 $state.go('form.ipgovern');
+//			 $state.go('form.summary');
+//			 $scope.lclUserDetail = userDetail;
+			// $window.location.href= './financedet.html'
+		 });
+	}
+	$scope.goBack = function(){
+		$state.go('form.risk');
+	}
+});
+homeApp.controller('ipGovernCtrl', function($scope,$rootScope,$state, $http,useridService) {
+	// Page:Risk Management :: Submit
+	$scope.ipGovernDetSubmit = function(userDetail){
+		console.log("***********Risk Detail Controller************");
+		userDetail.formID = 7;
+		//userDetail.userID = $rootScope.userId;
+		userDetail.userID = useridService.getUserId();
+		$rootScope.userDetail.formID = 2;
+		$rootScope.userDetail.extractValue = userDetail.extractValue;
+		$rootScope.userDetail.compExtValue = userDetail.compExtValue;
+		$rootScope.userDetail.compExtThrough = userDetail.compExtThrough;
+		$rootScope.userDetail.interCompIpAgree = userDetail.interCompIpAgree;
+		$rootScope.userDetail.trainForSecure = userDetail.trainForSecure;
+		$rootScope.userDetail.empHandbook = userDetail.empHandbook;
+		$rootScope.userDetail.ipAsFinReport = userDetail.ipAsFinReport;
+		$rootScope.userDetail.reviewAggr = userDetail.reviewAggr;
+		$rootScope.userDetail.defIpStratg = userDetail.defIpStratg;
+		$rootScope.userDetail.ipAudits = userDetail.ipAudits;
+		$rootScope.userDetail.ipRightsAtEmptTime = userDetail.ipRightsAtEmptTime;
+		$rootScope.userDetail.empRecvAddIncent = userDetail.empRecvAddIncent;
+		
+		
+		$http.post($rootScope.host+"../rest/reg/user", $rootScope.userDetail)
+		 .success(function(response){
+			 console.log("=======> " + response);
+			 if(response != ""){
+				 $rootScope.userDetail = response;
+			 }
+			// $('.nav-tabs > .active').next('li').find('a').trigger('click');
+			// $state.go('eventmenu.financedet');
+			 $state.go('form.thirdparty');
+//			 $state.go('form.summary');
+//			 $scope.lclUserDetail = userDetail;
+			// $window.location.href= './financedet.html'
+		 });
+	}
+	$scope.goBack = function(){
+		$state.go('form.r&d');
+	}
+});
+homeApp.controller('thirdPartyCtrl', function($scope,$rootScope,$state, $http,useridService) {
+	// Page:Risk Management :: Submit
+	$scope.thirdPartDetDetSubmit = function(userDetail){
+		console.log("***********Risk Detail Controller************");
+		userDetail.formID = 8;
+		//userDetail.userID = $rootScope.userId;
+		userDetail.userID = useridService.getUserId();
+		$rootScope.userDetail.formID = 2;
+		$rootScope.userDetail.compForInvest = userDetail.compForInvest;
+		$rootScope.userDetail.acqProcMandA = userDetail.acqProcMandA;
+		$rootScope.userDetail.engJointDev = userDetail.engJointDev;
+		$rootScope.userDetail.contractResOrg = userDetail.contractResOrg;
+		$rootScope.userDetail.orgCompInt = userDetail.orgCompInt;
+		$rootScope.userDetail.bizUnitConduct = userDetail.bizUnitConduct;
+		$rootScope.userDetail.pastIpRights = userDetail.pastIpRights;
+		$rootScope.userDetail.dedicatStafRes = userDetail.dedicatStafRes;
+		$rootScope.userDetail.coPromoAgree = userDetail.coPromoAgree;
+		$rootScope.userDetail.indSubmitIdea = userDetail.indSubmitIdea;
+		$rootScope.userDetail.gatherIdeas = userDetail.gatherIdeas;
+		
+		
+		$http.post($rootScope.host+"../rest/reg/user", $rootScope.userDetail)
+		 .success(function(response){
+			 console.log("=======> " + response);
+			 if(response != ""){
+				 $rootScope.userDetail = response;
+			 }
+			// $('.nav-tabs > .active').next('li').find('a').trigger('click');
+			// $state.go('eventmenu.financedet');
+			 $state.go('form.summary');
+//			 $scope.lclUserDetail = userDetail;
+			// $window.location.href= './financedet.html'
+		 });
+	}
+	$scope.goBack = function(){
+		$state.go('form.ipgovern');
 	}
 });
 homeApp.controller('logoutController',function($location, $scope,$rootScope,$state){

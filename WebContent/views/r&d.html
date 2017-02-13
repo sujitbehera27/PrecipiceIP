@@ -1,0 +1,144 @@
+<div ng-controller="researchDeveleopmentCtrl">
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+			<legend>Research And Development</legend>
+			
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company conduct industry based IP Policy and Practices Benchmarking ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forCompCondIpPolicy-Y">
+                        <input type="radio" ng-model="userDetail.compCondIpPolicy" ng-value="1" name="compCondIpPolicy" id="forCompCondIpPolicy-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forCompCondIpPolicy-N">
+                        <input type="radio" ng-model="userDetail.compCondIpPolicy"  ng-value="0" name="compCondIpPolicy" id="forCompCondIpPolicy-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company engage in Competitive Intelligence monitoring ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forintelliMonitor-Y">
+                        <input type="radio" ng-model="userDetail.intelliMonitor" ng-value="1" name="intelliMonitor" id="forintelliMonitor-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forGatherInnoIdea-N">
+                        <input type="radio" ng-model="userDetail.intelliMonitor"  ng-value="0" name="intelliMonitor" id="forintelliMonitor-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company have policies governing White space analysis and ideation sessions ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forSpaceAnaly-Y">
+                        <input type="radio" ng-model="userDetail.spaceAnaly" ng-value="1" name="spaceAnaly" id="forSpaceAnaly-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forSpaceAnaly-N">
+                        <input type="radio" ng-model="userDetail.spaceAnaly"  ng-value="0" name="spaceAnaly" id="forSpaceAnaly-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company house all of its R&D in one central organization ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forRandDInCentOrg-Y">
+                        <input type="radio" ng-model="userDetail.randDInCentOrg" ng-value="1" name="randDInCentOrg" id="forRandDInCentOrg-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forRandDInCentOrg-N">
+                        <input type="radio" ng-model="userDetail.randDInCentOrg"  ng-value="0" name="randDInCentOrg" id="forRandDInCentOrg-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company gather ideas for innovation from internal employees not embedded within the R&D or NPP departments ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forInnovFromIntEmp-Y">
+                        <input type="radio" ng-model="userDetail.innovFromIntEmp" ng-value="1" name="innovFromIntEmp" id="forInnovFromIntEmp-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forInnovFromIntEmp-N">
+                        <input type="radio" ng-model="userDetail.innovFromIntEmp"  ng-value="0" name="innovFromIntEmp" id="forInnovFromIntEmp-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row" >
+                <label class="col-md-4 control-label" for="forBizUnitConduct">Does each business unit conduct its own R&D and/or new product planning (NPP):</label>
+                <div class="col-md-4">
+                    <select id="forBizUnitConduct" ng-model="userDetail.bizUnitConduct" name="noOfEmp" class="form-control input-sm">
+                        <option value="">Select One</option>
+                        <option value="Own R&D">Own R&D</option>
+                        <option value="New Product Planning">New Product Planning (NPP)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Do all corporate employees complete/sign a NDA at the initiation of employment ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forEmpSignNDA-Y">
+                        <input type="radio" ng-model="userDetail.empSignNDA" ng-value="1" name="empSignNDA" id="forEmpSignNDA-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forEmpSignNDA-N">
+                        <input type="radio" ng-model="userDetail.empSignNDA"  ng-value="0" name="empSignNDA" id="forEmpSignNDA-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+
+               <div class="row">
+                <label class="col-md-4 control-label" >Do individuals submitting ideas through an open innovation portal receive any remuneration ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forOpenInnovPortal-Y">
+                        <input type="radio" ng-model="userDetail.openInnovPortal" ng-value="1" name="openInnovPortal" id="forOpenInnovPortal-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forOpenInnovPortal-N">
+                        <input type="radio" ng-model="userDetail.openInnovPortal"  ng-value="0" name="openInnovPortal" id="forOpenInnovPortal-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+               
+               <div class="row">
+                <label class="col-md-4 control-label" >Does the company invite open innovation from third parties corporations ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forOpenInnovThirdParty-Y">
+                        <input type="radio" ng-model="userDetail.openInnovThirdParty" ng-value="1" name="openInnovThirdParty" id="forOpenInnovThirdParty-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="foropenInnovThirdParty-N">
+                        <input type="radio" ng-model="userDetail.openInnovThirdParty"  ng-value="0" name="openInnovThirdParty" id="forOpenInnovThirdParty-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+               
+            <input type="hidden" ng-model="userDetail.formID" value="6"/>
+            <input type="hidden" ng-model="userDetail.userID"/>
+
+            <div class="row">
+                <div class="col-xs-offset-3 col-xs-8 " style="margin-left:70%;">
+                    <!-- <a style="background-color: #8c6316;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Edit Previous Changes</a> 
+                    <!-- <a style="background-color:green;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Save and Continue</a> -->
+                    <a style="background-color:#4775af;width: 160px;" class="btn btn-primary nexttab" data-toggle="tab"  ng-click="goBack()">Previous</a> 
+                    <a style="background-color:green;" href="#trd" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" ng-click="resDevDetSubmit(userDetail)">Save and Continue</a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>

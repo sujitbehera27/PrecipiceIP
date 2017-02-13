@@ -1,0 +1,162 @@
+<div ng-controller="thirdPartyCtrl">
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+			<legend>3rd Party Details</legend>
+
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company solicit ideas for invention from individuals outside the enterprise ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forCompForInvest-Y">
+                        <input type="radio" ng-model="userDetail.compForInvest" ng-value="1" name="CompForInvest" id="forCompForInvest-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forCompForInvest-N">
+                        <input type="radio" ng-model="userDetail.compForInvest"  ng-value="0" name="CompForInvest" id="forCompForInvest-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Has the company recently acquired IP through the process of M&A activity ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forAcqProcMandA-Y">
+                        <input type="radio" ng-model="userDetail.acqProcMandA" ng-value="1" name="acqProcMandA" id="forAcqProcMandA-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forAcqProcMandA-N">
+                        <input type="radio" ng-model="userDetail.acqProcMandA"  ng-value="0" name="acqProcMandA" id="forAcqProcMandA-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Is the company currently engaged in any joint development agreements ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forEngJointDev-Y">
+                        <input type="radio" ng-model="userDetail.engJointDev" ng-value="1" name="engJointDev" id="forEngJointDev-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forCompForInvest-N">
+                        <input type="radio" ng-model="userDetail.engJointDev"  ng-value="0" name="engJointDev" id="forEngJointDev-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company use contract research organizations for any R&D, phase I-IV pharmaceutical or biologic research, or marketing research where confidential details of products are required to be shared ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forContractResOrg-Y">
+                        <input type="radio" ng-model="userDetail.contractResOrg" ng-value="1" name="contractResOrg" id="forContractResOrg-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forContractResOrg-N">
+                        <input type="radio" ng-model="userDetail.contractResOrg"  ng-value="0" name="contractResOrg" id="forContractResOrg-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the organization conduct competitive intelligence to seek potential infringement or violation of its IPrights on an ongoing basis ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forOrgCompInt-Y">
+                        <input type="radio" ng-model="userDetail.orgCompInt" ng-value="1" name="orgCompInt" id="forOrgCompInt-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forContractResOrg-N">
+                        <input type="radio" ng-model="userDetail.orgCompInt"  ng-value="0" name="orgCompInt" id="forOrgCompInt-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+
+               <div class="row">
+                <label class="col-md-4 control-label" >Does/has the enterprise enforced its IP rights in the past </label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forPastIpRights-Y">
+                        <input type="radio" ng-model="userDetail.pastIpRights" ng-value="1" name="pastIpRights" id="forPastIpRights-Y"  >
+                        5 years ?
+                    </label>
+                    <label class="radio-inline" for="forPastIpRights-N">
+                        <input type="radio" ng-model="userDetail.pastIpRights"  ng-value="0" name="pastIpRights" id="forPastIpRights-N" >
+                        1 year ?
+                    </label>
+                </div>
+            </div>
+               
+               <div class="row">
+                <label class="col-md-4 control-label" >Does the enterprise have dedicated staffing and/or resources to seek/monitor the market for potential infringement or violation of its IP ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forDedicatStafRes-Y">
+                        <input type="radio" ng-model="userDetail.dedicatStafRes" ng-value="1" name="dedicatStafRes" id="forDedicatStafRes-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forDedicatStafRes-N">
+                        <input type="radio" ng-model="userDetail.dedicatStafRes"  ng-value="0" name="dedicatStafRes" id="forDedicatStafRes-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+               
+            <div class="row">
+                <label class="col-md-4 control-label" >Is the enterprise engaged in any co-promotion agreements of future or existing products ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forCoPromoAgree-Y">
+                        <input type="radio" ng-model="userDetail.coPromoAgree" ng-value="1" name="coPromoAgree" id="forCoPromoAgree-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forCoPromoAgree-N">
+                        <input type="radio" ng-model="userDetail.coPromoAgree"  ng-value="0" name="coPromoAgree" id="forCoPromoAgree-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Do individuals submitting ideas to the corporation assign their rights to any future IP generated from their ideas that are submitted ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forIndSubmitIdea-Y">
+                        <input type="radio" ng-model="userDetail.indSubmitIdea" ng-value="1" name="indSubmitIdea" id="forIndSubmitIdea-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forIndSubmitIdea-N">
+                        <input type="radio" ng-model="userDetail.indSubmitIdea"  ng-value="0" name="indSubmitIdea" id="forIndSubmitIdea-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-md-4 control-label" >Does the company gather innovative ideas through an outward facing web portal ?</label>
+                <div class="col-md-4" >
+                    <label class="radio-inline" for="forGatherIdeas-Y">
+                        <input type="radio" ng-model="userDetail.gatherIdeas" ng-value="1" name="enterpriseHave" id="forGatherIdeas-Y"  >
+                        Yes
+                    </label>
+                    <label class="radio-inline" for="forGatherIdeas-N">
+                        <input type="radio" ng-model="userDetail.gatherIdeas"  ng-value="0" name="enterpriseHave" id="forGatherIdeas-N" >
+                        No
+                    </label>
+                </div>
+            </div>
+            
+
+            <input type="hidden" ng-model="userDetail.formID" value="8"/>
+            <input type="hidden" ng-model="userDetail.userID"/>
+
+            <div class="row">
+                <div class="col-xs-offset-3 col-xs-8 " style="margin-left:70%;">
+                    <!-- <a style="background-color: #8c6316;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Edit Previous Changes</a> 
+                    <!-- <a style="background-color:green;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Save and Continue</a> -->
+                    <a style="background-color:#4775af;width: 160px;" class="btn btn-primary nexttab" data-toggle="tab"  ng-click="goBack()">Previous</a> 
+                    <a style="background-color:green;" href="#trd" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" ng-click="thirdPartDetDetSubmit(userDetail)">Save and Continue</a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>

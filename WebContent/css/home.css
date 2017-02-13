@@ -13,3 +13,11 @@
     height: 40px;
     margin-left: 82%;
 }
+
+.container {
+    width: 95%;
+}	
+
+.col-md-4 {
+    /* margin-bottom: 10px; */
+}

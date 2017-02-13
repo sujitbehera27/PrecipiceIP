@@ -32,7 +32,9 @@ public class UserDetail implements Serializable {
 	private int compIpPolicy;
 	private int compIpStrategy;
 	private int businesStrategy;
+	private String primaryIndus;
 	
+	/*Finance Detail*/
 	private String annualRev;
 	private String noOfEmp;
 	private List<String> investInRnD;
@@ -43,8 +45,15 @@ public class UserDetail implements Serializable {
 	private int sellService;
 	private int sellProdAndSvc;
 	private int licProp;
+	private int grossRevenue;
+	private int projectedSale;
+	private String revToRandD;
+	private int amtSpend;
+	private int  spendBizUnit;
 	
+	/*Risk Managements*/
 	private int hasConfInfo;
+	private String protectTradeSce;
 	private int hasIpPolicy;
 	private List<String> hasIpPolicyList;
 	private int agreementMngProt;
@@ -55,17 +64,68 @@ public class UserDetail implements Serializable {
 	private int selfInsIpLose;
 	private int purchedThirdPartyIns;
 	private List<String> thirdPartyIns;
+	private int doesCompHasOverIpGov;
 	private List<String> hasOverIpGov;
+	private List<String> empAgreeUtil;
+	private String lastNDAAgree;
+	private String iprDocketing;
+	private int amtFound;
+	private String compBenchmark;
 	
+	/*Trade Details*/
 	private int preserveCopyRight;
+	private List<String> howPreserveCopyRight;
 	private int regTradeMark;
+	private List<String> wherRegTradeMark;
 	private int domainRefBN;
 	private int domainRefPN;
 	private int tradeSec;
 	private int categoriTradeSec;
 	private int mngCyberSecRisk;
+	private String frameMngCyberSecRisk;
 	private int protectTradeSec;
+	private List<String> measureProtectTradeSec;
 	private int protectConfInfo;
+	private int patentableInnov;
+	private List<String> patentableInnovFile;
+	private int perOngTradeSec; 
+	
+	/*R&D*/
+	private int compCondIpPolicy;
+	private int intelliMonitor;
+	private int spaceAnaly;
+	private int randDInCentOrg;
+	private int innovFromIntEmp;
+	private String bizUnitConduct;
+	private int empSignNDA;
+	private int openInnovPortal;
+	private int openInnovThirdParty;
+	
+	/*IP-Governance*/
+	private String extractValue;
+	private List<String> compExtValue;
+	private List<String> compExtThrough;
+	private int interCompIpAgree;
+	private int trainForSecure;
+	private int empHandbook;
+	private int ipAsFinReport;
+	private int reviewAggr;
+	private int defIpStratg;
+	private int ipAudits;
+	private int ipRightsAtEmptTime;
+	private int empRecvAddIncent;
+	
+	/*3rd Party*/
+	private int compForInvest;
+	private int acqProcMandA;
+	private int engJointDev;
+	private int contractResOrg;
+	private int orgCompInt;
+	private int pastIpRights;
+	private int dedicatStafRes;
+	private int coPromoAgree;
+	private int indSubmitIdea;
+	private int gatherIdeas;
 	
 	private int formID; // Will Get From UI. 1-Comp Det, 2-Finance Det, 3-Biz Det, 4-Trade Det, 5-Risk Mng.
 	
@@ -460,6 +520,414 @@ public class UserDetail implements Serializable {
 
 	public void setFormID(int formID) {
 		this.formID = formID;
+	}
+
+	public String getPrimaryIndus() {
+		return primaryIndus;
+	}
+
+	public void setPrimaryIndus(String primaryIndus) {
+		this.primaryIndus = primaryIndus;
+	}
+
+	public int getGrossRevenue() {
+		return grossRevenue;
+	}
+
+	public void setGrossRevenue(int grossRevenue) {
+		this.grossRevenue = grossRevenue;
+	}
+
+	public int getProjectedSale() {
+		return projectedSale;
+	}
+
+	public void setProjectedSale(int projectedSale) {
+		this.projectedSale = projectedSale;
+	}
+
+	public String getRevToRandD() {
+		return revToRandD;
+	}
+
+	public void setRevToRandD(String revToRandD) {
+		this.revToRandD = revToRandD;
+	}
+
+	public int getAmtSpend() {
+		return amtSpend;
+	}
+
+	public void setAmtSpend(int amtSpend) {
+		this.amtSpend = amtSpend;
+	}
+
+	public int getSpendBizUnit() {
+		return spendBizUnit;
+	}
+
+	public void setSpendBizUnit(int spendBizUnit) {
+		this.spendBizUnit = spendBizUnit;
+	}
+
+	public String getProtectTradeSce() {
+		return protectTradeSce;
+	}
+
+	public void setProtectTradeSce(String protectTradeSce) {
+		this.protectTradeSce = protectTradeSce;
+	}
+
+	public int getDoesCompHasOverIpGov() {
+		return doesCompHasOverIpGov;
+	}
+
+	public void setDoesCompHasOverIpGov(int doesCompHasOverIpGov) {
+		this.doesCompHasOverIpGov = doesCompHasOverIpGov;
+	}
+
+	public List<String> getEmpAgreeUtil() {
+		return empAgreeUtil;
+	}
+
+	public void setEmpAgreeUtil(List<String> empAgreeUtil) {
+		this.empAgreeUtil = empAgreeUtil;
+	}
+
+	public String getLastNDAAgree() {
+		return lastNDAAgree;
+	}
+
+	public void setLastNDAAgree(String lastNDAAgree) {
+		this.lastNDAAgree = lastNDAAgree;
+	}
+
+	public String getIprDocketing() {
+		return iprDocketing;
+	}
+
+	public void setIprDocketing(String iprDocketing) {
+		this.iprDocketing = iprDocketing;
+	}
+
+	public int getAmtFound() {
+		return amtFound;
+	}
+
+	public void setAmtFound(int amtFound) {
+		this.amtFound = amtFound;
+	}
+
+	public String getCompBenchmark() {
+		return compBenchmark;
+	}
+
+	public void setCompBenchmark(String compBenchmark) {
+		this.compBenchmark = compBenchmark;
+	}
+
+	public List<String> getHowPreserveCopyRight() {
+		return howPreserveCopyRight;
+	}
+
+	public void setHowPreserveCopyRight(List<String> howPreserveCopyRight) {
+		this.howPreserveCopyRight = howPreserveCopyRight;
+	}
+
+	public List<String> getWherRegTradeMark() {
+		return wherRegTradeMark;
+	}
+
+	public void setWherRegTradeMark(List<String> wherRegTradeMark) {
+		this.wherRegTradeMark = wherRegTradeMark;
+	}
+
+	public String getFrameMngCyberSecRisk() {
+		return frameMngCyberSecRisk;
+	}
+
+	public void setFrameMngCyberSecRisk(String frameMngCyberSecRisk) {
+		this.frameMngCyberSecRisk = frameMngCyberSecRisk;
+	}
+
+	public List<String> getMeasureProtectTradeSec() {
+		return measureProtectTradeSec;
+	}
+
+	public void setMeasureProtectTradeSec(List<String> measureProtectTradeSec) {
+		this.measureProtectTradeSec = measureProtectTradeSec;
+	}
+
+	public int getPatentableInnov() {
+		return patentableInnov;
+	}
+
+	public void setPatentableInnov(int patentableInnov) {
+		this.patentableInnov = patentableInnov;
+	}
+
+	public List<String> getPatentableInnovFile() {
+		return patentableInnovFile;
+	}
+
+	public void setPatentableInnovFile(List<String> patentableInnovFile) {
+		this.patentableInnovFile = patentableInnovFile;
+	}
+
+	public int getPerOngTradeSec() {
+		return perOngTradeSec;
+	}
+
+	public void setPerOngTradeSec(int perOngTradeSec) {
+		this.perOngTradeSec = perOngTradeSec;
+	}
+
+	public int getCompCondIpPolicy() {
+		return compCondIpPolicy;
+	}
+
+	public void setCompCondIpPolicy(int compCondIpPolicy) {
+		this.compCondIpPolicy = compCondIpPolicy;
+	}
+
+	public int getIntelliMonitor() {
+		return intelliMonitor;
+	}
+
+	public void setIntelliMonitor(int intelliMonitor) {
+		this.intelliMonitor = intelliMonitor;
+	}
+
+	public int getSpaceAnaly() {
+		return spaceAnaly;
+	}
+
+	public void setSpaceAnaly(int spaceAnaly) {
+		this.spaceAnaly = spaceAnaly;
+	}
+
+	public int getRandDInCentOrg() {
+		return randDInCentOrg;
+	}
+
+	public void setRandDInCentOrg(int randDInCentOrg) {
+		this.randDInCentOrg = randDInCentOrg;
+	}
+
+	public int getInnovFromIntEmp() {
+		return innovFromIntEmp;
+	}
+
+	public void setInnovFromIntEmp(int innovFromIntEmp) {
+		this.innovFromIntEmp = innovFromIntEmp;
+	}
+
+	public String getBizUnitConduct() {
+		return bizUnitConduct;
+	}
+
+	public void setBizUnitConduct(String bizUnitConduct) {
+		this.bizUnitConduct = bizUnitConduct;
+	}
+
+	public int getEmpSignNDA() {
+		return empSignNDA;
+	}
+
+	public void setEmpSignNDA(int empSignNDA) {
+		this.empSignNDA = empSignNDA;
+	}
+
+	public int getOpenInnovPortal() {
+		return openInnovPortal;
+	}
+
+	public void setOpenInnovPortal(int openInnovPortal) {
+		this.openInnovPortal = openInnovPortal;
+	}
+
+	public int getOpenInnovThirdParty() {
+		return openInnovThirdParty;
+	}
+
+	public void setOpenInnovThirdParty(int openInnovThirdParty) {
+		this.openInnovThirdParty = openInnovThirdParty;
+	}
+
+	public String getExtractValue() {
+		return extractValue;
+	}
+
+	public void setExtractValue(String extractValue) {
+		this.extractValue = extractValue;
+	}
+
+	public List<String> getCompExtValue() {
+		return compExtValue;
+	}
+
+	public void setCompExtValue(List<String> compExtValue) {
+		this.compExtValue = compExtValue;
+	}
+
+	public List<String> getCompExtThrough() {
+		return compExtThrough;
+	}
+
+	public void setCompExtThrough(List<String> compExtThrough) {
+		this.compExtThrough = compExtThrough;
+	}
+
+	public int getInterCompIpAgree() {
+		return interCompIpAgree;
+	}
+
+	public void setInterCompIpAgree(int interCompIpAgree) {
+		this.interCompIpAgree = interCompIpAgree;
+	}
+
+	public int getTrainForSecure() {
+		return trainForSecure;
+	}
+
+	public void setTrainForSecure(int trainForSecure) {
+		this.trainForSecure = trainForSecure;
+	}
+
+	public int getEmpHandbook() {
+		return empHandbook;
+	}
+
+	public void setEmpHandbook(int empHandbook) {
+		this.empHandbook = empHandbook;
+	}
+
+	public int getIpAsFinReport() {
+		return ipAsFinReport;
+	}
+
+	public void setIpAsFinReport(int ipAsFinReport) {
+		this.ipAsFinReport = ipAsFinReport;
+	}
+
+	public int getReviewAggr() {
+		return reviewAggr;
+	}
+
+	public void setReviewAggr(int reviewAggr) {
+		this.reviewAggr = reviewAggr;
+	}
+
+	public int getDefIpStratg() {
+		return defIpStratg;
+	}
+
+	public void setDefIpStratg(int defIpStratg) {
+		this.defIpStratg = defIpStratg;
+	}
+
+	public int getIpAudits() {
+		return ipAudits;
+	}
+
+	public void setIpAudits(int ipAudits) {
+		this.ipAudits = ipAudits;
+	}
+
+	public int getIpRightsAtEmptTime() {
+		return ipRightsAtEmptTime;
+	}
+
+	public void setIpRightsAtEmptTime(int ipRightsAtEmptTime) {
+		this.ipRightsAtEmptTime = ipRightsAtEmptTime;
+	}
+
+	public int getEmpRecvAddIncent() {
+		return empRecvAddIncent;
+	}
+
+	public void setEmpRecvAddIncent(int empRecvAddIncent) {
+		this.empRecvAddIncent = empRecvAddIncent;
+	}
+
+	public int getCompForInvest() {
+		return compForInvest;
+	}
+
+	public void setCompForInvest(int compForInvest) {
+		this.compForInvest = compForInvest;
+	}
+
+	public int getAcqProcMandA() {
+		return acqProcMandA;
+	}
+
+	public void setAcqProcMandA(int acqProcMandA) {
+		this.acqProcMandA = acqProcMandA;
+	}
+
+	public int getEngJointDev() {
+		return engJointDev;
+	}
+
+	public void setEngJointDev(int engJointDev) {
+		this.engJointDev = engJointDev;
+	}
+
+	public int getContractResOrg() {
+		return contractResOrg;
+	}
+
+	public void setContractResOrg(int contractResOrg) {
+		this.contractResOrg = contractResOrg;
+	}
+
+	public int getOrgCompInt() {
+		return orgCompInt;
+	}
+
+	public void setOrgCompInt(int orgCompInt) {
+		this.orgCompInt = orgCompInt;
+	}
+
+	public int getPastIpRights() {
+		return pastIpRights;
+	}
+
+	public void setPastIpRights(int pastIpRights) {
+		this.pastIpRights = pastIpRights;
+	}
+
+	public int getDedicatStafRes() {
+		return dedicatStafRes;
+	}
+
+	public void setDedicatStafRes(int dedicatStafRes) {
+		this.dedicatStafRes = dedicatStafRes;
+	}
+
+	public int getCoPromoAgree() {
+		return coPromoAgree;
+	}
+
+	public void setCoPromoAgree(int coPromoAgree) {
+		this.coPromoAgree = coPromoAgree;
+	}
+
+	public int getIndSubmitIdea() {
+		return indSubmitIdea;
+	}
+
+	public void setIndSubmitIdea(int indSubmitIdea) {
+		this.indSubmitIdea = indSubmitIdea;
+	}
+
+	public int getGatherIdeas() {
+		return gatherIdeas;
+	}
+
+	public void setGatherIdeas(int gatherIdeas) {
+		this.gatherIdeas = gatherIdeas;
 	}
 	
 }
