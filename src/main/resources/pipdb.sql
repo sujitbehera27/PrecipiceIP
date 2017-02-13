@@ -39,11 +39,11 @@ CREATE TABLE `user_det` (
   `SELL_SERVICE` tinyint(1) DEFAULT '0',
   `SELL_PROD_AND_SVC` tinyint(1) DEFAULT '0',
   `LIC_PROP` tinyint(1) DEFAULT '0',
-  `GROSS_REVENUE` int(11) DEFAULT '0',
-  `PROJECTED_SALE` int(11) DEFAULT '0',
-  `REV_TO_RandD` varchar(50) DEFAULT NULL,
-  `AMT_SPEND` int(11) DEFAULT '0',
-  `SPEND_BIZ_UNIT` int(11) unsigned zerofill DEFAULT '00000000000',
+  `GROSS_REVENUE` int(15) DEFAULT '0',
+  `PROJECTED_SALE` int(15) DEFAULT '0',
+  `REV_TO_RandD` int(15) DEFAULT NULL,
+  `AMT_SPEND` int(15) DEFAULT '0',
+  `SPEND_BIZ_UNIT` int(15) DEFAULT '0',
   `HAS_CONF_INFO` int(1) DEFAULT '0',
   `PROTECT_TRADE_SEC` varchar(50) DEFAULT NULL,
   `HAS_IP_POLICY` tinyint(1) DEFAULT '0',
@@ -112,6 +112,6 @@ CREATE TABLE `user_det` (
   `GATHER_IDEAS` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`USER_DET_ID`),
   UNIQUE KEY `USER_ID` (`USER_ID`)
-) ;
+);
 
 
