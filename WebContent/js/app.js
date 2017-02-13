@@ -18,6 +18,11 @@ var homeApp = angular.module('formApp', ['ngAnimate', 'ui.router']).run(function
  $stateProvider
  
      // route to show our basic form (/form)
+	.state('riskScore', {
+	     url: '/riskScore',
+	     templateUrl: 'report.html',
+	     controller: 'reportController'
+	 })
      .state('form', {
          url: '/form',
          templateUrl: 'form.html',
