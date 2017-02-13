@@ -73,6 +73,20 @@
                         <option value="Strategic alliance agreements">Strategic alliance agreements</option>
                         <option value="Open source software agreements">Open source software agreements</option>
                         <option value="Employee Agreements">Employee Agreements</option>
+                    </select><br>
+                </div>
+
+            </div>
+            <div class="row" style="margin-bottom: 15px;">
+                <label class="col-md-4 control-label" for="country">How does the company avoid third party liability?</label>
+                <div class="col-md-4">
+
+                    <select id="revenue1"  ng-model="userDetail.thirdPartyLia" class="form-control input-sm"  multiple="multiple" >
+                        <option value="">Select Multiple</option>
+                        <option value="Policy">Policy</option>
+                        <option value="Freedom to operate practices">Freedom to operate practices</option>
+                        <option value="Agreement audit practices">Agreement audit practices</option>
+                        <option value="IP awareness Training">IP awareness Training</option>
                     </select>
                 </div>
 
@@ -100,21 +114,8 @@
 
             </div>
 
+            
             <div class="row" style="margin-bottom: 15px;">
-                <label class="col-md-4 control-label" for="country">How does the company avoid third party liability?</label>
-                <div class="col-md-4">
-
-                    <select id="revenue1"  ng-model="userDetail.thirdPartyLia" class="form-control input-sm"  multiple="multiple" >
-                        <option value="">Select Multiple</option>
-                        <option value="Policy">Policy</option>
-                        <option value="Freedom to operate practices">Freedom to operate practices</option>
-                        <option value="Agreement audit practices">Agreement audit practices</option>
-                        <option value="IP awareness Training">IP awareness Training</option>
-                    </select>
-                </div>
-
-            </div>
-            <div class="row">
                 <label class="col-md-4 control-label" >Is the company self-insured for IP losses?</label>
                 <div class="col-md-4" >
                     <label class="radio-inline" for="forSelfInsIpLose-Y">
@@ -127,21 +128,14 @@
                     </label>
                     <br><label style="font-size: 14px;color: #cc7a00">If yes, answer the following questions:</label>
 
-                    <!-- New -->
-					<div class="form-group">
-		                <label class="col-md-4 " for="forAmtFound">What is the amount funded ?</label>
-		                <div class="col-md-4">
-		                    <input type="number" ng-model="userDetail.amtFound" name="forAmtFound" id="forAmtFound"  class="form-control" >
-		                </div>
-		             </div>
-		             <!-- New -->
-					<div class="row" style="margin-bottom: 15px;">
-                	<label class="col-md-4 control-label" for="compBenchmark">What companies were benchmarked to arrive at funding levels ?</label>
-		                <div class="col-md-4">
-		                    <label>Overall</label>
+                  
+		                <label class="col-md-10 " for="forAmtFound">What is the amount funded ?</label>
+		            
+		                    <input type="text" ng-model="userDetail.amtFound" name="forAmtFound" id="forAmtFound"  class="form-control" >
+		                    <label class="col-md-10 " control-label" for="compBenchmark">What companies were benchmarked to arrive at funding levels ?</label>
 		                    <textarea class="form-control" id="compBenchmark" name="compBenchmark"  ng-model="userDetail.compBenchmark" placeholder="List competitors to overall business" ></textarea>
-		                </div>
-            		</div>
+		                	
+		              
                 </div>
             </div>
             <div class="row" style="margin-bottom: 15px;">
@@ -185,7 +179,7 @@
                         <option value="Board oversight and reporting">Board oversight and reporting</option>
                         <option value="Legal/compliance oversight and management">Legal/compliance oversight and management</option>
                         <option value="Business unit oversight and strategy alignment">Business unit oversight and strategy alignment</option>
-                    </select>
+                    </select><br>
                 </div>
             </div> 
             <!-- <div class="row">
@@ -210,7 +204,7 @@
                         <option value="Proprietary and assignments">Proprietary and assignments</option>
                         <option value="NDA">NDA</option>
                         <option value="Other">Other</option>
-                    </select>
+                    </select><br>
                 </div>
             </div>
             

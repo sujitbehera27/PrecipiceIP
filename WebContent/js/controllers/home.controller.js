@@ -203,7 +203,7 @@ homeApp.controller('riskMngDetailCtrl', function($scope,$rootScope,$state, $http
 		$rootScope.userDetail.selfInsIpLose = userDetail.selfInsIpLose;
 		$rootScope.userDetail.purchedThirdPartyIns = userDetail.purchedThirdPartyIns;
 		$rootScope.userDetail.hasOverIpGov = userDetail.hasOverIpGov;
-		
+		$rootScope.userDetail.compBenchmark = userDetail.compBenchmark;
 		
 		$http.post($rootScope.host+"../rest/reg/user", $rootScope.userDetail)
 		 .success(function(response){
