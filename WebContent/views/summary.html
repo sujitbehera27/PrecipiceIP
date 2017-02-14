@@ -1,394 +1,616 @@
 <div ng-controller="summaryCtrl">
-<div class="container" >
-<!-- <legend style="width:90%;">Summary Details<img class="back" src="../img/back.png" style="margin-left: 80%;" ng-click="goBack()"></legend> -->
-		<legend style="width:90%;">Summary Details</legend>
-    <div class="row">
-    <!-- <div>
-    	<img class="back" src="../img/back.png" style="margin-left: 84%;" ng-click="goBack()">
-    	</div> -->
-        <div class="col-lg-5" style="height: 50%;width:45%;" id="grid1">
-           
-            <table style="margin-top:3%;width: 95%;">
-                <thead>
-                <tr style="background-color: #cc7a00;">
-                    <th style="border-top-right-radius: 10px;">Company Details</th>
-                </tr>
-                </thead>
-                <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
-                <tr>
-                    <td>
-                    <span>User Name</span></td>
-                    <td>
-                    <span>{{userDetail.userName}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Company</span></td>
-                    <td>
-                    <span>{{userDetail.companyName}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Email</span></td>
-                    <td>
-                    <span>{{userDetail.emailID}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Address1</span></td>
-                    <td>
-                    <span>{{userDetail.address1}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Address2</span></td>
-                    <td>
-                    <span>{{userDetail.address2}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>City</span></td>
-                    <td>
-                    <span>{{userDetail.city}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Zip Code</span></td>
-                    <td>
-                    <span>{{userDetail.zip}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Country</span></td>
-                    <td>
-                    <span>{{userDetail.country}}</span>
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                    <span>Phone No</span></td>
-                    <td>
-                    <span>{{userDetail.phoneNo}}</span>
-                    </td>
-                </tr>
-               
+    <div class="container">
+        <legend style="width:92%;">Summary Details</legend>
+        <div class="row summaryContainer">
+            <div class="col-lg-5" style="height: 50%;width:45%;" id="grid1">
 
-                </tbody>
-            </table>
-             
-            <table style="margin-top:3%;width: 95%;">
-                <thead>
-                <tr style="background-color: #cc7a00;">
-                    <th style="border-top-right-radius: 10px;">Business Details</th>
-                </tr>
-                </thead>
-                <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
-                <tr>
-                    <td>
-                    <span>List the company’s top 5 competitors to the business.</span></td>
-                    <td>
-                    <span>{{userDetail.compOverall}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>What are the company’s marketing activities</span></td>
-                    <td>
-                    <span>{{userDetail.compMarketAct}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Is there a company wide IP Policy?</span></td>
-                    <td>
-                    <span>{{userDetail.compIpPolicy}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Do business units engage in strategy setting of the IP strategy?</span></td>
-                    <td>
-                    <span>{{userDetail.compIpStrategy}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Do intellectual property rights correlate with the
+                <table style="margin-top:3%;width: 96%;">
+                    <thead>
+                        <tr style="background-color: #cc7a00;">
+                            <th style="border-top-right-radius: 10px;">Company Details</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
+                        <tr>
+                            <td>
+                                <span>User Name</span></td>
+                            <td>
+                                <span>{{userDetail.userName}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Company</span></td>
+                            <td>
+                                <span>{{userDetail.companyName}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Email</span></td>
+                            <td>
+                                <span>{{userDetail.emailID}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Address1</span></td>
+                            <td>
+                                <span>{{userDetail.address1}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Address2</span></td>
+                            <td>
+                                <span>{{userDetail.address2}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>City</span></td>
+                            <td>
+                                <span>{{userDetail.city}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Zip Code</span></td>
+                            <td>
+                                <span>{{userDetail.zip}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Country</span></td>
+                            <td>
+                                <span>{{userDetail.country}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Phone No</span></td>
+                            <td>
+                                <span>{{userDetail.phoneNo}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="margin-top:3%;width: 100%;">
+                    <thead>
+                        <tr style="background-color: #cc7a00;">
+                            <th style="border-top-right-radius: 10px;">Business Details</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
+                        <tr>
+                            <td>
+                                <span>List the company’s top 5 competitors to the business.</span></td>
+                            <td>
+                                <span>{{userDetail.compOverall}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>What are the company’s marketing activities</span></td>
+                            <td>
+                                <span>{{userDetail.compMarketAct}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Is there a company wide IP Policy?</span></td>
+                            <td>
+                                <span>{{userDetail.compIpPolicy?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Do business units engage in strategy setting of the IP strategy?</span></td>
+                            <td>
+                                <span>{{userDetail.compIpStrategy?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Do intellectual property rights correlate with the
                     business strategy?</span></td>
-                    <td>
-                    <span>{{userDetail.businesStrategy}}</span>
-                    </td>
-                </tr>
-               
-               
-
-                </tbody>
-            </table>
-              <table style="margin-top:3%;width: 95%;">
-                <thead>
-                <tr style="background-color: #cc7a00;">
-                    <th style="border-top-right-radius: 10px;">Finance Details</th>
-                </tr>
-                </thead>
-                <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
-                <tr>
-                    <td>
-                    <span>What is the annual world-wide revenue for the business?</span></td>
-                    <td>
-                    <span>{{userDetail.annualRev}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>How many employees are in the business world-wide?</span></td>
-                    <td>
-                    <span>{{userDetail.noOfEmp}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>How does the company invest in R&D?</span></td>
-                    <td>
-                    <span>{{userDetail.investInRnD}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Which regions of the world does the business manufacture/sell/distribute its products?</span></td>
-                    <td>
-                    <span>{{userDetail.busInCountries}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Does the company use third parties to distribute its product?</span></td>
-                    <td>
-                    <span>{{userDetail.thirdPartyProd}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>What is the nature of company’s business? Sell Products?</span></td>
-                    <td>
-                    <span>{{userDetail.compBusType}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>If yes, select all IP insurance coverage that apply</span></td>
-                    <td>
-                    <span>{{userDetail.sellProd}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Sell services?</span></td>
-                    <td>
-                    <span>{{userDetail.sellService}}</span>
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                    <span>Sell products and services</span></td>
-                    <td>
-                    <span>{{userDetail.sellProdAndSvc}}</span>
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                    <span>License intellectual property</span></td>
-                    <td>
-                    <span>{{userDetail.licProp}}</span>
-                    </td>
-                </tr>
-               
-
-                </tbody>
-            </table>
-             
-         </div>
-         
-        <div class="col-lg-5" style="height: 50%;width:47%;" id="grid2">
-            <table style="margin-top:3%;width: 95%;border-top-right-radius: 10px;">
-                <thead>
-                <tr style="background-color: #cc7a00;">
-                    <th style="border-top-right-radius: 10px;">Trade Details</th>
-                </tr>
-                </thead>
-                <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
-                <tr>
-                    <td>
-                    <span>List the company’s top 5 competitors to the business.</span></td>
-                    <td>
-                    <span>{{userDetail.compOverall}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>What are the company’s marketing activities</span></td>
-                    <td>
-                    <span>{{userDetail.compMarketAct}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Is there a company wide IP Policy?</span></td>
-                    <td>
-                    <span>{{userDetail.compIpPolicy}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Do business units engage in strategy setting of the IP strategy?</span></td>
-                    <td>
-                    <span>{{userDetail.compIpStrategy}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Do intellectual property rights correlate with the
+                            <td>
+                                <span>{{userDetail.businesStrategy?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="margin-top:3%;width: 100%;">
+                    <thead>
+                        <tr style="background-color: #cc7a00;">
+                            <th style="border-top-right-radius: 10px;">Finance Details</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
+                        <tr>
+                            <td>
+                                <span>What is the annual world-wide revenue for the business?</span></td>
+                            <td>
+                                <span>{{userDetail.annualRev}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>How many employees are in the business world-wide?</span></td>
+                            <td>
+                                <span>{{userDetail.noOfEmp}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>How does the company invest in R&D?</span></td>
+                            <td>
+                                <span>{{userDetail.investInRnD}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Which regions of the world does the business manufacture/sell/distribute its products?</span></td>
+                            <td>
+                                <span>{{userDetail.busInCountries}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company use third parties to distribute its product?</span></td>
+                            <td>
+                                <span>{{userDetail.thirdPartyProd?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>What is the nature of company’s business? Sell Products?</span></td>
+                            <td>
+                                <span>{{userDetail.compBusType?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>If yes, select all IP insurance coverage that apply</span></td>
+                            <td>
+                                <span>{{userDetail.sellProd?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Sell services?</span></td>
+                            <td>
+                                <span>{{userDetail.sellService?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Sell products and services</span></td>
+                            <td>
+                                <span>{{userDetail.sellProdAndSvc?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>License intellectual property</span></td>
+                            <td>
+                                <span>{{userDetail.licProp?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="margin-top:3%;width: 100%;border-top-right-radius: 10px;">
+                    <thead>
+                        <tr style="background-color: #cc7a00;">
+                            <th style="border-top-right-radius: 10px;">Trade Details</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
+                        <tr>
+                            <td>
+                                <span>List the company’s top 5 competitors to the business.</span></td>
+                            <td>
+                                <span>{{userDetail.compOverall}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>What are the company’s marketing activities</span></td>
+                            <td>
+                                <span>{{userDetail.compMarketAct}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Is there a company wide IP Policy?</span></td>
+                            <td>
+                                <span>{{userDetail.compIpPolicy?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Do business units engage in strategy setting of the IP strategy?</span></td>
+                            <td>
+                                <span>{{userDetail.compIpStrategy?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Do intellectual property rights correlate with the
                     business strategy?</span></td>
-                    <td>
-                    <span>{{userDetail.businesStrategy}}</span>
-                    </td>
-                </tr>
-               
-               
+                            <td>
+                                <span>{{userDetail.businesStrategy?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="margin-top:3%;width: 100%;">
+                    <thead>
+                        <tr style="background-color: #cc7a00;">
+                            <th style="border-top-right-radius: 10px;">Risk Details</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
+                        <tr>
+                            <td>
+                                <span>Has the company taken reasonable measures to protect its confidential information.</span></td>
+                            <td>
+                                <span>{{userDetail.hasConfInfo?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company have specific IP policies?</span></td>
+                            <td>
+                                <span>{{userDetail.hasIpPolicy?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>select all IP insurance coverage that apply:</span></td>
+                            <td>
+                                <span>{{userDetail.hasIpPolicyList}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Agreement management and compliance protocols?</span></td>
+                            <td>
+                                <span>{{userDetail.agreementMngProt?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>If yes, select all that apply:</span></td>
+                            <td>
+                                <span>{{userDetail.agreementMngProtList}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company have ERM Software solutions</span></td>
+                            <td>
+                                <span>{{userDetail.hasErm?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>If yes, select all that apply:</span></td>
+                            <td>
+                                <span>{{userDetail.hasErmList}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>How does the company avoid third party liability?</span></td>
+                            <td>
+                                <span>{{userDetail.thirdPartyLia}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>If yes, select all that apply:</span></td>
+                            <td>
+                                <span>{{userDetail.agreementMngProtList}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Is the company self-insured for IP losses?</span></td>
+                            <td>
+                                <span>{{userDetail.selfInsIpLose?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company purchase 3rd Party IP insurance?</span></td>
+                            <td>
+                                <span>{{userDetail.purchedThirdPartyIns?'yes':'no'}}</span>
+                            </td>
+                        </tr>
 
-                </tbody>
-            </table>
-           
-              <table style="margin-top:3%;width: 95%;">
-                <thead>
-                <tr style="background-color: #cc7a00;">
-                    <th style="border-top-right-radius: 10px;">Risk Details</th>
-                </tr>
-                </thead>
-                <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
-                <tr>
-                    <td>
-                    <span>Has the company taken reasonable measures to protect its confidential information.</span></td>
-                    <td>
-                    <span>{{userDetail.hasConfInfo}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Does the company have specific IP policies?</span></td>
-                    <td>
-                    <span>{{userDetail.hasIpPolicy}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>select all IP insurance coverage that apply:</span></td>
-                    <td>
-                    <span>{{userDetail.hasIpPolicyList}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Agreement management and compliance protocols?</span></td>
-                    <td>
-                    <span>{{userDetail.agreementMngProt}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>If yes, select all that apply:</span></td>
-                    <td>
-                    <span>{{userDetail.agreementMngProtList}}</span>
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                    <span>Does the company have ERM Software solutions</span></td>
-                    <td>
-                    <span>{{userDetail.hasErm}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>If yes, select all that apply:</span></td>
-                    <td>
-                    <span>{{userDetail.hasErmList}}</span>
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                    <span>How does the company avoid third party liability?</span></td>
-                    <td>
-                    <span>{{userDetail.thirdPartyLia}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>If yes, select all that apply:</span></td>
-                    <td>
-                    <span>{{userDetail.agreementMngProtList}}</span>
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                    <span>Is the company self-insured for IP losses?</span></td>
-                    <td>
-                    <span>{{userDetail.selfInsIpLose}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <span>Does the company purchase 3rd Party IP insurance?</span></td>
-                    <td>
-                    <span>{{userDetail.purchedThirdPartyIns}}</span>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                    <span>Does the company have oversight of its IP Governance?</span></td>
-                    <td>
-                    <span>{{userDetail.hasOverIpGov}}</span>
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                    <span>Does the company purchase 3rd Party IP insurance?</span></td>
-                    <td>
-                    <span>{{userDetail.purchedThirdPartyIns}}</span>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                    <span>If yes, select all IP insurance coverage that apply:</span></td>
-                    <td>
-                    <span>{{userDetail.thirdPartyIns}}</span>
-                    </td>
-                </tr>
-               
-               
+                        <tr>
+                            <td>
+                                <span>Does the company have oversight of its IP Governance?</span></td>
+                            <td>
+                                <span>{{userDetail.hasOverIpGov}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company purchase 3rd Party IP insurance?</span></td>
+                            <td>
+                                <span>{{userDetail.purchedThirdPartyIns?'yes':'no'}}</span>
+                            </td>
+                        </tr>
 
-                </tbody>
-            </table>
+                        <tr>
+                            <td>
+                                <span>If yes, select all IP insurance coverage that apply:</span></td>
+                            <td>
+                                <span>{{userDetail.thirdPartyIns}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-lg-5" style="height: 50%;width:47%;" id="grid2">
+                <table style="margin-top:3%;width: 100%;">
+                    <thead>
+                        <tr style="background-color: #cc7a00;">
+                            <th style="border-top-right-radius: 10px;">Research and Development</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
+                        <tr>
+                            <td>
+                                <span>Does the company conduct industry based IP Policy and Practices Benchmarking ?</span></td>
+                            <td>
+                                <span>{{userDetail.compCondIpPolicy?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company engage in Competitive Intelligence monitoring ?</span></td>
+                            <td>
+                                <span>{{userDetail.intelliMonitor?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company have policies governing White space analysis and ideation sessions ?</span></td>
+                            <td>
+                                <span>{{userDetail.spaceAnaly?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company house all of its R&D in one central organization ?</span></td>
+                            <td>
+                                <span>{{userDetail.randDInCentOrg?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>internal employees not embedded within the R&D or NPP departments ?</span></td>
+                            <td>
+                                <span>{{userDetail.innovFromIntEmp?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does each business unit conduct its own R&D and/or new product planning (NPP):</span></td>
+                            <td>
+                                <span>{{userDetail.bizUnitConduct?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Do all corporate employees complete/sign a NDA at the initiation of employment ?</span></td>
+                            <td>
+                                <span>{{userDetail.empSignNDA?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Do individuals submitting ideas through an open innovation portal receive any remuneration ?</span></td>
+                            <td>
+                                <span>{{userDetail.openInnovPortal?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company invite open innovation from third parties corporations ?</span></td>
+                            <td>
+                                <span>{{userDetail.openInnovThirdParty?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="margin-top:3%;width: 100%;">
+                    <thead>
+                        <tr style="background-color: #cc7a00;">
+                            <th style="border-top-right-radius: 10px;">IP Governence</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
+                        <tr>
+                            <td>
+                                <span>How does the company extract value from its intellectual property rights ?</span></td>
+                            <td>
+                                <span>{{userDetail.hasConfInfo?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the Company extract value from its intellectual property rights through Enforcement of IP in the form of:</span></td>
+                            <td>
+                                <span>{{userDetail.hasIpPolicy?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the Company extract value from its intellectual property rights through Exploitation of IP through:</span></td>
+                            <td>
+                                <span>{{userDetail.hasIpPolicyList?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>If the company has subsidiaries, does the company have inter-company IP agreements in place ?</span></td>
+                            <td>
+                                <span>{{userDetail.interCompIpAgree?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company conduct annual and/or periodic Training with employees regarding securing its IP ?</span></td>
+                            <td>
+                                <span>{{userDetail.trainForSecure?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company have an Employee Handbook governing the use and disposition of its IP</span></td>
+                            <td>
+                                <span>{{userDetail.empHandbook?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company conduct IP Valuations and or recognize and assign good will values to its IP as part of its financial reporting ?</span></td>
+                            <td>
+                                <span>{{userDetail.ipAsFinReport?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company have a repository and conduct periodic review of thrid party Agreements for IP risk ?</span></td>
+                            <td>
+                                <span>{{userDetail.reviewAggr?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company have a defined IP Strategy ?</span></td>
+                            <td>
+                                <span>{{userDetail.defIpStratg?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company conduct regular IP Audits</span></td>
+                            <td>
+                                <span>{{userDetail.ipAudits?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Do all employees assign their IP rights to the enterprise at the time of employment ?</span></td>
+                            <td>
+                                <span>{{userDetail.ipRightsAtEmptTime?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <span>Do employees receive additional incentives for generation of ideas that may lead to future products or innovations for the enterprise ?</span></td>
+                            <td>
+                                <span>{{userDetail.empRecvAddIncent?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="margin-top:3%;width: 100%;">
+                    <thead>
+                        <tr style="background-color: #cc7a00;">
+                            <th style="border-top-right-radius: 10px;">3rd Party Details</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border:1px solid #727277;border-top-right-radius: 10px;">
+                        <tr>
+                            <td>
+                                <span>Does the company solicit ideas for invention from individuals outside the enterprise ?</span></td>
+                            <td>
+                                <span>{{userDetail.compForInvest?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Has the company recently acquired IP through the process of M&A activity ?</span></td>
+                            <td>
+                                <span>{{userDetail.acqProcMandA?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Is the company currently engaged in any joint development agreements ?</span></td>
+                            <td>
+                                <span>{{userDetail.engJointDev?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company use contract research organizations for any R&D, phase I-IV pharmaceutical or biologic research, or marketing research where confidential details of products are required to be shared ?</span></td>
+                            <td>
+                                <span>{{userDetail.contractResOrg?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the organization conduct competitive intelligence to seek potential infringement or violation of its IPrights on an ongoing basis ?</span></td>
+                            <td>
+                                <span>{{userDetail.orgCompInt?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does/has the enterprise enforced its IP rights in the past</span></td>
+                            <td>
+                                <span>{{userDetail.pastIpRights?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the enterprise have dedicated staffing and/or resources to seek/monitor the market for potential infringement or violation of its IP ?</span></td>
+                            <td>
+                                <span>{{userDetail.dedicatStafRes?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Is the enterprise engaged in any co-promotion agreements of future or existing products ?</span></td>
+                            <td>
+                                <span>{{userDetail.coPromoAgree?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Do individuals submitting ideas to the corporation assign their rights to any future IP generated from their ideas that are submitted ?</span></td>
+                            <td>
+                                <span>{{userDetail.indSubmitIdea?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Does the company gather innovative ideas through an outward facing web portal ?</span></td>
+                            <td>
+                                <span>{{userDetail.gatherIdeas?'yes':'no'}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-3 col-xs-8 " style="margin-left:55%;margin-top:2%;">
+                <a style="background-color:#4775af;width: 160px;" class="btn btn-primary nexttab" data-toggle="tab" ng-click="goBack()">Previous</a>
+                <a style="background-color:#b96838;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next">Edit Details</a>
+                <a style="background-color:green;" class="btn btn-primary nexttab" ng-click="viewRiskScore()">View Risk Score</a>
+            </div>
         </div>
     </div>
-     <div class="row">
-                <div class="col-xs-offset-3 col-xs-8 " style="margin-left:55%;margin-top:2%;">
-                   <!--  <a style="background-color: #8c6316;" href="#trd" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Edit Previous Changes</a> -->
-                    <!-- <a style="background-color:green;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Save and Continue</a> -->
-                    <a style="background-color:#4775af;width: 160px;" class="btn btn-primary nexttab" data-toggle="tab"  ng-click="goBack()">Previous</a> 
-                    <a style="background-color:#b96838;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" >Edit Details</a>
-               		<a style="background-color:green;" class="btn btn-primary nexttab" ng-click="viewRiskScore()" >View Risk Score</a>
-                </div>
-            </div>
-   
-    
 </div>
-
