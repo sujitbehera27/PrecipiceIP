@@ -73,10 +73,11 @@ var homeApp = angular.module('formApp', ['ngAnimate', 'ui.router']).run(function
 	     templateUrl: 'thirdparty.html'
 	 })
 	  // url will be /form/payment
-     .state('form.report', {
-         url: '/report',
-         templateUrl: 'report.html'
-     }).state('form.summary', {
+//     .state('form.report', {
+//         url: '/report',
+//         templateUrl: 'report.html'
+//     })
+     .state('form.summary', {
          url: '/summary',
          templateUrl: 'summary.html'
      });

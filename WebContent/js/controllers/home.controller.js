@@ -284,7 +284,7 @@ homeApp.controller('summaryCtrl', function($scope, $rootScope, $state, $http, us
         console.log("***********Summaryl Controller************");
 
 
-        $state.go('form.report');
+        $state.go('riskScore');
 
     }
     $scope.$watch("userDetail.hasIpPolicy", function(val) {
