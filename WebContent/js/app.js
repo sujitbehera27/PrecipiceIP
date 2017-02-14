@@ -1,5 +1,3 @@
-
-
 var homeApp = angular.module('HomeApp', ['ui.router']).run(function($rootScope){
 $rootScope.userId = "";
 $rootScope.userDetail;
@@ -106,9 +104,3 @@ var homeApp = angular.module('formApp', ['ngAnimate', 'ui.router']).run(function
 //       $state.go('form.report'); 
 //    };
 //  });
-
-
-
-
-
-

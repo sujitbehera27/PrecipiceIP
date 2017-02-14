@@ -256,4 +256,7 @@ a {
     text-decoration: none;
 }
 
+.errMsg{
+	color:red;
+}
 
