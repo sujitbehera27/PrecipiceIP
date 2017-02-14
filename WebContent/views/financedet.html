@@ -1,23 +1,14 @@
 <div ng-controller="financeDetailCtrl">
     <form class="form-horizontal">
         <fieldset>
-
-            <!-- Form Name -->
-           <!--  <legend>Financial Details<img class="back" src="../img/back.png" ng-click="goBack()"></legend> -->
-			<legend>Financial Details</legend>
+            <legend>Financial Details</legend>
             <div class="row">
                 <label class="col-md-4 control-label" for="revenue">What is the annual world-wide revenue for the business?</label>
                 <div class="col-md-4">
-                <input id="fn" ng-model="userDetail.annualRev" name="fn" type="text" placeholder="In $" class="form-control input-sm" required><br>
-                   <!--  <select id="revenue" ng-model="userDetail.annualRev" name="revenue" class="form-control input-sm">
-                        <option value="">Select One</option>
-                        <option value="less than $50 million" >less than $50 million</option>
-                        <option value="more than $50 million, but less than $1 billion">more than $50 million, but less than $1 billion</option>
-                        <option value="1 billion or more">1 billion or more</option>
-                    </select> -->
+                    <input id="fn" ng-model="userDetail.annualRev" name="fn" type="text" placeholder="In $" class="form-control input-sm" required><br>
                 </div>
             </div>
-            <div class="row" >
+            <div class="row">
                 <label class="col-md-4 control-label" for="emptotal">How many employees are in the business world-wide?</label>
                 <div class="col-md-4">
                     <select id="emptotal" ng-model="userDetail.noOfEmp" name="noOfEmp" class="form-control input-sm">
@@ -28,32 +19,11 @@
                     </select><br>
                 </div>
             </div>
-            <!-- <div class="form-group">
-                 <label class="col-md-4 control-label" for="Training">Does the company purchase 3rd Party IP insurance?</label>
-                 <div class="col-md-4">
-                     <label class="radio-inline" for="Training-0">
-                         <input type="radio" name="Training" id="Training-0" value="first" checked="checked">
-                         Yes
-                     </label>
-                     <label class="radio-inline" for="Training-1">
-                         <input type="radio" name="Training" id="Training-1" value="no">
-                         No
-                     </label> <br><label style="font-size: 14px;color: #cc7a00">If yes, select all IP insurance coverage that apply:</label>
-
-                     <select id="revenue1" ng-show="content == 'first'" name="revenue" class="form-control input-sm"  multiple="multiple" va>
-                         <option selected="selected">Select Multiple</option>
-                         <option>Abatement coverage</option>
-                         <option>Enforcement coverage</option>
-                         <option>Defensive coverage</option>
-                     </select>
-                 </div>
-
-             </div>-->
             <div class="row" style="margin-bottom: 15px;">
                 <label class="col-md-4 control-label" for="emptotal">How does the company invest in R&D?</label>
                 <div class="col-md-4">
-					<!-- ng-show="content == 'first'" -->
-                    <select id="emptotal"  ng-model="userDetail.investInRnD"   name="revenue" class="form-control input-sm"  multiple >
+                    <!-- ng-show="content == 'first'" -->
+                    <select id="emptotal" ng-model="userDetail.investInRnD" name="revenue" class="form-control input-sm" multiple>
                         <option value="">Select Multiple</option>
                         <option value="Closed innovation">Closed innovation</option>
                         <option value="Open innovation">Open innovation</option>
@@ -66,8 +36,8 @@
                 <label class="col-md-4 control-label" for="country">Which regions of the world does the business manufacture/sell/distribute its products?</label>
                 <div class="col-md-4">
 
- 					<!-- ng-show="content == 'first'"  -->
-                    <select id="country" ng-model="userDetail.busInCountries"  name="busInCountries" class="form-control input-sm"  multiple >
+                    <!-- ng-show="content == 'first'"  -->
+                    <select id="country" ng-model="userDetail.busInCountries" name="busInCountries" class="form-control input-sm" multiple>
                         <option value="">Select Multiple</option>
                         <option value="US">US</option>
                         <option value="Canada">Canada</option>
@@ -80,7 +50,7 @@
             </div>
 
             <div class="row">
-                <label class="col-md-4 control-label" >Does the company use third parties to distribute its product?</label>
+                <label class="col-md-4 control-label">Does the company use third parties to distribute its product?</label>
                 <div class="col-md-4" ng-init="userDetail.thirdPartyProd= 0 ">
                     <label class="radio-inline" for="forDisProd-Y">
                         <input type="radio" ng-model="userDetail.thirdPartyProd" ng-value="1" name="thirdPartyProd" id="forDisProd-Y" >
@@ -95,8 +65,8 @@
 
 
             <div class="row">
-                <label class="col-md-4 control-label" >What is the nature of company’s business? Sell Products?</label>
-                <div class="col-md-4" >
+                <label class="col-md-4 control-label">What is the nature of company’s business? Sell Products?</label>
+                <div class="col-md-4">
                     <label class="radio-inline" for="forCompBiz-Y">
                         <input type="radio" ng-model="userDetail.compBusType" ng-value="1" name="compBusType" id="forCompBiz-Y" >
                         Yes
@@ -106,7 +76,7 @@
                         No
                     </label> <br><label style="font-size: 14px;color: #cc7a00">If yes, select all IP insurance coverage that apply:</label>
 
-                    <select id="forCompBiz" ng-show="userDetail.compBusType=='1'" ng-model="userDetail.sellProd" name="sellProd" class="form-control input-sm"  multiple="multiple" >
+                    <select id="forCompBiz" ng-show="userDetail.compBusType=='1'" ng-model="userDetail.sellProd" name="sellProd" class="form-control input-sm" multiple="multiple">
                         <option value="">Select Multiple</option>
                         <option value="OEM">OEM</option>
                         <option value="Retailer">Retailer</option>
@@ -117,8 +87,8 @@
             </div>
 
             <div class="row">
-                <label class="col-md-4 control-label" >Sell services?</label>
-                <div class="col-md-4" >
+                <label class="col-md-4 control-label">Sell services?</label>
+                <div class="col-md-4">
                     <label class="radio-inline" for="forSellServiceY">
                         <input type="radio" ng-model="userDetail.sellService" ng-value="1" name="sellService" id="forSellServiceY" >
                         Yes
@@ -130,8 +100,8 @@
                 </div>
             </div>
             <div class="row">
-                <label class="col-md-4 control-label" >Sell products and services</label>
-                <div class="col-md-4" >
+                <label class="col-md-4 control-label">Sell products and services</label>
+                <div class="col-md-4">
                     <label class="radio-inline" for="sellProdAndSvc-Y">
                         <input type="radio" ng-model="userDetail.sellProdAndSvc" ng-value="1" name="sellProdAndSvc" id="sellProdAndSvc-Y" >
                         Yes
@@ -143,8 +113,8 @@
                 </div>
             </div>
             <div class="row">
-                <label class="col-md-4 control-label" >License intellectual property</label>
-                <div class="col-md-4" >
+                <label class="col-md-4 control-label">License intellectual property</label>
+                <div class="col-md-4">
                     <label class="radio-inline" for="licProp-Y">
                         <input type="radio" ng-model="userDetail.licProp" ng-value="1"  name="licProp" id="licProp-Y" >
                         Yes
@@ -159,62 +129,46 @@
             <div class="row">
                 <label class="col-md-4 control-label" for="forGrossRevenue">What is  the gross revenue for the business unit in which IP resides ?</label>
                 <div class="col-md-4">
-                <input id="forGrossRevenue" ng-model="userDetail.grossRevenue" name="forGrossRevenue" type="text" placeholder="In $" class="form-control input-sm" required><br>
-               <!--  <input ng-model="userDetail.grossRevenue" name="forGrossRevenue"  id="forGrossRevenue" placeholder="In $" type="text" class="form-control input-sm">  -->
-                <!-- 
-                <input ng-model="userDetail.grossRevenue" name="forGrossRevenue"  id="forGrossRevenue" type="number" placeholder="In $" class="form-control input-sm">
-                 --></div>
+                    <input id="forGrossRevenue" ng-model="userDetail.grossRevenue" name="forGrossRevenue" type="text" placeholder="In $" class="form-control input-sm" required><br></div>
             </div>
-            
+
             <!-- New -->
             <div class="row">
                 <label class="col-md-4 control-label" for="forProjSale">What are the projected sales for the product associated with the IP ?</label>
                 <div class="col-md-4">
-                <input ng-model="userDetail.projectedSale" name="forProjSale"  id="forProjSale" type="text" placeholder="In $" class="form-control input-sm"><br>
+                    <input ng-model="userDetail.projectedSale" name="forProjSale" id="forProjSale" type="text" placeholder="In $" class="form-control input-sm"><br>
                 </div>
             </div>
-            
+
             <!-- New -->
             <div class="row">
                 <label class="col-md-4 control-label" for="forRevToRandD">What is the ratio of gross revenue to R&D spend ?</label>
                 <div class="col-md-4">
-                <input ng-model="userDetail.revToRandD" name="forRevToRandD"  id="forRevToRandD" type="text" class="form-control input-sm"> <br>
+                    <input ng-model="userDetail.revToRandD" name="forRevToRandD" id="forRevToRandD" type="text" class="form-control input-sm"> <br>
                 </div>
             </div>
-            
-             <!-- New -->
+
+            <!-- New -->
             <div class="row">
                 <label class="col-md-4 control-label" for="forAmtSpend"> What was the total amount of enterprise R&D spend the past fiscal year ?</label>
                 <div class="col-md-4">
-                <input ng-model="userDetail.amtSpend" name="forAmtSpend"  id="forAmtSpend" type="text" placeholder="In $"  class="form-control input-sm"><br>
+                    <input ng-model="userDetail.amtSpend" name="forAmtSpend" id="forAmtSpend" type="text" placeholder="In $" class="form-control input-sm"><br>
                 </div>
             </div>
-            
+
             <!-- New -->
             <div class="row">
                 <label class="col-md-4 control-label" for="forspendBizUnit"> What was the R&D spend for the business unit ?</label>
                 <div class="col-md-4">
-                <input ng-model="userDetail.spendBizUnit" name="forspendBizUnit"  id="forspendBizUnit" type="text" placeholder="In $"  class="form-control input-sm">
+                    <input ng-model="userDetail.spendBizUnit" name="forspendBizUnit" id="forspendBizUnit" type="text" placeholder="In $" class="form-control input-sm">
                 </div>
             </div>
-           
-            <input type="hidden" ng-model="userDetail.formID" value="2"/>
-           <!--  <input type="hidden" ng-model="userDetail.userID"/> -->
 
-
-
-            <!-- <div class="form-group" style="margin-left: 25%;">
-                 <label class="col-md-4 control-label" for="submit"></label>
-                 <div class="col-md-4">
-                     <button id="submitfin" name="submitfin" class="btn btn-primary">Continue To Next Form</button>
-                 </div>
-             </div>-->
+            <input type="hidden" ng-model="userDetail.formID" value="2" />
             <div class="row">
                 <div class="col-xs-offset-3 col-xs-8 " style="margin-left:70%;">
-                  <!--   <a style="background-color: #8c6316;" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Edit Previous Changes</a> -->
-                    <!-- <a style="background-color:green;" href="#fin" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" onclick="$('.nav-tabs > .active').next('li').find('a').trigger('click');">Save and Continue</a> -->
-                     <a style="background-color:#4775af;width: 160px;" class="btn btn-primary nexttab" data-toggle="tab"  ng-click="goBack()">Previous</a> 
-                     <a style="background-color:green;" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" ng-click="financeDetSubmit(userDetail)">Save and Continue</a> 
+                    <a style="background-color:#4775af;width: 160px;" class="btn btn-primary nexttab" data-toggle="tab" ng-click="goBack()">Previous</a>
+                    <a style="background-color:green;" class="btn btn-primary nexttab" data-toggle="tab" id="btn-next" ng-click="financeDetSubmit(userDetail)">Save and Continue</a>
                 </div>
             </div>
         </fieldset>
